@@ -40,8 +40,8 @@ Route::namespace('Dashboard\API')->group(function (){
       Route::apiResource('orders', 'OrderController')->only(['index','destroy']);
       Route::get('products-not-allow','StatisticController@productsNotAllow');
       Route::get('products-not-allow-count','StatisticController@productsNotAllowCount');
-      Route::get('orders-outstanding','StatisticController@ordersOutstanding');
-      Route::get('orders-outstanding-count','StatisticController@ordersOutstandingCount');
+      Route::get('orders-outstanding','StatisticController@pendingOrders');
+      Route::get('orders-outstanding-count','StatisticController@pendingOrdersCount');
       Route::get('latest-messages','StatisticController@getLatestMessages');
       Route::get('messages-count','StatisticController@getMessagesCount');
 });

@@ -18,13 +18,13 @@ class StatisticController extends Controller
     {
         return Product::notAllow()->count();
     }
-    public function ordersOutstanding()
+    public function pendingOrders()
     {
-        return Order::outstanding()->get();
+        return Order::pending()->get();
     }
-    public function ordersOutstandingCount()
+    public function pendingOrdersCount()
     {
-        return Order::outstanding()->count();
+        return Order::pending()->count();
     }
     public function getMessagesCount()
     {
