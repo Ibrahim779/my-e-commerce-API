@@ -12,7 +12,7 @@ class Order extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function scopeOutstanding($query)
+    public function scopePending($query)
     {
         return $query->whereStatus(0);
     }

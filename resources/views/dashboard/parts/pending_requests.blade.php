@@ -45,48 +45,6 @@
                         </label>
                     </div>
                 </li>
-                <li class="list-group-item todo-item" data-role="task">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label todo-label" for="customCheck1">
-                            <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing</span><span class="badge badge-pill badge-primary float-right">1 week </span>
-                        </label>
-                    </div>
-                    <div class="item-date"> 26 jun 2017</div>
-                </li>
-                <li class="list-group-item todo-item" data-role="task">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck2">
-                        <label class="custom-control-label todo-label" for="customCheck2">
-                            <span class="todo-desc">Give Purchase report to</span> <span class="badge badge-pill badge-info float-right">Yesterday</span>
-                        </label>
-                    </div>
-                    <ul class="list-style-none assignedto">
-                        <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                        <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
-                    </ul>
-                </li>
-                <li class="list-group-item todo-item" data-role="task">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        <label class="custom-control-label todo-label" for="customCheck3">
-                            <span class="todo-desc">Lorem Ipsum is simply dummy text of the printing </span> <span class="badge badge-pill badge-warning float-right">2 weeks</span>
-                        </label>
-                    </div>
-                    <div class="item-date"> 26 jun 2017</div>
-                </li>
-                <li class="list-group-item todo-item" data-role="task">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck4">
-                        <label class="custom-control-label todo-label" for="customCheck4">
-                            <span class="todo-desc">Give Purchase report to</span> <span class="badge badge-pill badge-info float-right">Yesterday</span>
-                        </label>
-                    </div>
-                    <ul class="list-style-none assignedto">
-                        <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/3.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Priyanka"></li>
-                        <li class="assignee"><img class="rounded-circle" width="40" src="../../assets/images/users/4.jpg" alt="user" data-toggle="tooltip" data-placement="top" title="" data-original-title="Selina"></li>
-                    </ul>
-                </li>
             </ul>
         </div>
     </div>
