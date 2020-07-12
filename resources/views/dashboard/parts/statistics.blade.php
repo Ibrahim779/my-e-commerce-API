@@ -12,7 +12,7 @@
     <div class="col-md-6 col-lg-3">
         <div class="card card-hover">
             <div class="box bg-success text-center">
-                <h1 class="font-light text-white"><i>47</i></h1>
+                <h1 class="font-light text-white"><i>{{$products_not_allow_count}}</i></h1>
                 <h6 class="text-white">Products Not Allow</h6>
             </div>
         </div>
@@ -21,7 +21,7 @@
     <div class="col-md-6 col-lg-3">
         <div class="card card-hover">
             <div class="box bg-warning text-center">
-                <h1 class="font-light text-white"><i>50</i></h1>
+                <h1 class="font-light text-white"><i>{{$messages_count}}</i></h1>
                 <h6 class="text-white">Messages</h6>
             </div>
         </div>
@@ -30,7 +30,7 @@
     <div class="col-md-6 col-lg-3">
         <div class="card card-hover">
             <div class="box bg-danger text-center">
-                <h1 class="font-light text-white"><i>18</i></h1>
+                <h1 class="font-light text-white"><i>{{$pending_orders_count}}</i></h1>
                 <h6 class="text-white">Pending Order</h6>
             </div>
         </div>

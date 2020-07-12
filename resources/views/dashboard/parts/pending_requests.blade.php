@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Pending Request</h4>
+        <h4 class="card-title">Pending Orders</h4>
         <div class="todo-widget scrollable" style="height:450px;">
             <ul class="list-task todo-list list-group m-b-0" data-role="tasklist">
                 <li class="list-group-item todo-item" data-role="task">
