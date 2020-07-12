@@ -17,9 +17,10 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
     Route::resource('categories', 'CategoryController')->except('show');
     Route::resource('products', 'ProductController')->only(['destroy', 'update']);
     Route::name('products.')->prefix('products')->group(function (){
+        Route::get('offers', 'ProductController@isOffer')->name('isOffer');
         Route::name('categories.')->prefix('categories')->group(function (){
             Route::get('{category}', 'ProductController@index')->name('index');
-            Route::get('{category}/not-allow', 'ProductController@getNotAllow')->name('notAllow');
+            Route::get('{category}/unpublished', 'ProductController@getUnPublished')->name('UnPublished');
             Route::get('{category}/has-discount', 'ProductController@getHasDiscount')->name('hasDiscount');
             Route::post('{category}', 'ProductController@store')->name('store');
         });
@@ -30,7 +31,6 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
             Route::post('{category}', 'SubCategoryController@store')->name('store');
         });
     });
-    Route::get('offers','OffersController@index')->name('offers.index');
     Route::get('coupons',function (){
         return 'welcome';
     })->name('coupons.index');

@@ -2,39 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="776c63ef-f381-42af-925f-c21fb43a1511" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/BrandController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/MessageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SliderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/StatisticController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SubCategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/category/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/coupon/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/offer/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/product/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/slider/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/subcategory/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/message/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/MessageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/OffersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/OffersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SliderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SubCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SubCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/script.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_19_085347_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_19_085347_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/coupon/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/coupon/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/style.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/style.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/messages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/not_allow_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/not_allow_products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/offers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/offers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/pending_requests.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/pending_requests.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/statistics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/statistics.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/offer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/message/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/slider/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/slider/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/subcategory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/subcategory/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/dash_api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/dash_api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/message/index.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +134,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/coupon" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/message" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -158,11 +144,11 @@
       <recent name="E:\Projects\my-e-commerce-API\public" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\coupon" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\message" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\slider" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\offer" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\message" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\coupon" />
       <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\subcategory" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\slider" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\offer" />
     </key>
   </component>
   <component name="RunManager">
@@ -188,7 +174,8 @@
       <workItem from="1593104743550" duration="612000" />
       <workItem from="1594442266434" duration="18372000" />
       <workItem from="1594490702035" duration="6236000" />
-      <workItem from="1594522802137" duration="4546000" />
+      <workItem from="1594522802137" duration="7851000" />
+      <workItem from="1594558212108" duration="3857000" />
     </task>
     <servers />
   </component>
@@ -212,10 +199,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="604" y="352" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1594522893191" />
-    <state x="444" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1594522804418">
+    <state x="444" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1594558379525">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="444" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1594522804418" />
+    <state x="444" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1594558379525" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1592746503032">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
