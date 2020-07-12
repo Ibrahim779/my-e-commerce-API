@@ -17,3 +17,5 @@
 <script src="{{asset('assets/libs/moment/min/moment.min.js')}}"></script>
 <script src="{{asset('assets/libs/fullcalendar/dist/fullcalendar.min.js')}}"></script>
 <script src="{{asset('assets/dist/js/pages/calendar/cal-init.js')}}"></script>
+
+@yield('script')
