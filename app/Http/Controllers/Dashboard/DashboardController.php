@@ -13,6 +13,7 @@ class DashboardController extends Controller
     public function index()
     {
         $products_not_allow_count = Product::notAllow()->count();
+        $offers = Product::whereIsOffer(1)->take(4)->get();
         $products_not_allow = Product::notAllow()->take(4)->get();
         $pending_orders =  Order::pending()->get();
         $pending_orders_count =  Order::pending()->count();
@@ -24,7 +25,8 @@ class DashboardController extends Controller
                     'pending_orders',
                     'pending_orders_count',
                     'latest_messages',
-                     'messages_count'
+                     'messages_count',
+                      'offers'
                  ));
 
 
