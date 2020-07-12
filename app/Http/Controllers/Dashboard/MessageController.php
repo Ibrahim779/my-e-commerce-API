@@ -13,8 +13,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        Message::get();
-        return view('dashboard.message.index');
+        $messages = Message::get();
+        return view('dashboard.message.index', compact('messages'));
     }
 
     /**

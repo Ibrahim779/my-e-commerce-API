@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->double('price')->unsigned()->default(0.0);
             $table->double('discount')->default(0);
             $table->string('bar_code')->nullable();
-            $table->tinyInteger('status')->default(1);
+            $table->tinyInteger('is_published')->default(1);
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('brand_id');
             $table->unsignedInteger('subcategory_id')->nullable();

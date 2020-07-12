@@ -18,21 +18,28 @@ class ProductController extends Controller
      */
     public function index($category)
     {
-        Product::whereCategoryId($category)->get();
-        return view('dashboard.product.index');
+        $products = Product::whereCategoryId($category)->published()->get();
+        $page_title = 'Products';
+        return view('dashboard.product.index',compact('products','page_title'));
     }
-    public function getNotAllow($category)
+    public function getUnPublished($category)
     {
-        Product::whereCategoryId($category)->notAllow()->get();
-        return view('dashboard.product.index');
+        $products =  Product::whereCategoryId($category)->unPublished()->get();
+        $page_title = 'Products Not Allow';
+        return view('dashboard.product.index', compact('products', 'page_title'));
     }
     public function getHasDiscount($category)
     {
-        Product::whereCategoryId($category)->hasDiscount()->get();
-        return view('dashboard.product.index');
+        $products = Product::whereCategoryId($category)->hasDiscount()->get();
+        $page_title = 'Products Has Discount';
+        return view('dashboard.product.index', compact('products', 'page_title'));
     }
-
-
+    public function isOffer()
+    {
+        $products = Product::offer()->get();
+        $page_title = 'Offers';
+        return view('dashboard.product.index', compact('products', 'page_title'));
+    }
     /**
      * Store a newly created resource in storage.
      *

@@ -24,12 +24,20 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class);
     }
-    public function scopeNotAllow($query)
+    public function scopeUnPublished($query)
     {
-        return $query->whereStatus(0);
+        return $query->whereIsPublished(0);
+    }
+    public function scopePublished($query)
+    {
+        return $query->whereIsPublished(1);
     }
     public function scopeHasDiscount($query)
     {
         return $query->where('discount', '>',0);
+    }
+    public function scopeOffer($query)
+    {
+        return $query->whereIsOffer(1);
     }
 }

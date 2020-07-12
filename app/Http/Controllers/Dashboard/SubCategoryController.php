@@ -16,8 +16,8 @@ class SubCategoryController extends Controller
      */
     public function index($category)
     {
-         SubCategory::whereCategoryId($category)->get();
-        return view('dashboard.subcategory.index');
+         $subcategories = SubCategory::whereCategoryId($category)->get();
+        return view('dashboard.subcategory.index', compact('subcategories'));
     }
 
     /**

@@ -19,7 +19,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'subcategory_id' => function(){
              return factory(\App\SubCategory::class)->create();
         },
-        'status' => 0,
+        'is_published' => 0,
         'is_offer' => 1
     ];
 });

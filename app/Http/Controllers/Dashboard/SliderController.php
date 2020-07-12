@@ -15,8 +15,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-         Slider::get();
-        return view('dashboard.slider.index');
+         $sliders = Slider::get();
+        return view('dashboard.slider.index', compact('sliders'));
     }
 
     /**
