@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::namespace('Dashboard\API')->group(function (){
+Route::namespace('Dashboard\API')->name('api')->group(function (){
       Route::apiResource('categories', 'CategoryController')->except('show');
       Route::apiResource('products', 'ProductController')->only(['destroy', 'update']);
       Route::name('products.')->prefix('products')->group(function (){
