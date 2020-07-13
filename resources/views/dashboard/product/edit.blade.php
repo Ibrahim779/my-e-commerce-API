@@ -65,15 +65,6 @@
                               </div>
                           </div>
                           <div class="form-group row">
-                              <label class="col-sm-3 text-right control-label col-form-label">Category</label>
-                              <div class="col-md-9">
-                                  <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
-                                      <option>Select</option>
-                                  </select>
-
-                              </div>
-                          </div>
-                          <div class="form-group row">
                               <label class="col-sm-3 text-right control-label col-form-label">SubCategory</label>
                               <div class="col-md-9">
                                   <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
