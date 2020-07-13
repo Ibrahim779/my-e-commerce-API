@@ -4,7 +4,7 @@
                 @include('dashboard.parts.statistics')
                 <div class="row">
                     <div class="col-md-6">
-                     @include('dashboard.parts.not_allow_products')
+                     @include('dashboard.parts.unpublished_products')
                          <!-- Card -->
                        @include('dashboard.parts.pending_requests')
                     </div>
