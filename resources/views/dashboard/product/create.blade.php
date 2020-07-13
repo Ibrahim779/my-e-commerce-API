@@ -27,31 +27,31 @@
                             <div class="form-group row">
                                 <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Name</label>
                                 <div class="col-sm-9">
-                                    <input name="name" value="{{old('name')}}" type="text" class="form-control" id="category_name" placeholder="Category Name Here">
+                                    <input name="name" value="{{old('name')}}" type="text" class="form-control" id="category_name" placeholder="Product Name Here">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Quantity</label>
                                 <div class="col-sm-9">
-                                    <input name="quantity" value="{{old('quantity')}}" type="text" class="form-control" id="category_quantity" placeholder="Category Quantity Here">
+                                    <input name="quantity" value="{{old('quantity')}}" type="text" class="form-control" id="category_quantity" placeholder="Product Quantity Here">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Price</label>
                                 <div class="col-sm-9">
-                                    <input name="price" value="{{old('price')}}" type="text" class="form-control" id="category_name" placeholder="Category Price Here">
+                                    <input name="price" value="{{old('price')}}" type="text" class="form-control" id="category_name" placeholder="Product Price Here">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Discount</label>
                                 <div class="col-sm-9">
-                                    <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="category_name" placeholder="Category Discount Here">
+                                    <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="category_name" placeholder="Product Discount Here">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Bar Code</label>
                                 <div class="col-sm-9">
-                                    <input name="bar_code" value="{{old('bar_code')}}" type="text" class="form-control" id="category_name" placeholder="Category Bar Code Here">
+                                    <input name="bar_code" value="{{old('bar_code')}}" type="text" class="form-control" id="category_name" placeholder="Product Bar Code Here">
                                 </div>
                             </div>
                             <div class="form-group row">
