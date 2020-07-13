@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="776c63ef-f381-42af-925f-c21fb43a1511" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/category/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/category/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/product/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/subcategory/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/subcategory/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SubCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/SubCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/not_allow_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/unpublished_products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/statistics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/statistics.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/subcategory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/subcategory/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,21 +131,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/product" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard" />
-      <recent name="E:\Projects\my-e-commerce-API\app\Http\Controllers\Dashboard" />
-      <recent name="E:\Projects\my-e-commerce-API\public" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\product" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\category" />
       <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\message" />
       <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\coupon" />
       <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\subcategory" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\slider" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\offer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\subcategory" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard" />
+      <recent name="E:\Projects\my-e-commerce-API\app\Http\Controllers\Dashboard" />
+      <recent name="E:\Projects\my-e-commerce-API\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -161,6 +174,7 @@
       <workItem from="1594490702035" duration="6236000" />
       <workItem from="1594522802137" duration="7851000" />
       <workItem from="1594558212108" duration="13290000" />
+      <workItem from="1594611930534" duration="10173000" />
     </task>
     <servers />
   </component>
@@ -172,10 +186,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1592754434485" />
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594456406669">
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594621429344">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1594456406669" />
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1594621429344" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1594566872771">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

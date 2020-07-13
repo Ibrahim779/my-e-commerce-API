@@ -17,7 +17,11 @@ class SubCategoryController extends Controller
     public function index($category)
     {
          $subcategories = SubCategory::whereCategoryId($category)->get();
-        return view('dashboard.subcategory.index', compact('subcategories'));
+        return view('dashboard.subcategory.index', compact('subcategories','category'));
+    }
+    public function create($category)
+    {
+        return view('dashboard.subcategory.create',compact('category'));
     }
 
     /**
@@ -25,7 +29,7 @@ class SubCategoryController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param $category
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request , $category)
     {
@@ -34,31 +38,40 @@ class SubCategoryController extends Controller
         $subcategory->name = $request->name;
         $subcategory->category_id = $category;
         $subcategory->save();
+        return redirect()->route('subcategories.categories.index', $category);
+    }
+    public function edit($category, SubCategory $subcategory)
+    {
+        return view('dashboard.subcategory.edit', compact('subcategory', 'category'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param $subcategory
-     * @return void
+     * @param SubCategory $subcategory
+     * @param $category
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request,SubCategory $subcategory)
+    public function update(Request $request,  $category, SubCategory $subcategory)
     {
          $data = $this->validation($request);
          $subcategory->update($data);
+        return redirect()->route('subcategories.categories.index', $category);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param $subcategory
-     * @return void
+     * @param SubCategory $subcategory
+     * @param $category
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy(SubCategory $subcategory)
+    public function destroy($category,SubCategory $subcategory)
     {
         $subcategory->delete();
+        return redirect()->route('subcategories.categories.index', $category);
     }
     /**
      * @param Request $request

@@ -12,16 +12,16 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $products_not_allow_count = Product::notAllow()->count();
+        $products_unpublished_count = Product::unpublished()->count();
         $offers = Product::whereIsOffer(1)->take(4)->get();
-        $products_not_allow = Product::notAllow()->take(4)->get();
+        $products_unpublished = Product::unpublished()->take(4)->get();
         $pending_orders =  Order::pending()->get();
         $pending_orders_count =  Order::pending()->count();
         $latest_messages = Message::latest('created_at')->take(4)->get();
         $messages_count = Message::count();
         return view('dashboard.index',compact(
-            'products_not_allow_count',
-                 'products_not_allow',
+            'products_unpublished_count',
+                 'products_unpublished',
                     'pending_orders',
                     'pending_orders_count',
                     'latest_messages',

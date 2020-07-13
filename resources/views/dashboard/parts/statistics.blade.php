@@ -12,8 +12,8 @@
     <div class="col-md-6 col-lg-3">
         <div class="card card-hover">
             <div class="box bg-success text-center">
-                <h1 class="font-light text-white"><i>{{$products_not_allow_count}}</i></h1>
-                <h6 class="text-white">Products Not Allow</h6>
+                <h1 class="font-light text-white"><i>{{$products_unpublished_count}}</i></h1>
+                <h6 class="text-white">Products UnPublished</h6>
             </div>
         </div>
     </div>

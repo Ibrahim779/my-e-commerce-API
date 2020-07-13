@@ -20,7 +20,7 @@ class ProductController extends Controller
     {
         $products = Product::whereCategoryId($category)->published()->get();
         $page_title = 'Products';
-        return view('dashboard.product.index',compact('products','page_title'));
+        return view('dashboard.product.index',compact('products','page_title','category'));
     }
     public function getUnPublished($category)
     {
@@ -40,6 +40,10 @@ class ProductController extends Controller
         $page_title = 'Offers';
         return view('dashboard.product.index', compact('products', 'page_title'));
     }
+    public function create($category)
+    {
+        return view('dashboard.product.create', compact( 'category'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -52,6 +56,10 @@ class ProductController extends Controller
         $this->validation($request);
         $product = new Product();
         $this->saveData($request,$product,$category);
+    }
+    public function edit($category, Product $product)
+    {
+        return view('dashboard.product.edit', compact('product', 'category'));
     }
 
     /**
