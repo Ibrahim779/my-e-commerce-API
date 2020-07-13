@@ -31,6 +31,75 @@
                                 <input name="name" value="{{$product->name}}" type="text" class="form-control" id="category_name" placeholder="Category Name Here">
                             </div>
                         </div>
+                          <div class="form-group row">
+                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Quantity</label>
+                              <div class="col-sm-9">
+                                  <input name="quantity" value="{{old('quantity')}}" type="text" class="form-control" id="category_quantity" placeholder="Category Quantity Here">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Price</label>
+                              <div class="col-sm-9">
+                                  <input name="price" value="{{old('price')}}" type="text" class="form-control" id="category_name" placeholder="Category Price Here">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Discount</label>
+                              <div class="col-sm-9">
+                                  <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="category_name" placeholder="Category Discount Here">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Bar Code</label>
+                              <div class="col-sm-9">
+                                  <input name="bar_code" value="{{old('bar_code')}}" type="text" class="form-control" id="category_name" placeholder="Category Bar Code Here">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-sm-3"></label>
+                              <div class="col-md-9">
+                                  <div class="custom-control custom-checkbox mr-sm-2">
+                                      <input type="checkbox" class="custom-control-input" id="customControlAutosizing1">
+                                      <label class="custom-control-label" for="customControlAutosizing1">Published</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-sm-3 text-right control-label col-form-label">Category</label>
+                              <div class="col-md-9">
+                                  <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                      <option>Select</option>
+                                  </select>
+
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-sm-3 text-right control-label col-form-label">SubCategory</label>
+                              <div class="col-md-9">
+                                  <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                      <option>Select</option>
+                                  </select>
+
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-sm-3 text-right control-label col-form-label">Brand</label>
+                              <div class="col-md-9">
+                                  <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                      <option>Select</option>
+                                  </select>
+
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-sm-3"></label>
+                              <div class="col-md-9">
+                                  <div class="custom-control custom-checkbox mr-sm-2">
+                                      <input type="checkbox" class="custom-control-input" id="Offer">
+                                      <label class="custom-control-label" for="Offer">Offer</label>
+                                  </div>
+                              </div>
+                          </div>
                     </div>
                     <div class="border-top">
                         <div class="card-body">
