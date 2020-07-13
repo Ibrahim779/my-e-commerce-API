@@ -26,14 +26,20 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$subcategory->name}}</td>
                     <td>
-                        <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        <a href="{{route('subcategories.categories.edit', ['subcategory' => $subcategory->id, 'category' => $category])}}">
+                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                        </a>
+                        <a href="{{route('subcategories.categories.destroy', ['subcategory' => $subcategory->id, 'category' => $category])}}">
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </a>
                     </td>
                 </tr>
-                @endforeach
+            @endforeach
                 </tbody>
             </table>
-            <button type="button" class="pr-5 pl-5  btn btn-cyan btn-md">Add</button>
+            <a href="{{route('subcategories.categories.create',$category)}}">
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+            </a>
         </div>
     </div>
 </div>
