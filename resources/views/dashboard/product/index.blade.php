@@ -36,19 +36,25 @@
 
 
                     <td>
-                        <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                        <a href="{{route('products.categories.edit', ['product' => $product->id, 'category' => $category])}}">
+                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                        </a>
                         @if($product->is_published)
                         <a href=""><button type="button" class="btn btn-success btn-sm">UnPublish</button></a>
                         @else
                         <a href=""><button type="button" class="btn btn-success btn-sm">Publish</button></a>
                         @endif
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        <a href="{{route('products.categories.destroy', ['product' => $product->id, 'category' => $category])}}">
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </a>
                     </td>
                 </tr>
                 @endforeach
                 </tbody>
             </table>
-            <button type="button" class="pr-5 pl-5  btn btn-cyan btn-md">Add</button>
+            <a href="{{route('products.categories.create',$category)}}">
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+            </a>
         </div>
     </div>
 </div>
