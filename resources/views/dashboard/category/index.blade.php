@@ -27,13 +27,13 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$category->name}}</td>
                     <td>
-                        <img src="{{$category->image}}" alt="category image">
+                        <img style="width: 50px;height: auto" src="{{url('storage/'.@$category->image->url)}}" alt="category image">
                     </td>
                     <td>
                       <a href="{{route('categories.edit', $category->id)}}">
                           <button type="button" class="btn btn-cyan btn-sm">Edit</button>
                       </a>
-                        <a href="{{route('categories.destroy')}}">
+                        <a href="{{route('categories.destroy', $category->id)}}">
                             <button type="button" class="btn btn-danger btn-sm">Delete</button>
                         </a>
                     </td>
@@ -41,7 +41,9 @@
                 @endforeach
                 </tbody>
             </table>
-            <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+            <a href="{{route('categories.create')}}">
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+            </a>
         </div>
     </div>
 </div>
