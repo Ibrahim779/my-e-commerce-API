@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
 use App\Product;
+use App\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -42,7 +43,8 @@ class ProductController extends Controller
     }
     public function create($category)
     {
-        return view('dashboard.product.create', compact( 'category'));
+        $subcategories = SubCategory::whereCategoryId($category)->get();
+        return view('dashboard.product.create', compact( 'category', 'subcategories'));
     }
     /**
      * Store a newly created resource in storage.

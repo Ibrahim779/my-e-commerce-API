@@ -68,6 +68,9 @@
                                 <div class="col-md-9">
                                     <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
                                         <option>Select</option>
+                                        @foreach($subcategories as $subcategory)
+                                            <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
+                                            @endforeach
                                     </select>
 
                                 </div>
