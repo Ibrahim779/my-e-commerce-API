@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Brand;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,53 +16,72 @@ class BrandController extends Controller
      */
     public function index()
     {
-         Brand::get();
-         //Todo: correct it to brand
-        return view('dashboard.product.index');
+         $brands = Brand::get();
+        return view('dashboard.brand.index', compact('brands'));
+    }
+    public function create()
+    {
+        return view('dashboard.brand.create');
     }
 
     /**
      * Store a newly created resource in storage.
-     * @param Request $request
      */
-    public function store(Request $request)
+    public function store()
     {
-        $data = $this->validation($request);
-        Brand::create($data);
+        $this->saveData(new Brand());
+        return redirect()->route('brands.index');
+    }
+
+    public function edit(Brand $brand)
+    {
+        return view('dashboard.brand.edit', compact('brand'));
     }
 
     /**
      * Update the specified resource in storage.
-     * @param Request $request
      * @param Brand $brand
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Brand $brand)
     {
-       $data = $this->validation($request);
-        $brand->update($data);
+       $this->saveData($brand);
+        return redirect()->route('brands.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Brand $brand
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
     public function destroy(Brand $brand)
     {
         $brand->delete();
+        return redirect()->route('brands.index');
     }
 
     /**
      * @param Request $request
      * @return mixed
      */
-    private function validation(Request $request)
+    private function validation()
     {
-        return $request->validate([
-            'name' => 'required'
+        return request()->validate([
+            'name' => 'required',
+            'categories_id' => 'required'
         ]);
+    }
+    private function saveData($brand)
+    {
+        $this->validation();
+        $brand->name = request()->name;
+        $brand->save();
+        if ($brand->categories()){
+            $brand->categories()->detach();
+        }
+        $brand->categories()->attach(request()->categories_id);
     }
 
 }
