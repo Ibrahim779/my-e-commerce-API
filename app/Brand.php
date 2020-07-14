@@ -16,4 +16,11 @@ class Brand extends Model
     {
         return $this->belongsToMany(Product::class);
     }
+    public function scopeCategoriesById($query, $category)
+    {
+        return $query->whereHas('categories', function ($q) use($category){
+            $q->where('category_id', $category);
+        });
+    }
+
 }
