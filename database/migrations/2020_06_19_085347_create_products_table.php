@@ -19,13 +19,13 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->string('quantity')->default('1');
             $table->double('price')->unsigned()->default(0.0);
-            $table->double('discount')->default(0);
+            $table->double('discount')->nullable();
             $table->string('bar_code')->nullable();
-            $table->tinyInteger('is_published')->default(1);
+            $table->enum('is_published',['on',null])->default('on')->nullable();
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('brand_id');
+            $table->unsignedBigInteger('brand_id')->nullable();
             $table->unsignedInteger('subcategory_id')->nullable();
-            $table->tinyInteger('is_offer')->default(0);
+            $table->enum('is_offer',['on',null])->default('on')->nullable();
             $table->timestamps();
         });
     }
