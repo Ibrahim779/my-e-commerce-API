@@ -42,7 +42,8 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
         return 'welcome';
     })->name('coupons.index');
 
-    Route::resource('brands', 'BrandController');
+    Route::resource('brands', 'BrandController')->except('destroy');
+    Route::get('brands/{brand}/destroy','BrandController@destroy')->name('brands.destroy');
     Route::resource('sliders', 'SliderController');
     Route::resource('messages', 'MessageController')->only(['index','destroy']);
     Route::resource('users', 'UserController')->only(['index','destroy']);

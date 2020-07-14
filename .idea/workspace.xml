@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="776c63ef-f381-42af-925f-c21fb43a1511" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/brand/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/brand/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/brand/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/BrandController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,22 +122,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/dashboard/brand" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\product" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\category" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\message" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\coupon" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\subcategory" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\subcategory" />
       <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard" />
       <recent name="E:\Projects\my-e-commerce-API\app\Http\Controllers\Dashboard" />
       <recent name="E:\Projects\my-e-commerce-API\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\brand" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\product" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\category" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\message" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\coupon" />
     </key>
   </component>
   <component name="RunManager">
@@ -159,7 +166,7 @@
       <workItem from="1594522802137" duration="7851000" />
       <workItem from="1594558212108" duration="13290000" />
       <workItem from="1594611930534" duration="10173000" />
-      <workItem from="1594639392987" duration="4434000" />
+      <workItem from="1594639392987" duration="9024000" />
     </task>
     <servers />
   </component>
@@ -171,10 +178,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1592754434485" />
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594621429344">
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594644930431">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1594621429344" />
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1594644930431" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1594566872771">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
