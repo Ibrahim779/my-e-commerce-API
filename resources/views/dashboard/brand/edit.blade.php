@@ -32,7 +32,7 @@
                             <div class="form-group row">
                                 <label for="brand_name" class="col-sm-3 text-right control-label col-form-label">Brands Name</label>
                                 <div class="col-sm-9">
-                                    <input name="name" value="{{old('name')}}" type="text" class="form-control" id="brand_name" placeholder="Brand Name Here">
+                                    <input name="name" value="{{$brand->name??old('name')}}" type="text" class="form-control" id="brand_name" placeholder="Brand Name Here">
                                 </div>
                             </div>
                             <div class="form-group row">
