@@ -26,11 +26,11 @@ class Product extends Model
     }
     public function scopeUnPublished($query)
     {
-        return $query->whereIsPublished(0);
+        return $query->whereIsPublished(null);
     }
     public function scopePublished($query)
     {
-        return $query->whereIsPublished(1);
+        return $query->whereIsPublished('on');
     }
     public function scopeHasDiscount($query)
     {
@@ -40,4 +40,5 @@ class Product extends Model
     {
         return $query->whereIsOffer(1);
     }
+
 }
