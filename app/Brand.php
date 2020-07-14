@@ -10,10 +10,10 @@ class Brand extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(Brand::class);
+        return $this->belongsToMany(Category::class);
     }
     public function products()
     {
-        return $this->belongsToMany(Brand::class);
+        return $this->belongsToMany(Product::class);
     }
 }
