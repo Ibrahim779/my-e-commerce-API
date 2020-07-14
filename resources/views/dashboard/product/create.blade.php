@@ -3,6 +3,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/extra-libs/multicheck/multicheck.css')}}">
     <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/libs/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/libs/jquery-minicolors/jquery.minicolors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/libs/quill/dist/quill.snow.css')}}">
 @endsection
 @section('page_title','Products| Add')
 @section('content')
@@ -58,7 +62,7 @@
                                 <label class="col-sm-3"></label>
                                 <div class="col-md-9">
                                     <div class="custom-control custom-checkbox mr-sm-2">
-                                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing1">
+                                        <input name="is_published" type="checkbox" class="custom-control-input" id="customControlAutosizing1">
                                         <label class="custom-control-label" for="customControlAutosizing1">Published</label>
                                     </div>
                                 </div>
@@ -66,8 +70,8 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 text-right control-label col-form-label">SubCategory</label>
                                 <div class="col-md-9">
-                                    <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
-                                        <option>Select</option>
+                                    <select name="subcategory_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        <option value="{{null}}">Select</option>
                                         @foreach($subcategories as $subcategory)
                                             <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
                                             @endforeach
@@ -78,8 +82,11 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 text-right control-label col-form-label">Brand</label>
                                 <div class="col-md-9">
-                                    <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
-                                        <option>Select</option>
+                                    <select name="brand_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        <option value="{{null}}">Select</option>
+                                        @foreach($brands as $brand)
+                                        <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -87,10 +94,18 @@
                                 <label class="col-sm-3"></label>
                                 <div class="col-md-9">
                                     <div class="custom-control custom-checkbox mr-sm-2">
-                                        <input type="checkbox" class="custom-control-input" id="Offer">
+                                        <input name="is_offer" type="checkbox" class="custom-control-input" id="Offer">
                                         <label class="custom-control-label" for="Offer">Offer</label>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Description</label>
+                            <div class="col-sm-8">
+                                    <textarea style="height: 100px" name="description" class="form-control">
+                                           {{old('description')}}
+                                    </textarea>
                             </div>
                         </div>
                         <div class="border-top">
@@ -106,14 +121,62 @@
 
 @endsection
 @section('script')
+
     <script src="{{asset('assets/extra-libs/multicheck/datatable-checkbox-init.js')}}"></script>
     <script src="{{asset('assets/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
     <script src="{{asset('assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/dist/js/pages/mask/mask.init.js')}}"></script>
+    <script src="{{asset('assets/libs/select2/dist/js/select2.full.min.js')}}"></script>
+    <script src="{{asset('assets/libs/select2/dist/js/select2.min.js')}}"></script>
+    <script src="{{asset('assets/libs/jquery-asColor/dist/jquery-asColor.min.js')}}"></script>
+    <script src="{{asset('assets/libs/jquery-asGradient/dist/jquery-asGradient.js')}}"></script>
+    <script src="{{asset('assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js')}}"></script>
+    <script src="{{asset('assets/libs/jquery-minicolors/jquery.minicolors.min.js')}}"></script>
+    <script src="{{asset('assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('assets/libs/quill/dist/quill.min.js')}}"></script>
     <script>
-        /****************************************
-         *       Basic Table                   *
-         ****************************************/
-        $('#zero_config').DataTable();
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
+
+        /*colorpicker*/
+        $('.demo').each(function() {
+            //
+            // Dear reader, it's actually very easy to initialize MiniColors. For example:
+            //
+            //  $(selector).minicolors();
+            //
+            // The way I've done it below is just for the demo, so don't get confused
+            // by it. Also, data- attributes aren't supported at this time...they're
+            // only used for this demo.
+            //
+            $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function(value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
     </script>
 
 @endsection
