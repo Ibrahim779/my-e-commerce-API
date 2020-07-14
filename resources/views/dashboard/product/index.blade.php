@@ -31,20 +31,15 @@
                     <td>{{$product->name}}</td>
                     <td>{{$product->quantity}}</td>
                     <td>{{$product->price}}</td>
-                    <td>{{$product->discount}}</td>
+                    <td>{{$product->discount??'null'}}</td>
                     <td>{{$product->bar_code}}</td>
 
-
                     <td>
-                        <a href="{{route('products.categories.edit', ['product' => $product->id, 'category' => $category])}}">
+                        <a href="{{route('products.categories.edit', ['category' => $category,'product' => $product->id])}}">
                             <button type="button" class="btn btn-cyan btn-sm">Edit</button>
                         </a>
-                        @if($product->is_published)
-                        <a href=""><button type="button" class="btn btn-success btn-sm">UnPublish</button></a>
-                        @else
-                        <a href=""><button type="button" class="btn btn-success btn-sm">Publish</button></a>
-                        @endif
-                        <a href="{{route('products.categories.destroy', ['product' => $product->id, 'category' => $category])}}">
+                        <a href="{{route('products.categories.published',['category' => $category,'product' => $product->id])}}"><button type="button" class="btn btn-success btn-sm">{{$product->is_published?'UnPublish':'Publish'}}</button></a>
+                        <a href="{{route('products.categories.destroy', ['category' => $category,'product' => $product->id])}}">
                             <button type="button" class="btn btn-danger btn-sm">Delete</button>
                         </a>
                     </td>
