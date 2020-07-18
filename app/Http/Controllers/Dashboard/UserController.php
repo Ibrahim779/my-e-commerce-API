@@ -13,9 +13,21 @@ class UserController extends Controller
      */
     public function index()
     {
-      return User::get();
+      $users = User::get();
+      return view('dashboard.user.index', compact('users'));
     }
+    public function create()
+    {
+        return view('dashboard.user.create');
+    }
+    public function store()
+    {
 
+    }
+    public function edit(User $user)
+    {
+        return view('dashboard.user.edit', compact('user'));
+    }
     /**
      * @param User $user
      * @throws \Exception
