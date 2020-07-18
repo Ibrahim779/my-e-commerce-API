@@ -87,10 +87,11 @@ class CategoryController extends Controller
     {
         $category->name = $request->name;
         $category->save();
-        if (!$category->image){
+        if ($category->image){
+            $category->image()->update(['url' => $request->image->store('categories','public')]);
+        }else{
             $category->image()->create(['url' => $request->image->store('categories','public')]);
         }
-        $category->image()->update(['url' => $request->image->store('categories','public')]);
         $category->save();
     }
 }
