@@ -45,7 +45,7 @@ class ProductController extends Controller
     public function create($category)
     {
         $subcategories = SubCategory::whereCategoryId($category)->get();
-            $brands        = Brand::categoriesById($category)->get();
+        $brands        = Brand::categoriesById($category)->get();
         return view('dashboard.product.create', compact( 'category', 'subcategories','brands'));
     }
     /**
@@ -102,24 +102,26 @@ class ProductController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy($category, Product $product)
+    public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('products.categories.index', $category);
+        return redirect()->back();
     }
-    public function published($category, Product $product)
+    public function published(Product $product)
     {
         if ($product->is_published){
             $product->is_published = null;
-            $product->save();
-            return redirect()->route('products.categories.index', $category);
         }else{
             $product->is_published = 'on';
-            $product->save();
-            return redirect()->route('products.categories.unPublished', $category);
         }
-
-
+        $product->save();
+        return redirect()->back();
+    }
+    public function removeDiscount(Product $product)
+    {
+            $product->discount = null;
+            $product->save();
+            return redirect()->back();
     }
     /**
      * @return mixed
@@ -150,6 +152,12 @@ class ProductController extends Controller
         $product->is_offer        = request()->is_offer;
         if ($category) {
             $product->category_id     = $category;
+        }
+        $product->save();
+        if ($product->image){
+            $product->image()->update(['url' => request()->image->store('products','public')]);
+        }else{
+            $product->image()->create(['url' => request()->image->store('products','public')]);
         }
         $product->save();
     }
