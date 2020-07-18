@@ -13,7 +13,7 @@ class DashboardController extends Controller
     public function index()
     {
         $products_unpublished_count = Product::unpublished()->count();
-        $offers = Product::whereIsOffer(1)->take(4)->get();
+        $offers = Product::hasDiscount()->take(4)->get();
         $products_unpublished = Product::unpublished()->take(4)->get();
         $pending_orders =  Order::pending()->get();
         $pending_orders_count =  Order::pending()->count();
