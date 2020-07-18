@@ -1,8 +1,8 @@
 @extends('layouts.dashboard')
 @section('css')
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/extra-libs/multicheck/multicheck.css')}}">
-    <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/extra-libs/multicheck/multicheck.css')}}">
+    <link href="{{asset('assets/dashboard/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
 @section('page_title', $page_title)
 @section('content')
@@ -17,6 +17,7 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
+                    <th>image</th>
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Discount</th>
@@ -29,6 +30,9 @@
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$product->name}}</td>
+                    <td>
+                        <img style="width: 50px;height: auto" src="{{url('storage/'.@$product->image->url)}}" alt="category image">
+                    </td>
                     <td>{{$product->quantity}}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->discount??'null'}}</td>
@@ -38,9 +42,22 @@
                         <a href="{{route('products.categories.edit', ['category' => $category,'product' => $product->id])}}">
                             <button type="button" class="btn btn-cyan btn-sm">Edit</button>
                         </a>
-                        <a href="{{route('products.categories.published',['category' => $category,'product' => $product->id])}}"><button type="button" class="btn btn-success btn-sm">{{$product->is_published?'UnPublish':'Publish'}}</button></a>
-                        <a href="{{route('products.categories.destroy', ['category' => $category,'product' => $product->id])}}">
-                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        <a href="{{route('products.published', $product->id)}}">
+                            <button type="button" class="btn btn-success btn-sm">
+                                {{$product->is_published?'UnPublish':'Publish'}}
+                            </button>
+                        </a>
+                        @if($product->discount)
+                        <a href="{{route('products.removeDiscount', $product->id)}}">
+                            <button type="button" class="btn btn-success btn-sm">
+                                remove discount
+                            </button>
+                        </a>
+                        @endif
+                        <a href="{{route('products.destroy',  $product->id)}}">
+                            <button type="button" class="btn btn-danger btn-sm">
+                                Delete
+                            </button>
                         </a>
                     </td>
                 </tr>
@@ -59,9 +76,9 @@
 
 @endsection
 @section('script')
-    <script src="{{asset('assets/extra-libs/multicheck/datatable-checkbox-init.js')}}"></script>
-    <script src="{{asset('assets/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
-    <script src="{{asset('assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/multicheck/datatable-checkbox-init.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/DataTables/datatables.min.js')}}"></script>
     <script>
         /****************************************
          *       Basic Table                   *

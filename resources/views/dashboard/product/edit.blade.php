@@ -1,8 +1,8 @@
 @extends('layouts.dashboard')
 @section('css')
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/extra-libs/multicheck/multicheck.css')}}">
-    <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/extra-libs/multicheck/multicheck.css')}}">
+    <link href="{{asset('assets/dashboard/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
 @section('page_title','Products| Edit')
 @section('content')
@@ -53,6 +53,16 @@
                               <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Bar Code</label>
                               <div class="col-sm-9">
                                   <input name="bar_code" value="{{$product->bar_code??old('bar_code')}}" type="text" class="form-control" id="category_name" placeholder="Product Bar Code Here">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Category Image</label>
+                              <div class="col-md-9">
+                                  <div class="custom-file">
+                                      <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                      <label  class="custom-file-label" for="validatedCustomFile">Choose category image...</label>
+                                      <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                  </div>
                               </div>
                           </div>
                           <div class="form-group row">
@@ -111,9 +121,9 @@
 
 @endsection
 @section('script')
-    <script src="{{asset('assets/extra-libs/multicheck/datatable-checkbox-init.js')}}"></script>
-    <script src="{{asset('assets/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
-    <script src="{{asset('assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/multicheck/datatable-checkbox-init.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/DataTables/datatables.min.js')}}"></script>
     <script>
         /****************************************
          *       Basic Table                   *
