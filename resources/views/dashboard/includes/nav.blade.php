@@ -11,13 +11,13 @@
                 <a class="navbar-brand" href="{{route('dashboard.index')}}">
                     <!-- Logo icon -->
                     <b class="logo-icon p-l-10">
-                        <img src="{{asset('assets/images/logo-icon.png')}}" alt="homepage" class="light-logo" />
+                        <img src="{{asset('assets/dashboard/images/logo-icon.png')}}" alt="homepage" class="light-logo" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                              <!-- dark Logo text -->
-                             <img src="{{asset('assets/images/logo-text.png')}}" alt="homepage" class="light-logo" />
+                             <img src="{{asset('assets/dashboard/images/logo-text.png')}}" alt="homepage" class="light-logo" />
 
                         </span>
                 </a>
