@@ -39,7 +39,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        $this->mapDashApiRoutes();
+        $this->mapDashboardApiRoutes();
+
+        $this->mapDashboardWebRoutes();
 
         //
     }
@@ -72,11 +74,17 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
-    protected function mapDashApiRoutes()
+    protected function mapDashboardApiRoutes()
     {
         Route::prefix('api/dashboard')
             ->middleware('api')
             ->namespace($this->namespace)
-            ->group(base_path('routes/dash_api.php'));
+            ->group(base_path('routes/dashboard_api.php'));
+    }
+    protected function mapDashboardWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/dashboard.php'));
     }
 }
