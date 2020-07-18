@@ -1,8 +1,8 @@
 @extends('layouts.dashboard')
 @section('css')
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/extra-libs/multicheck/multicheck.css')}}">
-    <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/extra-libs/multicheck/multicheck.css')}}">
+    <link href="{{asset('assets/dashboard/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
 @section('page_title','Messages')
 
@@ -39,14 +39,19 @@
                     <td>{{$message->phone}}</td>
                     <td>{{$message->message}}</td>
                     <td>
-                        <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        <form method="post" action="{{route('messages.destroy',  $message->id)}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                Delete
+                            </button>
+                        </form>
                     </td>
+
                 </tr>
                 @endforeach
                 </tbody>
             </table>
-            <button type="button" class="pr-5 pl-5  btn btn-cyan btn-md">Add</button>
         </div>
     </div>
 
@@ -57,9 +62,9 @@
 
 @endsection
 @section('script')
-    <script src="{{asset('assets/extra-libs/multicheck/datatable-checkbox-init.js')}}"></script>
-    <script src="{{asset('assets/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
-    <script src="{{asset('assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/multicheck/datatable-checkbox-init.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
+    <script src="{{asset('assets/dashboard/extra-libs/DataTables/datatables.min.js')}}"></script>
     <script>
         /****************************************
          *       Basic Table                   *
