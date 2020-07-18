@@ -8,9 +8,9 @@ class Product extends Model
 {
     protected $guarded = [];
 
-    public function images()
+    public function image()
     {
-        return $this->morphMany(image::class, 'imageable');
+        return $this->morphOne(image::class, 'imageable');
     }
     public function category()
     {
