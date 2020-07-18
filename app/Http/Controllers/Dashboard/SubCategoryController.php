@@ -68,10 +68,10 @@ class SubCategoryController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy($category,SubCategory $subcategory)
+    public function destroy(SubCategory $subcategory)
     {
         $subcategory->delete();
-        return redirect()->route('subcategories.categories.index', $category);
+        return redirect()->back();
     }
     /**
      * @param Request $request
