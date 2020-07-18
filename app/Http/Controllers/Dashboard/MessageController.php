@@ -19,10 +19,12 @@ class MessageController extends Controller
 
     /**
      * @param Message $message
+     * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
     public function destroy(Message $message)
     {
        $message->delete();
+       return redirect()->back();
     }
 }
