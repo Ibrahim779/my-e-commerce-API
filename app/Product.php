@@ -40,5 +40,9 @@ class Product extends Model
     {
         return $query->whereIsOffer(1);
     }
+    public function getDiscountPriceAttribute()
+    {
+        return $this->price - ($this->price * ($this->discount/100));
+    }
 
 }
