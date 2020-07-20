@@ -26,16 +26,24 @@
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{$slider->title}}</td>
-
                     <td>
-                        <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        <img style="width: 50px;height: auto" src="{{url('storage/'.@$slider->image->url)}}" alt="slider image">
+                    </td>
+                    <td>
+                        <a href="{{route('sliders.edit', $slider->id)}}">
+                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                        </a>
+                        <a href="{{route('sliders.destroy', $slider->id )}}">
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </a>
                     </td>
                 </tr>
-                @endforeach
+            @endforeach
                 </tbody>
             </table>
-            <button type="button" class="pr-5 pl-5  btn btn-cyan btn-md">Add</button>
+            <a href="{{route('sliders.create')}}">
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+            </a>
         </div>
     </div>
 </div>
