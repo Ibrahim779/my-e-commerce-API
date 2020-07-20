@@ -44,7 +44,7 @@
                               </div>
                           </div>
                           <div class="form-group row">
-                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Discount</label>
+                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">Products Discount %</label>
                               <div class="col-sm-9">
                                   <input name="discount" value="{{$product->discount??old('discount')}}" type="text" class="form-control" id="category_name" placeholder="Product Discount Here">
                               </div>

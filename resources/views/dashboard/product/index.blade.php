@@ -35,7 +35,7 @@
                     </td>
                     <td>{{$product->quantity}}</td>
                     <td>{{$product->price}}</td>
-                    <td>{{$product->discount??'null'}}</td>
+                    <td>{{$product->discount??'null'}}%</td>
                     <td>{{$product->bar_code}}</td>
 
                     <td>
