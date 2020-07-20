@@ -13,5 +13,5 @@
 use Illuminate\Support\Facades\Route;
 
 Route::namespace('Home')->group(function (){
-      Route::view('/','site.index');
+      Route::get('/','HomeController@index')->name('home.index');
 });
