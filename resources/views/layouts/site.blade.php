@@ -8,6 +8,8 @@
 <body class="goto-here">
     @include('site.includes.nav')
     @yield('content')
+    <hr>
+    @include('site.includes.subscribe')
     @include('site.includes.footer')
     @include('site.includes.script')
 </body>

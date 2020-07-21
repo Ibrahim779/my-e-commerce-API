@@ -25,9 +25,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Message</th>
+                    <th>Email</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -35,9 +33,9 @@
             @foreach($subscribes as $subscribe)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$message->email}}</td>
+                    <td>{{$subscribe->email}}</td>
                     <td>
-                        <form method="post" action="{{route('subscribe.destroy',  $subscribe->id)}}">
+                        <form method="post" action="{{route('subscribes.destroy',  $subscribe->id)}}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">
