@@ -62,9 +62,10 @@
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('products.isOffer')}}" aria-expanded="false"><span class="hide-menu"> Offers</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('orders.index')}}" aria-expanded="false"><span class="hide-menu"> Orders</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('coupons.index')}}" aria-expanded="false"><span class="hide-menu"> Coupon Codes</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('sliders.index')}}" aria-expanded="false"><span class="hide-menu"> Sliders</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('users.index')}}" aria-expanded="false"><span class="hide-menu"> Users</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('messages.index')}}" aria-expanded="false"><span class="hide-menu"> Messages</span></a></li>
-                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('sliders.index')}}" aria-expanded="false"><span class="hide-menu"> Sliders</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('subscribes.index')}}" aria-expanded="false"><span class="hide-menu"> Subscribes</span></a></li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
