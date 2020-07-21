@@ -13,10 +13,6 @@
 
      @include('site.parts.products_hasDiscount')
 
-    <hr>
-
-     @include('site.parts.subscribe')
-
 
    @endsection
 
