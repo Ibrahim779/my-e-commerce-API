@@ -8,7 +8,7 @@
                             <div class="text text-center">
                                 <h2>Vegetables</h2>
                                 <p>Protect the health of every home</p>
-                                <p><a href="#" class="btn btn-primary">Shop now</a></p>
+                                <p><a href="{{route('products.index')}}" class="btn btn-primary">Shop now</a></p>
                             </div>
                         </div>
                     </div>
@@ -16,7 +16,7 @@
                         @foreach($categories_section1 as $category)
                             <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url({{'storage/'.@$category->image->url}});">
                                 <div class="text px-3 py-1">
-                                    <h2 class="mb-0"><a href="#">{{$category->name}}</a></h2>
+                                    <h2 class="mb-0"><a href="{{route('products.categories.getCategoryProducts', $category->id)}}">{{$category->name}}</a></h2>
                                 </div>
                             </div>
                         @endforeach
@@ -28,7 +28,7 @@
                 @foreach($categories_section2 as $category)
                     <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url({{'storage/'.@$category->image->url}});">
                         <div class="text px-3 py-1">
-                            <h2 class="mb-0"><a href="#">{{$category->name}}</a></h2>
+                            <h2 class="mb-0"><a href="{{route('products.categories.getCategoryProducts', $category->id)}}">{{$category->name}}</a></h2>
                         </div>
                     </div>
                 @endforeach
