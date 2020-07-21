@@ -106,6 +106,14 @@
                                   </div>
                               </div>
                           </div>
+                          <div class="form-group row">
+                              <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Description</label>
+                              <div class="col-sm-8">
+                                    <textarea style="height: 100px" name="description" class="form-control">
+                                           {{$product->discription??old('description')}}
+                                    </textarea>
+                              </div>
+                          </div>
                     </div>
                     <div class="border-top">
                         <div class="card-body">
