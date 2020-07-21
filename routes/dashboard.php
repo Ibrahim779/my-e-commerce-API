@@ -54,4 +54,5 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
     Route::resource('users', 'UserController');
     Route::resource('orders', 'OrderController')->only(['index','show']);
     Route::get('orders/{order}/destroy','OrderController@destroy')->name('orders.destroy');
+    Route::resource('subscribes', 'SubscribeController')->only(['index', 'destroy']);
 });
