@@ -34,7 +34,12 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a class="dropdown-item" href="{{route('products.index')}}">Shop</a>
-                        <a class="dropdown-item" href="{{route('wishlist.index')}}">Wishlist</a>
+                        <a class="dropdown-item" href="{{route('wishlist.index')}}">
+                            Wishlist
+                            <span style="color:white;background: #febe08;border-radius: 50px; padding: 0 6px 0 6px">
+                            {{\App\Wishlist::whereUserId(1)->count()}}
+                            </span>
+                        </a>
                         <a class="dropdown-item" href="{{route('cart.index')}}">Cart</a>
                         <a class="dropdown-item" href="{{route('checkout.index')}}">Checkout</a>
                     </div>
