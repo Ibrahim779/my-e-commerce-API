@@ -44,5 +44,9 @@ class Product extends Model
     {
         return $this->price - ($this->price * ($this->discount/100));
     }
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('name','LIKE','%'. $search . '%');
+    }
 
 }
