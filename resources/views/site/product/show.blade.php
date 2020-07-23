@@ -112,7 +112,7 @@
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
                             <a href="{{route('products.show', $product->id)}}" class="img-prod">
-                                <img class="img-fluid" src="{{url('storage/'.@$product->image->url)}}" alt="Colorlib Template">
+                                <img style="width: 300px;height: 200px" class="img-fluid" src="{{url('storage/'.@$product->image->url)}}" alt="Colorlib Template">
                                 @if($product->discount)
                                     <span class="status">{{$product->discount}}%</span>
                                 @endif
@@ -139,7 +139,7 @@
                                         <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
                                             <span><i class="ion-ios-cart"></i></span>
                                         </a>
-                                        <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                                        <a href="{{route('wishlist.store', $product->id)}}" class="heart d-flex justify-content-center align-items-center ">
                                             <span><i class="ion-ios-heart"></i></span>
                                         </a>
                                     </div>
