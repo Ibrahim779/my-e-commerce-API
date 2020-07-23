@@ -10,24 +10,86 @@
         </div>
     </div>
 </div>
-<section class="ftco-section">
-    <div class="container">
+
+<section class="ftco-section ftco-degree-bg container">
+    <div class="row">
+        <div class="col-lg-3 sidebar ftco-animate">
+            <div class="sidebar-box">
+                <form method="get" action="{{route('search')}}" class="search-form">
+                    <div class="form-group">
+                        <span class="icon ion-ios-search"></span>
+                        <input
+                            value="{{request()->search??old('search')}}"
+                            name="search" type="text"
+                            class="form-control"
+                            placeholder="Search...">
+                    </div>
+                </form>
+            </div>
+            <div class="sidebar-box ftco-animate">
+                <h3 class="heading">SubCategories</h3>
+                <ul class="categories">
+                    @forelse($subcategories as $subcategory)
+                        <li>
+                            <a
+                                href="{{route('products.categories.getSubcategoryProducts',
+                                      ['category' => $subcategory->category_id, 'subcategory' => $subcategory->id])}}">
+                                {{$subcategory->name}}
+                                <span>
+                                   ( {{\App\Product::whereSubcategoryId($subcategory->id)->count()}} )
+                                </span>
+                            </a>
+                        </li>
+                    @empty
+                        <li>
+                            Null
+                        </li>
+                    @endforelse
+                </ul>
+            </div>
+
+
+            <div class="sidebar-box ftco-animate">
+                <h3 class="heading">Brands</h3>
+                <div class="tagcloud">
+                    @forelse($brands as $brand)
+                        <a href="{{$_category?route('products.categories.getCategoryBrandProducts',
+                                      ['category' => $_category, 'brand' => $brand->id]):route('products.getBrandProducts', $brand->id)}}"
+                           class="tag-cloud-link">
+                            {{$brand->name}}
+                        </a>
+                    @empty
+                        <ul class="categories">
+                            <li>
+                                Null
+                            </li>
+                        </ul>
+                    @endforelse
+                </div>
+            </div>
+        </div>
+    <div class=" col-lg-9 ">
         <div class="row justify-content-center">
             <div class="col-md-10 mb-5 text-center">
                 <ul class="product-category">
                     <li><a href="{{route('products.index')}}" class="active">All</a></li>
                     @foreach($categories as $category)
-                    <li><a href={{route('products.categories.getCategoryProducts', $category->id)}}>{{$category->name}}</a></li>
+                    <li>
+                        <a
+                            href="{{route('products.categories.getCategoryProducts', $category->id)}}" >
+                            {{$category->name}}
+                        </a>
+                    </li>
                    @endforeach
                 </ul>
             </div>
         </div>
         <div class="row">
-            @foreach($products as $product)
+            @forelse($products as $product)
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="{{route('products.show', $product->id)}}" class="img-prod">
-                            <img class="img-fluid" src="{{url('storage/'.@$product->image->url)}}" alt="Colorlib Template">
+                            <img style="width: 300px;height: 150px" class="img-fluid" src="{{url('storage/'.@$product->image->url)}}" alt="Colorlib Template">
                             @if($product->discount)
                                 <span class="status">{{$product->discount}}%</span>
                             @endif
@@ -54,7 +116,7 @@
                                     <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
                                         <span><i class="ion-ios-cart"></i></span>
                                     </a>
-                                    <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                                    <a href="{{route('wishlist.store', $product->id)}}" class="heart d-flex justify-content-center align-items-center ">
                                         <span><i class="ion-ios-heart"></i></span>
                                     </a>
                                 </div>
@@ -62,8 +124,10 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
+                @empty
+                        <h4>No Products Allow</h4>
+            @endforelse
+            </div>
         <div class="row mt-5">
             <div class="col text-center">
                 <div class="block-27">
@@ -79,6 +143,9 @@
                 </div>
             </div>
         </div>
+        </div>
+
     </div>
 </section>
+
 @endsection
