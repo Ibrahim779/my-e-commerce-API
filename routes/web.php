@@ -25,12 +25,13 @@ Route::namespace('Home')->group(function (){
         });
         Route::get('brand/{brand}', 'ProductController@getBrandProducts')->name('getBrandProducts');
       });
-      Route::get('contact', 'ContactController@index')->name('contact.index');
+      Route::resource('contact', 'ContactController')->only(['index', 'store']);
       Route::get('about', 'AboutController@index')->name('about.index');
       Route::get('cart', 'CartController@index')->name('cart.index');
-      Route::get('wishlist', 'WishlistController@index')->name('wishlist.index');
+      Route::resource('wishlist', 'WishlistController')->only(['index', 'destroy']);
       Route::get('wishlist/{product}', 'WishlistController@store')->name('wishlist.store');
-      Route::delete('wishlist/{wishlist}', 'WishlistController@destroy')->name('wishlist.destroy');
+      Route::resource('cart', 'CartController')->only(['index', 'destroy']);
+      Route::get('cart/{product}', 'CartController@store')->name('cart.store');
       Route::get('checkout', 'CheckoutController@index')->name('checkout.index');
       Route::get('search','ProductController@search')->name('search');
 
