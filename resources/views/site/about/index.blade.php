@@ -1,10 +1,10 @@
 @extends('layouts.site')
 @section('content')
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url({{asset('assets/site/images/bg_1.jpg')}});">
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>About us</span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home.index')}}">Home</a></span> <span>About us</span></p>
                     <h1 class="mb-0 bread">About us</h1>
                 </div>
             </div>
@@ -26,9 +26,8 @@
                         </div>
                     </div>
                     <div class="pb-md-5">
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
-                        <p><a href="#" class="btn btn-primary">Shop now</a></p>
+                      <p> {{$information['text']}} </p>
+                        <p><a href="{{route('products.index')}}" class="btn btn-primary">Shop now</a></p>
                     </div>
                 </div>
             </div>
