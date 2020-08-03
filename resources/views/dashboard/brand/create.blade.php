@@ -24,8 +24,8 @@
                                         <i class="material-icons">close</i>
                                     </button>
                                     <span>
-                        {{$errors->first()}}
-                    </span>
+                                        {{$errors->first()}}
+                                    </span>
                                 </div>
                             @endif
                             <div class="form-group row">
