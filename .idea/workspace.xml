@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="776c63ef-f381-42af-925f-c21fb43a1511" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Setting.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/ContactController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/WishlistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/WishlistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/site/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/site/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/brand/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/brand/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/about/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/about/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/cart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/cart/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/includes/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/parts/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/parts/products_hasDiscount.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/products_hasDiscount.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/parts/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/product/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/wishlist/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/wishlist/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +197,10 @@
       <workItem from="1595245205027" duration="14551000" />
       <workItem from="1595306056419" duration="21531000" />
       <workItem from="1595414600299" duration="13481000" />
-      <workItem from="1595476122935" duration="9072000" />
+      <workItem from="1595476122935" duration="9456000" />
+      <workItem from="1595507509087" duration="2037000" />
+      <workItem from="1596355768169" duration="4528000" />
+      <workItem from="1596391329238" duration="1491000" />
     </task>
     <servers />
   </component>
@@ -208,22 +212,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="488" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1595322325750" />
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595480110066">
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1596392267171">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1595480110066" />
+    <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1596392267171" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1595420392932">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1595420392932" />
+    <state x="583" y="231" key="NewPhpClassDialog" timestamp="1596358983576">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="583" y="231" key="NewPhpClassDialog/0.0.1536.864@0.0.1536.864" timestamp="1596358983576" />
     <state x="604" y="352" key="NewPhpFileDialog" timestamp="1595321367088">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="604" y="352" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1595321367088" />
-    <state x="444" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1595414607629">
+    <state x="444" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1596391374181">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="444" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1595414607629" />
+    <state x="444" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1596391374181" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1592746503032">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -232,5 +240,16 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1595428244787" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/site/wishlist/index.blade.php</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
