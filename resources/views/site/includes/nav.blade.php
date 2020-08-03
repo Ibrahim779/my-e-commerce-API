@@ -40,13 +40,18 @@
                             {{\App\Wishlist::whereUserId(1)->count()}}
                             </span>
                         </a>
-                        <a class="dropdown-item" href="{{route('cart.index')}}">Cart</a>
+                        <a class="dropdown-item" href="{{route('cart.index')}}">
+                            Cart
+                            <span style="color:white;background: #febe08;border-radius: 50px; padding: 0 6px 0 6px">
+                            {{\App\Cart::whereUserId(1)->count()}}
+                            </span>
+                        </a>
                         <a class="dropdown-item" href="{{route('checkout.index')}}">Checkout</a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="{{route('about.index')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('contact.index')}}" class="nav-link">Contact</a></li>
-                <li class="nav-item cta cta-colored"><a href="{{route('cart.index')}}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+                <li class="nav-item cta cta-colored"><a href="{{route('cart.index')}}" class="nav-link"><span class="icon-shopping_cart"></span>[{{\App\Cart::whereUserId(1)->count()}}]</a></li>
 
             </ul>
         </div>
