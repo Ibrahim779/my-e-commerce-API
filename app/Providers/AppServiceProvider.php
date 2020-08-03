@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Category;
+use App\Setting;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -25,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share('categories',Category::all());
+        View::share('categories', Category::all());
+        View::share('information', Setting::getInformation());
     }
 }
