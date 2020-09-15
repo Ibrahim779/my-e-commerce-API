@@ -57,9 +57,7 @@ class ProductController extends Controller
      */
     public function store($category)
     {
-        $this->validation();
-        $product = new Product();
-        $this->saveData($product,$category);
+        $this->saveData(new Product(),$category);
         return redirect()->route('products.categories.index', $category);
     }
     public function edit($category, Product $product)
@@ -89,7 +87,6 @@ class ProductController extends Controller
      */
     public function update($category, Product $product)
     {
-        $this->validation();
         $this->saveData($product);
         return redirect()->route('products.categories.index', $category);
     }
@@ -140,6 +137,7 @@ class ProductController extends Controller
      */
     private function saveData($product, $category = null)
     {
+        $this->validation();
         $product->name            = request()->name;
         $product->price           = request()->price;
         $product->discount        = request()->discount;
