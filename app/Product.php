@@ -34,11 +34,11 @@ class Product extends Model
     }
     public function scopeHasDiscount($query)
     {
-        return $query->where('discount', '>',0);
+        return $query->where('discount', '>', 0);
     }
     public function scopeOffer($query)
     {
-        return $query->whereIsOffer(1);
+        return $query->whereIsOffer('on');
     }
     public function getDiscountPriceAttribute()
     {
