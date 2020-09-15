@@ -16,12 +16,14 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('user_id');
-            $table->string('another_name')->nullable();
-            $table->string('another_phone')->nullable();
-            $table->string('another_address')->nullable();
+            $table->string('name');
+            $table->string('phone');
+            $table->unsignedInteger('city_id')->nullable();
+            $table->string('address');
+            $table->string('email');
             $table->double('total_price')->default(0.0);
-            $table->tinyInteger('payment_status')->default(0);
-            $table->tinyInteger('status')->default(0);
+            $table->enum('payment_status', ['debt', 'paid'])->default('debt');
+            $table->enum('status', ['pending', 'prepared', 'delivered','completed'])->default('pending');
             $table->timestamps();
         });
     }
