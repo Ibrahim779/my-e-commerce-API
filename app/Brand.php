@@ -19,7 +19,7 @@ class Brand extends Model
     public function scopeCategoriesById($query, $category)
     {
         return $query->whereHas('categories', function ($q) use($category){
-            $q->where('category_id', $category);
+            $q->whereCategoryId($category);
         });
     }
 
