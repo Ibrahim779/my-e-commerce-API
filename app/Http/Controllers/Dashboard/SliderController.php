@@ -25,14 +25,11 @@ class SliderController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store()
     {
-        $this->validation($request);
-        $slider = new Slider();
-        $this->saveData($request, $slider);
+        $this->saveData(new Slider());
         return redirect()->route('sliders.index');
     }
     public function edit(Slider $slider)
@@ -42,14 +39,12 @@ class SliderController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * @param Request $request
      * @param Slider $slider
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request,Slider $slider)
+    public function update(Slider $slider)
     {
-        $this->validation($request);
-        $this->saveData($request, $slider);
+        $this->saveData($slider);
         return redirect()->route('sliders.index');
     }
 
@@ -67,23 +62,22 @@ class SliderController extends Controller
     }
 
     /**
-     * @param Request $request
      * @return mixed
      */
-    private function validation(Request $request)
+    private function validation()
     {
-        return $request->validate([
+        return request()->validate([
             'title' => 'min:10'
         ]);
     }
 
     /**
-     * @param Request $request
      * @param $slider
      */
-    private function saveData(Request $request, $slider)
+    private function saveData($slider)
     {
-        $slider->title = $request->title;
+        $this->validation();
+        $slider->title = request()->title;
         $slider->save();
         if ($slider->image){
             $slider->image()->update(['url' => request()->image->store('sliders','public')]);
