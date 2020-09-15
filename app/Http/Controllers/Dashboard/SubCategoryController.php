@@ -27,15 +27,14 @@ class SubCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param $category
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request , $category)
+    public function store($category)
     {
-        $this->validation($request);
         $subcategory = new SubCategory();
-        $subcategory->name = $request->name;
+        $subcategory->name = request()->name;
         $subcategory->category_id = $category;
         $subcategory->save();
         return redirect()->route('subcategories.categories.index', $category);
@@ -48,15 +47,13 @@ class SubCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param SubCategory $subcategory
      * @param $category
+     * @param SubCategory $subcategory
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request,  $category, SubCategory $subcategory)
+    public function update($category, SubCategory $subcategory)
     {
-         $data = $this->validation($request);
-         $subcategory->update($data);
+         $subcategory->update($this->validation());
         return redirect()->route('subcategories.categories.index', $category);
     }
 
@@ -64,7 +61,6 @@ class SubCategoryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param SubCategory $subcategory
-     * @param $category
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
@@ -73,13 +69,13 @@ class SubCategoryController extends Controller
         $subcategory->delete();
         return redirect()->back();
     }
+
     /**
-     * @param Request $request
      * @return mixed
      */
-    private function validation(Request $request)
+    private function validation()
     {
-        return $request->validate([
+        return request()->validate([
             'name' => 'required'
         ]);
     }
