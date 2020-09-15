@@ -8,9 +8,14 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Order::class, function (Faker $faker) {
     return [
-        'user_id' => function(){
-            return factory(User::class)->create();
-        }
+        'user_id' => factory(User::class),
+        'name' => $faker->name,
+        'phone' => $faker->phoneNumber,
+        'city_id' => factory(\App\City::class),
+        'address' => $faker->sentence,
+        'email' => $faker->email,
+        'payment_status' => $faker->randomElement(['debt', 'paid']),
+        'status' => $faker->randomElement(['pending', 'prepared', 'delivered','completed'])
 
     ];
 });
