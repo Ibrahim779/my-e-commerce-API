@@ -26,14 +26,11 @@ class CategoryController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store()
     {
-         $this->validation($request);
-         $category = new Category();
-         $this->saveData($request, $category);
+         $this->saveData(new Category());
         return redirect()->route('categories.index');
     }
     public function edit(Category $category)
@@ -43,14 +40,12 @@ class CategoryController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * @param Request $request
-     * @param $category
+     * @param Category $category
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request,Category $category)
+    public function update(Category $category)
     {
-        $this->validation($request);
-        $this->saveData($request, $category);
+        $this->saveData($category);
         return redirect()->route('categories.index');
     }
 
@@ -68,12 +63,11 @@ class CategoryController extends Controller
     }
 
     /**
-     * @param Request $request
      * @return mixed
      */
-    private function validation(Request $request)
+    private function validation()
     {
-        return $request->validate([
+        return request()->validate([
             'name' => 'required|min:3|max:150',
             'image' => 'required',
         ]);
@@ -83,14 +77,15 @@ class CategoryController extends Controller
      * @param Request $request
      * @param $category
      */
-    private function saveData(Request $request, $category)
+    private function saveData($category)
     {
-        $category->name = $request->name;
+        $this->validation();
+        $category->name = request()->name;
         $category->save();
         if ($category->image){
-            $category->image()->update(['url' => $request->image->store('categories','public')]);
+            $category->image()->update(['url' => request()->image->store('categories','public')]);
         }else{
-            $category->image()->create(['url' => $request->image->store('categories','public')]);
+            $category->image()->create(['url' => request()->image->store('categories','public')]);
         }
         $category->save();
     }
