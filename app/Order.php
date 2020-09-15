@@ -14,6 +14,10 @@ class Order extends Model
     }
     public function scopePending($query)
     {
-        return $query->whereStatus(0);
+        return $query->whereStatus('pending');
+    }
+    public function city()
+    {
+        return $this->belongsTo(City::class);
     }
 }
