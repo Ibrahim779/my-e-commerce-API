@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Cart;
 use App\Category;
 use App\Setting;
 use Illuminate\Support\ServiceProvider;
