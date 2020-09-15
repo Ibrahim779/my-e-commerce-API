@@ -11,7 +11,7 @@ class WishlistController extends Controller
 {
     public function index()
     {
-        $wishlist = Wishlist::whereUserId(1)->with('product')->get();
+        $wishlist = Wishlist::whereUserId(1)->with('product')->get();//Todo
         return view('site.wishlist.index', compact('wishlist'));
     }
     public function store($product)
