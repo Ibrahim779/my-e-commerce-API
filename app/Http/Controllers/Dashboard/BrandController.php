@@ -81,7 +81,7 @@ class BrandController extends Controller
         if ($brand->categories()){
             $brand->categories()->detach();
         }
-        $brand->categories()->attach(request()->categories_id);
+
     }
 
 }
