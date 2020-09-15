@@ -15,8 +15,8 @@ class CreateBrandCategoryTable extends Migration
     {
         Schema::create('brand_category', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('brand_id');
-            $table->bigInteger('category_id');
+            $table->unsignedInteger('brand_id');
+            $table->unsignedInteger('category_id');
             $table->timestamps();
         });
     }
