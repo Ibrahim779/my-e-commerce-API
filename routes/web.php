@@ -17,7 +17,7 @@ Route::namespace('Home')->group(function (){
       Route::post('subscribes', 'SubscribeController@store')->name('subscribes.store');
       Route::name('products.')->prefix('products')->group(function (){
         Route::get('/','ProductController@index')->name('index');
-          Route::get('{product}','ProductController@show')->name('show');
+        Route::get('{product}','ProductController@show')->name('show');
         Route::name('categories.')->prefix('categories')->group(function () {
             Route::get('{category}', 'ProductController@getCategoryProducts')->name('getCategoryProducts');
             Route::get('{category}/subcategory/{subcategory}', 'ProductController@getSubcategoryProducts')->name('getSubcategoryProducts');
@@ -27,12 +27,18 @@ Route::namespace('Home')->group(function (){
       });
       Route::resource('contact', 'ContactController')->only(['index', 'store']);
       Route::get('about', 'AboutController@index')->name('about.index');
-      Route::get('cart', 'CartController@index')->name('cart.index');
       Route::resource('wishlist', 'WishlistController')->only(['index', 'destroy']);
       Route::get('wishlist/{product}', 'WishlistController@store')->name('wishlist.store');
       Route::resource('cart', 'CartController')->only(['index', 'destroy']);
+      Route::post('applyCoupon', 'CartController@applyCoupon')->name('applyCoupon');
       Route::get('cart/{product}', 'CartController@store')->name('cart.store');
-      Route::get('checkout', 'CheckoutController@index')->name('checkout.index');
+      Route::resource('checkout', 'CheckoutController')->only(['index', 'store']);
       Route::get('search','ProductController@search')->name('search');
+      Route::get('profile/edit', 'ProfileController@edit')->name('profile.edit');
+      Route::get('profile/orders', 'ProfileController@orders')->name('profile.orders');
+    Route::get('profile/orders/show', 'ProfileController@orderShow')->name('profile.orders.show');
+
 
 });
+
+Auth::routes();
