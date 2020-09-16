@@ -36,16 +36,21 @@ class CheckoutController extends Controller
     private function saveData($order)
     {
         $this->validation();
-        $order->user_id = 1; //Todo
-        $order->name = \request()->name;
-        $order->city_id = \request()->city_id;
-        $order->address = \request()->address;
-        $order->phone = \request()->phone;
-        $order->email = \request()->email;
-        $order->total_price = Cart::getTotal()['total'];
-        $order->payment_status = \request()->payment_status;
+        $order->user_id = auth()->id();
+        $order->name    = request()->name;
+        $order->city_id = request()->city_id;
+        $order->address = request()->address;
+        $order->phone   = request()->phone;
+        $order->email   = request()->email;
+        if (request()->city_id == auth()->user()->city_id){
+            $order->total_price = Cart::getTotal()['total'];
+        }else{
+            $city = City::find(request()->city_id);
+            $order->total_price =  Cart::getTotal()['sub_total'] + $city->shipping - Cart::getTotal()['discount'];
+        }
+        $order->payment_status = request()->payment_status;
         $order->save();
-        foreach (Cart::getUserCart(1)->whereOrderId(null)->get() as $cart){ //Todo
+        foreach (Cart::getUserCart(auth()->id())->whereOrderId(null)->get() as $cart){
             $cart->order_id = $order->id;
             $cart->save();
         }
