@@ -11,7 +11,7 @@ class WishlistController extends Controller
 {
     public function index()
     {
-        $wishlist = Wishlist::whereUserId(1)->with('product')->get();//Todo
+        $wishlist = Wishlist::whereUserId(auth()->id())->with('product')->get();
         return view('site.wishlist.index', compact('wishlist'));
     }
     public function store($product)
@@ -19,7 +19,7 @@ class WishlistController extends Controller
         if (!Wishlist::whereProductId($product)->first()){
             $wishlist = new Wishlist();
             $wishlist->product_id = $product;
-            $wishlist->user_id = 1; //Todo::make it auth()->id
+            $wishlist->user_id = auth()->id();
             $wishlist->save();
         }
         return back();
