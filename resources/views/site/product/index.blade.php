@@ -1,16 +1,6 @@
 @extends('layouts.site')
 @section('content')
-<div class="hero-wrap hero-bread" style="background-image: url({{asset('assets/site/images/bg_1.jpg')}});">
-    <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-            <div class="col-md-9 ftco-animate text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
-                <h1 class="mb-0 bread">Products</h1>
-            </div>
-        </div>
-    </div>
-</div>
-
+    @include('site.parts.hero', ['title' => 'Products'])
 <section class="ftco-section ftco-degree-bg container">
     <div class="row">
         <div class="col-lg-3 sidebar ftco-animate">
@@ -72,10 +62,11 @@
         <div class="row justify-content-center">
             <div class="col-md-10 mb-5 text-center">
                 <ul class="product-category">
-                    <li><a href="{{route('products.index')}}" class="active">All</a></li>
+                    <li><a href="{{route('products.index')}}" class="{{$_category??'active'}}">All</a></li>
                     @foreach($categories as $category)
                     <li>
                         <a
+                            class="{{isset($_category->id)?($category->id == $_category->id?'active':''):''}}"
                             href="{{route('products.categories.getCategoryProducts', $category->id)}}" >
                             {{$category->name}}
                         </a>
@@ -89,7 +80,7 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="{{route('products.show', $product->id)}}" class="img-prod">
-                            <img style="width: 300px;height: 150px" class="img-fluid" src="{{url('storage/'.@$product->image->url)}}" alt="Colorlib Template">
+                            <img style="width: 300px;height: 150px" class="img-fluid" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="Colorlib Template">
                             @if($product->discount)
                                 <span class="status">{{$product->discount}}%</span>
                             @endif
@@ -113,7 +104,7 @@
                                     <a href="{{route('products.show', $product->id)}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                                         <span><i class="ion-ios-menu"></i></span>
                                     </a>
-                                    <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                                    <a href="{{route('cart.store', $product->id)}}" class="buy-now d-flex justify-content-center align-items-center mx-1">
                                         <span><i class="ion-ios-cart"></i></span>
                                     </a>
                                     <a href="{{route('wishlist.store', $product->id)}}" class="heart d-flex justify-content-center align-items-center ">
