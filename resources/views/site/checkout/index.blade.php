@@ -12,7 +12,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="firstname">Full Name</label>
-                                    <input name="name" type="text" class="form-control" placeholder="Enter Your Name">
+                                    <input value="{{old('name')??auth()->user()->full_name}}" name="name" type="text" class="form-control" placeholder="Enter Your Name">
                                 </div>
                             </div>
 
@@ -23,8 +23,9 @@
                                     <div class="select-wrap">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                         <select name="city_id" id="" class="form-control">
+                                            <option  value="{{null}}">select city</option>
                                             @foreach($cities as $city)
-                                            <option value="{{$city->id}}">{{$city->name}}</option>
+                                            <option {{$city->id == auth()->user()->city_id|old('city_id')?'selected':''}} value="{{$city->id}}">{{$city->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -34,7 +35,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="streetaddress">Street Address</label>
-                                    <input name="address" type="text" class="form-control" placeholder="House number and street name">
+                                    <input value="{{old('address')??auth()->user()->address}}" name="address" type="text" class="form-control" placeholder="House number and street name">
                                 </div>
                             </div>
 {{--                            <div class="col-md-6">--}}
@@ -47,20 +48,20 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="phone">Phone</label>
-                                    <input name="phone" type="text" class="form-control" placeholder="Enter Your Phone">
+                                    <input value="{{old('phone')??auth()->user()->phone}}" name="phone" type="text" class="form-control" placeholder="Enter Your Phone">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="phone">Email</label>
-                                    <input name="email" type="email" class="form-control" placeholder="Enter Your Email">
+                                    <input value="{{old('email')??auth()->user()->email}}" name="email" type="email" class="form-control" placeholder="Enter Your Email">
                                 </div>
                             </div>
                             <div class="w-100"></div>
                             <div class="col-md-12">
                                 <div class="form-group mt-4">
                                     <div class="radio">
-                                        <label class="mr-3"><input value="dept" type="radio" name="payment_status"> الدفع عند الاستلام  </label>
+                                        <label class="mr-3"><input checked value="debt" type="radio" name="payment_status"> الدفع عند الاستلام  </label>
 {{--                                        <label><input value="1"  type="radio" name="payment_status"> Ship to different address</label>--}}
                                     </div>
                                 </div>
