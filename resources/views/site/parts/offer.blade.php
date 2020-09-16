@@ -1,9 +1,9 @@
-<section class="ftco-section img" style="background-image: url({{asset('assets/site/images/bg_3.jpg')}});">
+<section class="ftco-section img" style="background-image: url({{asset('assets/site/images/offer_en.jpg')}});">
     <div class="container">
         <div class="row justify-content-end">
             <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
                 <span class="subheading">Best Price For You</span>
-                <h2 class="mb-4">انتظر عروضنا كل خميس</h2>
+                <h2 class="mb-4">Wait for our offers every Thursday</h2>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
                 <h3><a href="{{route('products.index')}}">Shop Now</a></h3>
                 <div id="timer" class="d-flex mt-5">
