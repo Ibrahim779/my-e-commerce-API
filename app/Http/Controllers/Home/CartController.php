@@ -12,25 +12,33 @@ class CartController extends Controller
 {
     public function index()
     {
-        //Todo:: remove static user and add auth user
-        $cartItems = Cart::getUserCart(1)->whereOrderId(null)->get();
+        $cartItems = Cart::getUserCart(auth()->id())->whereOrderId(null)->get();
         $cart_total = Cart::getTotal();
         return view('site.cart.index', compact('cartItems', 'cart_total'));
     }
     public function store($product)
     {
-        if (!Cart::whereProductId($product)->whereOrderId(null)->first()) {
-            $cart = new Cart();
-            $cart->product_id = $product;
-            $cart->user_id = 1; //Todo::make it auth()->id
-            $cart->save();
+        if (!Cart::whereUserId(auth()->id())->whereProductId($product)->whereOrderId(null)->first()) {
+            $this->saveData(new Cart(), $product);
         }
+        return back();
+    }
+    public function update(Cart $cart)
+    {
+        $this->saveData($cart);
         return back();
     }
     public function destroy(Cart $cart)
     {
         $cart->delete();
         return back();
+    }
+    private function saveData(Cart $cart,$product = null)
+    {
+        $cart->product_id = $product??$cart->product_id;
+        $cart->user_id    = $cart->user_id??auth()->id();
+        $cart->count      = request()->count??1;
+        $cart->save();
     }
     public function applyCoupon()
     {
