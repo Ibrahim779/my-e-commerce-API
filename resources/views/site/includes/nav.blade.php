@@ -6,14 +6,14 @@
                 <div class="row d-flex">
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                        <span class="text">+ 1235 2355 98</span>
+                        <span class="text">{{$information['phone']}}</span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-                        <span class="text">youremail@email.com</span>
+                        <span class="text">{{$information['email']}}</span>
                     </div>
                     <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-                        <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+                        <span class="text">{{$information['service']}}</span>
                     </div>
                 </div>
             </div>
@@ -37,14 +37,13 @@
                         <a class="dropdown-item" href="{{route('wishlist.index')}}">
                             Wishlist
                             <span style="color:white;background: #febe08;border-radius: 50px; padding: 0 6px 0 6px">
-                            {{\App\Wishlist::whereUserId(1)->count()}}
+                            {{\App\Wishlist::whereUserId(auth()->id())->count()}}
                             </span>
                         </a>
                         <a class="dropdown-item" href="{{route('cart.index')}}">
                             Cart
                             <span style="color:white;background: #febe08;border-radius: 50px; padding: 0 6px 0 6px">
-                                {{--                            Todo--}}
-                            {{\App\Cart::whereUserId(1)->whereOrderId(null)->count()}}
+                            {{\App\Cart::whereUserId(auth()->id())->whereOrderId(null)->count()}}
                             </span>
                         </a>
                         <a class="dropdown-item" href="{{route('checkout.index')}}">Checkout</a>
@@ -56,8 +55,7 @@
                 <li class="nav-item cta cta-colored">
                     <a href="{{route('cart.index')}}" class="nav-link">
                         <span class="icon-shopping_cart">
-{{--                            Todo--}}
-                        </span>[{{\App\Cart::whereUserId(1)->whereOrderId(null)->count()}}]
+                        </span>[{{\App\Cart::whereUserId(auth()->id())->whereOrderId(null)->count()}}]
                     </a>
                 </li>
 
