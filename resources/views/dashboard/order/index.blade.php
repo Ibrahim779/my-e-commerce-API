@@ -29,11 +29,11 @@
             @foreach($orders as $order)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$order->another_name??$order->user->full_name}}</td>
-                    <td>{{$order->another_address??$order->user->address}}</td>
-                    <td>{{$order->another_phone??$order->user->phone}}</td>
+                    <td>{{$order->name??$order->user->full_name}}</td>
+                    <td>{{$order->address??$order->user->address}}</td>
+                    <td>{{$order->phone??$order->user->phone}}</td>
                     <td>{{$order->total_price}}</td>
-                    <td>{{$order->payment_status}}</td>
+                    <td>{{$order->payment_status==0 ? 'الدفع عند الاستلام':'تم الدفع'}}</td>
                     <td>{{$order->status}}</td>
                     <td>
                         <a href="{{route('orders.show', $order->id)}}">
