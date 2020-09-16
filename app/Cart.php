@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     protected $guarded = [];
+    protected $with = ['user'];
 
     public function product()
     {
@@ -14,7 +15,7 @@ class Cart extends Model
     }
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
     public function scopeGetUserCart($query, $user)
     {
@@ -22,13 +23,12 @@ class Cart extends Model
     }
     public static function getTotal()
     {
-        //Todo:: remove static user and add auth user
-        $cart = Cart::getUserCart(1)->whereOrderId(null)->get();
+        $cart = Cart::getUserCart(auth()->id())->whereOrderId(null)->get();
         $sub_total = 0;
         foreach ($cart as $cartItem){
-            $sub_total += @$cartItem->product->discount_price;
+            $sub_total += @$cartItem->count * @$cartItem->product->discount_price;
         }
-        $delivery = 5;
+        $delivery = auth()->user()->city->shipping;
         $discount = session()->get('discount') ?? 0;
         $total = $sub_total + $delivery - $discount;
 
