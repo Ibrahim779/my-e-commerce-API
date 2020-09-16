@@ -35,7 +35,7 @@
                                     <td class="image-prod">
                                         <a href="{{route('products.show', @$cartItem->product->id)}}">
                                             <div
-                                                class="img" style="background-image:url({{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}});">
+                                                class="img" style="background-image:url({{@$cartItem->product->image->url?(str_contains(@$cartItem->product->image->url, 'products')?'/storage/'.@$cartItem->product->image->url:@$cartItem->product->image->url):asset('assets/site/images/default.png')}});">
                                             </div>
                                         </a>
                                     </td>
@@ -57,9 +57,14 @@
                                     </td>
 
                                     <td class="quantity">
-                                        <div class="input-group mb-3">
-                                            <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                        </div>
+                                        <form method="post" action="{{route('cart.update', $cartItem->id)}}" class="subscribe-form">
+                                            @csrf
+                                            @method('PATCH')
+                                            <div class="form-group d-flex">
+                                                <input value="{{$cartItem->count}}" name="count" type="number" class="form-control" placeholder="Count">
+                                                <input type="submit" value="Change" class="submit px-3">
+                                            </div>
+                                        </form>
                                     </td>
 
                                     <td style="color: #ffbe08 " class="total">{{$cartItem->count * @$cartItem->product->discount_price}} EGY</td>
