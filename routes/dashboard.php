@@ -42,10 +42,6 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
         });
         Route::get('{subcategory}/destroy', 'SubCategoryController@destroy')->name('destroy');
     });
-    Route::get('coupons',function (){
-        return 'welcome';
-    })->name('coupons.index');
-
     Route::resource('brands', 'BrandController')->except('destroy');
     Route::get('brands/{brand}/destroy','BrandController@destroy')->name('brands.destroy');
     Route::resource('sliders', 'SliderController')->except('destroy');
@@ -55,4 +51,6 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
     Route::resource('orders', 'OrderController')->only(['index','show']);
     Route::get('orders/{order}/destroy','OrderController@destroy')->name('orders.destroy');
     Route::resource('subscribes', 'SubscribeController')->only(['index', 'destroy']);
+    Route::resource('cities', 'CityController');
+    Route::resource('coupons', 'CouponController');
 });
