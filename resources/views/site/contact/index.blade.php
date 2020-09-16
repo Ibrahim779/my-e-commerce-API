@@ -41,13 +41,13 @@
                         </div>
                     @endif
                     <div class="form-group">
-                        <input name="name" type="text" class="form-control" placeholder="Your Name">
+                        <input value="{{old('name')??auth()->user()->full_name}}" name="name" type="text" class="form-control" placeholder="Your Name">
                     </div>
                     <div class="form-group">
-                        <input name="phone" type="text" class="form-control" placeholder="Your Phone">
+                        <input value="{{old('phone')??auth()->user()->phone}}" name="phone" type="text" class="form-control" placeholder="Your Phone">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                        <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{old('message')}}</textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
