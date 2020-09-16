@@ -1,15 +1,6 @@
 @extends('layouts.site')
 @section('content')
-    <div class="hero-wrap hero-bread" style="background-image: url({{asset('assets/site/images/bg_1.jpg')}});">
-        <div class="container">
-            <div class="row no-gutters slider-text align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Wishlist</span></p>
-                    <h1 class="mb-0 bread">My Wishlist</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('site.parts.hero', ['title' => 'WishList'])
 
     <section class="ftco-section ftco-cart">
         <div class="container">
@@ -45,7 +36,7 @@
                                 <td class="image-prod">
                                     <a href="{{route('products.show', @$_wishlist->product->id)}}">
                                     <div
-                                        class="img" style="background-image:url({{url('storage/'.@$_wishlist->product->image->url)}});">
+                                        class="img" style="background-image:url({{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}});">
                                     </div>
                                     </a>
                                 </td>
