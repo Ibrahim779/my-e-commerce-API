@@ -31,7 +31,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$product->name}}</td>
                     <td>
-                        <img style="width: 50px;height: auto" src="{{url('storage/'.@$product->image->url)}}" alt="category image">
+                        <img style="width: 50px;height: auto" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="category image">
                     </td>
                     <td>{{$product->quantity}}</td>
                     <td>{{$product->price}}</td>
