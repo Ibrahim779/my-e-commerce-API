@@ -21,7 +21,7 @@
     <script>
         function makeTimer() {
 
-            var endTime = new Date("7/22/2020");
+            var endTime = new Date("9/22/2020");
             endTime = (Date.parse(endTime) / 1000);
 
             var now = new Date();
