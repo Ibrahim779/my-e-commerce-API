@@ -62,22 +62,21 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
                         <div class="w-100"></div>
-                        <div class="input-group col-md-6 d-flex mb-3">
-	             	<span class="input-group-btn mr-2">
-	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-	                   <i class="ion-ios-remove"></i>
-	                	</button>
-	            		</span>
-                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-                            <span class="input-group-btn ml-2">
-	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-	                     <i class="ion-ios-add"></i>
-	                 </button>
-	             	</span>
-                        </div>
+
+                            <div class="input-group col-md-6 d-flex mb-3">
+                                <form method="post" action="{{route('cart.store', $product->id)}}" class="subscribe-form">
+                                    @csrf
+                                    <div class="form-group d-flex">
+                                        <input value="1" name="count" type="number" class="form-control" placeholder="Count">
+                                    </div>
+                                    <div  class="mt-5 btn btn-black px-5">
+                                        <button style="color:white; border: none"  type="submit">Add To Cart</button>
+                                    </div>
+                                </form>
+                            </div>
                         <div class="w-100"></div>
                     </div>
-                    <p><a href="{{route('cart.store', $product->id)}}" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+
                 </div>
             </div>
         </div>
