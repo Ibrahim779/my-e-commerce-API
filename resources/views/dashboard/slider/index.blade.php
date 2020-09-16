@@ -27,7 +27,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$slider->title}}</td>
                     <td>
-                        <img style="width: 50px;height: auto" src="{{url('storage/'.@$slider->image->url)}}" alt="slider image">
+                        <img style="width: 50px;height: auto" src="{{@$slider->image->url?(str_contains(@$slider->image->url, 'sliders')?'/storage/'.@$slider->image->url:@$slider->image->url):asset('assets/site/images/default.png')}}" alt="slider image">
                     </td>
                     <td>
                         <a href="{{route('sliders.edit', $slider->id)}}">
