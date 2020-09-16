@@ -14,10 +14,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::published()->get();
-        $categories = Category::all();
-        $subcategories = SubCategory::all();
+        $categories = Category::inRandomOrder()->take(10)->get();
+        $subcategories = SubCategory::inRandomOrder()->take(10)->get();
         $_category = null;
-        $brands = Brand::all();
+        $brands = Brand::inRandomOrder()->take(10)->get();
         return view('site.product.index',
             compact('products', 'categories','subcategories','brands','_category'));
     }
