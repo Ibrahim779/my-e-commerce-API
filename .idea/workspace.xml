@@ -2,41 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="776c63ef-f381-42af-925f-c21fb43a1511" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/setting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/site.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ar/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/setting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/site.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/WishlistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/WishlistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Setting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Wishlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Wishlist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/MessageFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/MessageFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_19_112936_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_19_112936_create_messages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/messages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/login/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/cart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/cart/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/checkout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/checkout/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/parts/offer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/offer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/product/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/profile/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/profile/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/profile/includes/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/profile/orders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/profile/orders/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/profile/orders/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/profile/orders/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/pagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/passwords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,24 +144,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../twitterTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\site\profile" />
-      <recent name="E:\Projects\my-e-commerce-API\public\assets\site" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views" />
-      <recent name="E:\Projects\my-e-commerce-API\public\assets\site\profile" />
-      <recent name="E:\Projects\my-e-commerce-API\resources\views\dashboard\coupon" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Projects\my-e-commerce-API\resources\views\site\profile\orders" />
       <recent name="E:\Projects\my-e-commerce-API\public\assets\site\images" />
       <recent name="E:\Projects\my-e-commerce-API\resources\views\site\includes" />
       <recent name="E:\Projects\my-e-commerce-API\resources\views\site" />
       <recent name="E:\Projects\my-e-commerce-API\public\assets\dashboard" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projects\my-e-commerce-API\resources\lang" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views\site\profile" />
+      <recent name="E:\Projects\my-e-commerce-API\public\assets\site" />
+      <recent name="E:\Projects\my-e-commerce-API\resources\views" />
+      <recent name="E:\Projects\my-e-commerce-API\public\assets\site\profile" />
     </key>
   </component>
   <component name="RunManager">
@@ -248,7 +229,7 @@
       <workItem from="1600084723897" duration="11072000" />
       <workItem from="1600098232711" duration="6879000" />
       <workItem from="1600160449316" duration="27936000" />
-      <workItem from="1600231098770" duration="32508000" />
+      <workItem from="1600231098770" duration="34804000" />
     </task>
     <servers />
   </component>
