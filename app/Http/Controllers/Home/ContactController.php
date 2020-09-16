@@ -14,16 +14,24 @@ class ContactController extends Controller
     }
     public function store()
     {
-        Message::create($this->validation());
-        return redirect()->back();
+        $this->saveData(new Message());
+        return back();
     }
     private function validation()
     {
-        return \request()->validate([
+        return request()->validate([
             'name' => 'required|min:3',
             'phone' => 'required|min:11',
-            'message' => 'required|min:5'
-
+            'message' => 'required|min:5',
         ]);
+    }
+    private function saveData(Message $message)
+    {
+        $this->validation();
+        $message->name = request()->name;
+        $message->phone = request()->phone;
+        $message->message = request()->message;
+        $message->user_id = auth()->id();
+        $message->save();
     }
 }
