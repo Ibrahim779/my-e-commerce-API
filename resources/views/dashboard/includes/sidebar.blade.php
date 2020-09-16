@@ -60,6 +60,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('products.isOffer')}}" aria-expanded="false"><span class="hide-menu"> Offers</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('cities.index')}}" aria-expanded="false"><span class="hide-menu"> Cities</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('orders.index')}}" aria-expanded="false"><span class="hide-menu"> Orders</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('coupons.index')}}" aria-expanded="false"><span class="hide-menu"> Coupon Codes</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('sliders.index')}}" aria-expanded="false"><span class="hide-menu"> Sliders</span></a></li>
