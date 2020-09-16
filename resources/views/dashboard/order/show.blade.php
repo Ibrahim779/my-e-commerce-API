@@ -11,11 +11,11 @@
                         <div class="col-md-12">
                             <div class="pull-left">
                                 <address>
-                                    <h3> &nbsp;<b class="text-danger">{{$order->another_name??$order->user->full_name}}</b></h3>
+                                    <h3> &nbsp;<b class="text-danger">{{$order->name??$order->user->full_name}}</b></h3>
                                     <p class="text-muted m-l-5">
-                                       <span>Phone: </span> {{$order->another_phone??$order->user->phone}}
+                                       <span>Phone: </span> {{$order->phone??$order->user->phone}}
                                         <br/>
-                                        <span>Address: </span> {{$order->another_address??$order->user->address}}
+                                        <span>Address: </span> {{$order->address??$order->user->address}}
                                     </p>
                                 </address>
                             </div>
@@ -26,41 +26,28 @@
                                     <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th>Description</th>
+                                        <th>Image</th>
+                                        <th class="text-right">Name</th>
                                         <th class="text-right">Quantity</th>
-                                        <th class="text-right">Unit Cost</th>
+                                        <th class="text-right">Price</th>
+                                        <th class="text-right">Count</th>
                                         <th class="text-right">Total</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($cartItems as $cartItem)
                                     <tr>
-                                        <td class="text-center">1</td>
-                                        <td>Milk Powder</td>
-                                        <td class="text-right">2 </td>
-                                        <td class="text-right"> $24 </td>
-                                        <td class="text-right"> $48 </td>
+                                        <td class="text-center">{{$loop->iteration}}</td>
+                                        <td>
+                                            <img style="width: 50px;height: auto" src="{{url('storage/'.@$cartItem->product->image->url)}}" alt="category image">
+                                        </td>
+                                        <td class="text-right">{{@$cartItem->product->name}}</td>
+                                        <td class="text-right"> {{@$cartItem->product->quantity}}</td>
+                                        <td class="text-right"> {{@$cartItem->product->discount_price}}</td>
+                                        <td class="text-right"> {{$cartItem->count}}</td>
+                                        <td class="text-right"> {{$cartItem->count * @$cartItem->product->discount_price}}</td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td>Air Conditioner</td>
-                                        <td class="text-right"> 3 </td>
-                                        <td class="text-right"> $500 </td>
-                                        <td class="text-right"> $1500 </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">3</td>
-                                        <td>RC Cars</td>
-                                        <td class="text-right"> 20 </td>
-                                        <td class="text-right"> %600 </td>
-                                        <td class="text-right"> $12000 </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">4</td>
-                                        <td>Down Coat</td>
-                                        <td class="text-right"> 60 </td>
-                                        <td class="text-right">$5 </td>
-                                        <td class="text-right"> $300 </td>
-                                    </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
