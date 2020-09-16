@@ -17,7 +17,7 @@ class HomeController extends Controller
         $categories_section1 = Category::inRandomOrder()->take(2)->get();
         $categories_section2 = Category::inRandomOrder()->take(2)->get();
         $products = Product::inRandomOrder()->get();
-        $products_hasDiscount = Product::hasDiscount()->inRandomOrder()->get();
+        $products_hasDiscount = Product::hasDiscount()->inRandomOrder()->get()->sortByDesc('discount');
         return view('site.index',compact('sliders','categories_section1','categories_section2','products','products_hasDiscount'));
     }
 }
