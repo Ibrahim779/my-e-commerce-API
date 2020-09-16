@@ -1,22 +1,12 @@
 @extends('layouts.site')
 @section('content')
-    <div class="hero-wrap hero-bread" style="background-image: url({{asset('assets/site/images/bg_1.jpg')}});">
-        <div class="container">
-            <div class="row no-gutters slider-text align-items-center justify-content-center">
-                <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home.index')}}">Home</a></span> <span class="mr-2"><a href="index.html">Product</a></span> <span>Product Single</span></p>
-                    <h1 class="mb-0 bread">Product Single</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    @include('site.parts.hero', ['title' => 'Single Product'])
     <section class="ftco-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-5 ftco-animate">
 
-                    <a href="{{url('storage/'.@$product->image->url)}}" class="image-popup"><img src="{{url('storage/'.@$product->image->url)}}" class="img-fluid" alt="Colorlib Template"></a>
+                    <a href="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" class="image-popup"><img src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" class="img-fluid" alt="Colorlib Template"></a>
                 </div>
                 <div class="col-lg-6 product-details pl-md-5 ftco-animate">
                     <h4>{{$product->name}}
@@ -86,11 +76,8 @@
 	             	</span>
                         </div>
                         <div class="w-100"></div>
-                        <div class="col-md-12">
-                            <p style="color: #000;">600 kg available</p>
-                        </div>
                     </div>
-                    <p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+                    <p><a href="{{route('cart.store', $product->id)}}" class="btn btn-black py-3 px-5">Add to Cart</a></p>
                 </div>
             </div>
         </div>
@@ -112,7 +99,7 @@
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
                             <a href="{{route('products.show', $product->id)}}" class="img-prod">
-                                <img style="width: 300px;height: 200px" class="img-fluid" src="{{url('storage/'.@$product->image->url)}}" alt="Colorlib Template">
+                                <img style="width: 300px;height: 200px" class="img-fluid" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="Colorlib Template">
                                 @if($product->discount)
                                     <span class="status">{{$product->discount}}%</span>
                                 @endif
