@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Wishlist extends Model
 {
     protected $guarded = [];
+    protected $with = ['user'];
 
     public function product()
     {
@@ -14,6 +15,6 @@ class Wishlist extends Model
     }
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 }
