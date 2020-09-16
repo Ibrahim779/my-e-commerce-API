@@ -1,7 +1,7 @@
 <div style="background: #ffbe08  ; color: white" class="dashboard-sidebar">
     <div class="company-info">
         <div class="thumb">
-            <img src="./Himba _ User Profile Edit_files/15997368305f5a0bfe81f1b.png" class="img-fluid" alt="">
+            <img src="{{isset(auth()->user()->image->url)?'/storage/'.auth()->user()->image->url:asset('assets/site/images/avatar.png')}}" class="img-fluid" alt="">
         </div>
         <div class="company-body">
             <h5 style="color: #2a3d45">ibrahim ismail</h5>
@@ -17,10 +17,10 @@
             <li class="{{$orders??''}} &quot;&quot;"><i class="ion-ios-paper"></i><a  href="{{route('profile.orders')}}">Orders</a></li>
         </ul>
         <ul class="delete">
-            <form id="logout-form" action="https://himba.net/logout" method="POST" style="display: none;">
-                <input type="hidden" name="_token" value="7IOscdMhX5WDy49RKtHiwZkZmlkCb6lTxyU3w5r2">
+            <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                @csrf
             </form>
-            <li><i class="ion-ios-power"></i><a href="https://himba.net/logout" onclick="event.preventDefault();
+            <li><i class="ion-ios-power"></i><a href="{{route('logout')}}" onclick="event.preventDefault();
                                document.getElementById(&#39;logout-form&#39;).submit();">Logout</a></li>
         </ul>
     </div>
