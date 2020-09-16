@@ -17,33 +17,48 @@
                             <div id="vueApp" class="dashboard-content-wrapper">
                                 <div class="about-details details-section dashboard-section" style="padding: 0px;">
                                     <div class="information-and-contact">
+                                        @forelse($orders as $order)
                                         <div class="information p-info">
-                                            <h4 class="section-edit-title">Order #125458
-                                                <a href="{{route('profile.orders.show')}}" class="btn btn-primary edit-resume">
+                                            <h4 class="section-edit-title">Order #{{$order->id}}
+                                                <a href="{{route('profile.orders.show', $order->id)}}" class="btn btn-primary edit-resume">
                                                     Show
                                                 </a>
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <span>Name:</span> ALi Esmail
+                                                    <span>Name:</span> {{$order->name}}
                                                 </li>
                                                 <li>
-                                                    <span>Address:</span> Damietta
+                                                    <span>Phone:</span> {{$order->phone}}
                                                 </li>
                                                 <li>
-                                                    <span>Phone:</span> 01025288758
+                                                    <span>Email:</span> {{$order->email}}
                                                 </li>
                                                 <li>
-                                                    <span>Order Status:</span> pending
+                                                    <span>City:</span> {{$order->city->name}}
                                                 </li>
                                                 <li>
-                                                    <span>Total:</span>  3000 ج
+                                                    <span>Address:</span> {{$order->address}}
                                                 </li>
                                                 <li>
-                                                    <span>Payment Status:</span>  الدفع عند الاستلام
+                                                    <span>Order Status:</span> {{$order->status}}
+                                                </li>
+                                                <li>
+                                                    <span>Total:</span>  {{$order->total_price}} ج
+                                                </li>
+                                                <li>
+                                                    <span>Payment Status:</span> {{$order->payment_status}}
+                                                </li>
+                                                <li>
+                                                    <span>Date:</span> {{$order->created_at}}
                                                 </li>
                                             </ul>
                                         </div>
+                                            @empty
+                                            <div class="information p-info">
+                                                Not Found Orders
+                                            </div>
+                                        @endforelse
                                     </div>
                                 </div>
                             </div>
