@@ -57,9 +57,11 @@
                     </div>
                     <div class="wrap-input100 validate-input" data-validate="Job is required">
                         <span class="label-input100">{{__('site.job')}}</span>
-                        <select style="border: none" class="input100">
-                            <option>City</option>
-                            <option>Damitta</option>
+                        <select name="city_id" style="border: none" class="input100">
+                            <option  value="{{null}}">select city</option>
+                            @foreach($cities as $city)
+                            <option value="{{$city->id}}">{{$city->name}}</option>
+                            @endforeach
                         </select>
 
                     </div>
