@@ -27,7 +27,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$category->name}}</td>
                     <td>
-                        <img style="width: 50px;height: auto" src="{{url('storage/'.@$category->image->url)}}" alt="category image">
+                        <img style="width: 50px;height: auto" src="{{@$category->image->url?(str_contains(@$category->image->url, 'categories')?'/storage/'.@$category->image->url:@$category->image->url):asset('assets/site/images/default.png')}}" alt="category image">
                     </td>
                     <td>
                       <a href="{{route('categories.edit', $category->id)}}">
