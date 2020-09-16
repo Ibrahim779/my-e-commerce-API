@@ -14,17 +14,17 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::published()->get();
-        $categories = Category::inRandomOrder()->take(10)->get();
-        $subcategories = SubCategory::inRandomOrder()->take(10)->get();
+        $categories = Category::take(10)->get();
+        $subcategories = SubCategory::get();
         $_category = null;
-        $brands = Brand::inRandomOrder()->take(10)->get();
+        $brands = Brand::get();
         return view('site.product.index',
             compact('products', 'categories','subcategories','brands','_category'));
     }
     public function search()
     {
         $products = Product::published()->search(request()->search)->get();
-        $categories = Category::all();
+        $categories = Category::take(10)->get();
         $_category = null;
         $subcategories = SubCategory::all();
         $brands = Brand::all();
@@ -34,7 +34,7 @@ class ProductController extends Controller
     public function getCategoryProducts($category)
     {
         $products = Product::whereCategoryId($category)->published()->get();
-        $categories = Category::all();
+        $categories = Category::take(10)->get();
         $_category = Category::find($category);
         $subcategories = SubCategory::whereCategoryId($category)->get();
         $brands = Brand::categoriesById($category)->get();
@@ -44,8 +44,8 @@ class ProductController extends Controller
     public function getSubcategoryProducts($category, $subcategory)
     {
         $products = Product::whereSubcategoryId($subcategory)->published()->get();
-        $categories = Category::all();
-        $_category = null;
+        $categories = Category::take(10)->get();
+        $_category = Category::find($category);
         $subcategories = SubCategory::whereCategoryId($category)->get();
         $brands = Brand::categoriesById($category)->get();
         return view('site.product.index',
@@ -54,7 +54,7 @@ class ProductController extends Controller
     public function getBrandProducts($brand)
     {
         $products = Product::whereBrandId($brand)->published()->get();
-        $categories = Category::all();
+        $categories = Category::take(10)->get();
         $_category = null;
         $subcategories = SubCategory::all();
         $brands = Brand::all();
@@ -64,7 +64,7 @@ class ProductController extends Controller
     public function getCategoryBrandProducts($category, $brand)
     {
         $products = Product::whereCategoryId($category)->whereBrandId($brand)->published()->get();
-        $categories = Category::all();
+        $categories = Category::take(10)->get();
         $_category = Category::find($category);
         $subcategories = SubCategory::whereCategoryId($category)->get();
         $brands = Brand::categoriesById($category)->get();
