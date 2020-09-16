@@ -22,7 +22,7 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Vegefoods</a>
+        <a class="navbar-brand" href="{{route('home.index')}}">{{$information['name']}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
@@ -43,7 +43,8 @@
                         <a class="dropdown-item" href="{{route('cart.index')}}">
                             Cart
                             <span style="color:white;background: #febe08;border-radius: 50px; padding: 0 6px 0 6px">
-                            {{\App\Cart::whereUserId(1)->count()}}
+                                {{--                            Todo--}}
+                            {{\App\Cart::whereUserId(1)->whereOrderId(null)->count()}}
                             </span>
                         </a>
                         <a class="dropdown-item" href="{{route('checkout.index')}}">Checkout</a>
@@ -51,7 +52,14 @@
                 </li>
                 <li class="nav-item"><a href="{{route('about.index')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('contact.index')}}" class="nav-link">Contact</a></li>
-                <li class="nav-item cta cta-colored"><a href="{{route('cart.index')}}" class="nav-link"><span class="icon-shopping_cart"></span>[{{\App\Cart::whereUserId(1)->count()}}]</a></li>
+                <li class="nav-item"><a href="{{route('profile.edit')}}" class="nav-link">Profile</a></li>
+                <li class="nav-item cta cta-colored">
+                    <a href="{{route('cart.index')}}" class="nav-link">
+                        <span class="icon-shopping_cart">
+{{--                            Todo--}}
+                        </span>[{{\App\Cart::whereUserId(1)->whereOrderId(null)->count()}}]
+                    </a>
+                </li>
 
             </ul>
         </div>
