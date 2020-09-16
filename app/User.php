@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'phone', 'city_id', 'address', 'email', 'password',
     ];
 
     /**
@@ -48,5 +48,9 @@ class User extends Authenticatable
     public function city()
     {
         return $this->belongsTo(City::class);
+    }
+    public function image()
+    {
+        return $this->morphOne(image::class, 'imageable');
     }
 }
