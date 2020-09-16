@@ -14,7 +14,7 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="{{route('products.show', $product->id)}}" class="img-prod">
-                            <img style="width: 300px;height: 200px" class="img-fluid" src="storage/{{@$product->image->url}}" alt="Colorlib Template">
+                            <img style="width: 300px;height: 200px" class="img-fluid" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="Colorlib Template">
                             @if($product->discount)
                                 <span class="status">{{$product->discount}}%</span>
                             @endif
