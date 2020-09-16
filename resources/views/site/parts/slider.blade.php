@@ -1,7 +1,8 @@
 <section id="home-section" class="hero">
-    @foreach($sliders as $slider)
-        <div class="home-slider owl-carousel">
-            <div class="slider-item" style="background-image: url({{'storage/'.@$slider->image->url}});">
+
+        <div class="home-slider owl-carousel" dir="ltr">
+            @foreach($sliders as $slider)
+            <div class="slider-item" style="background-image: url({{@$slider->image->url?(str_contains(@$slider->image->url, 'sliders')?'/storage/'.@$slider->image->url:@$slider->image->url):asset('assets/site/images/default.png')}});">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -15,6 +16,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-    @endforeach
+
 </section>
