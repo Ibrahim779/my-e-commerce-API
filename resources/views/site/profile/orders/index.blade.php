@@ -4,10 +4,10 @@
     @include('site.profile.includes.links')
 @endsection
 @section('content')
-    @include('site.parts.hero', ['title' => 'Orders'])
+    @include('site.parts.hero', ['title' => __('site.orders')])
     <div id="app">
 
-        @include('site.profile.includes.breadcrumb', ['title' => 'Orders'])
+        @include('site.profile.includes.breadcrumb', ['title' => __('site.orders')])
 
         <div style="background: none" class="alice-bg section-padding-bottom">
             <div class="container no-gliters">
@@ -19,44 +19,44 @@
                                     <div class="information-and-contact">
                                         @forelse($orders as $order)
                                         <div class="information p-info">
-                                            <h4 class="section-edit-title">Order #{{$order->id}}
+                                            <h4 style="text-align: center;" class="section-edit-title">{{__('site.order')}} #{{$order->id}}
                                                 <a href="{{route('profile.orders.show', $order->id)}}" class="btn btn-primary edit-resume">
-                                                    Show
+                                                    {{__('site.show')}}
                                                 </a>
                                             </h4>
                                             <ul>
                                                 <li>
-                                                    <span>Name:</span> {{$order->name}}
+                                                    <span>{{__('site.name')}}:</span> {{$order->name}}
                                                 </li>
                                                 <li>
-                                                    <span>Phone:</span> {{$order->phone}}
+                                                    <span>{{__('site.phone')}}:</span> {{$order->phone}}
                                                 </li>
                                                 <li>
-                                                    <span>Email:</span> {{$order->email}}
+                                                    <span>{{__('site.email')}}:</span> {{$order->email}}
                                                 </li>
                                                 <li>
-                                                    <span>City:</span> {{$order->city->name}}
+                                                    <span>{{__('site.city')}}:</span> {{$order->city->name}}
                                                 </li>
                                                 <li>
-                                                    <span>Address:</span> {{$order->address}}
+                                                    <span>{{__('site.address')}}:</span> {{$order->address}}
                                                 </li>
                                                 <li>
-                                                    <span>Order Status:</span> {{$order->status}}
+                                                    <span>{{__('site.order_status')}}:</span> {{$order->status}}
                                                 </li>
                                                 <li>
-                                                    <span>Total:</span>  {{$order->total_price}} ج
+                                                    <span>{{__('site.total')}}:</span>  {{$order->total_price}} ج
                                                 </li>
                                                 <li>
-                                                    <span>Payment Status:</span> {{$order->payment_status}}
+                                                    <span>{{__('site.payment_status')}}:</span> {{$order->payment_status}}
                                                 </li>
                                                 <li>
-                                                    <span>Date:</span> {{$order->created_at}}
+                                                    <span>{{__('site.date')}}:</span> {{$order->created_at}}
                                                 </li>
                                             </ul>
                                         </div>
                                             @empty
                                             <div class="information p-info">
-                                                Not Found Orders
+                                                {{__('site.empty')}}
                                             </div>
                                         @endforelse
                                     </div>
