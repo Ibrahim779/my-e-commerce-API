@@ -4,10 +4,10 @@
     @include('site.profile.includes.links')
 @endsection
 @section('content')
-    @include('site.parts.hero', ['title' => 'Show Order'])
+    @include('site.parts.hero', ['title' => __('site.show').' '.__('site.order')])
     <div id="app">
 
-        @include('site.profile.includes.breadcrumb', ['title' => 'Order Show'])
+        @include('site.profile.includes.breadcrumb', ['title' => __('site.show').' '.__('site.order')])
 
         <div style="background: none" class="alice-bg section-padding-bottom">
             <div class="container no-gliters">
@@ -25,7 +25,7 @@
                                         </div>
                                     </div>
                                     <div class="showing-number">
-                                        <span>Showing 2 of 2 Jobs</span>
+                                        <span style="color: white;background: #febe08;padding: 0 8px 0 8px; border-radius: 5px">{{count($cartItems)}}</span> <span>{{__('site.products')}}</span>
                                     </div>
                                 </div>
                                 <div class="job-filter-result">
@@ -37,21 +37,21 @@
                                             </a>
                                         </div>
                                         <div class="body">
-                                            <div class="content">
+                                            <div style="padding: 0 20px;" class="content">
                                                 <h4><a href="{{route('products.show', $cartItem->product->id)}}" >{{$cartItem->product->name}}</a>
                                                 </h4>
                                                 <div class="info">
                                                     <span class="company">
-                                                        <span style="color: #febe08">Price:</span><span>{{$cartItem->product->price}} EGY</span>
+                                                        <span style="color: #febe08">{{__('site.price')}}:</span><span>{{$cartItem->product->price}} {{__('site.currency')}}</span>
                                                     </span>
                                                     <span class="company">
-                                                            <span style="color: #febe08">Quantity:</span><span>{{$cartItem->product->quantity}}</span>
+                                                            <span style="color: #febe08">{{__('site.quantity')}}:</span><span>{{$cartItem->product->quantity}}</span>
                                                     </span>
                                                     <span class="company">
-                                                            <span style="color: #febe08">Count:</span><span>{{$cartItem->count}}</span>
+                                                            <span style="color: #febe08">{{__('site.count')}}:</span><span>{{$cartItem->count}}</span>
                                                     </span>
                                                     <span class="company">
-                                                           <span style="color: #febe08">BarCode:</span><span>{{$cartItem->product->bar_code}}</span>
+                                                           <span style="color: #febe08">{{__('site.bar_code')}}:</span><span>{{$cartItem->product->bar_code}}</span>
                                                     </span>
                                                     <span class="job-type temporary">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle>
@@ -66,7 +66,7 @@
                                     </div>
                                         @empty
                                         <div class="job-list">
-                                            Not Found Cart Items
+                                            {{__('site.empty')}}
                                         </div>
                                     @endforelse
                                 </div>
