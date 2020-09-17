@@ -1,6 +1,6 @@
 @extends('layouts.site')
 @section('content')
-    @include('site.parts.hero', ['title' => 'WishList'])
+    @include('site.parts.hero', ['title' => __('site.wishlist')])
 
     <section class="ftco-section ftco-cart">
         <div class="container">
@@ -11,11 +11,11 @@
                             <thead class="thead-primary">
                             <tr class="text-center">
                                 <th>&nbsp;</th>
-                                <th>Product List</th>
-                                <th>&nbsp;</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
+                                <th>{{__('site.product_image')}}</th>
+                                <th>{{__('site.product_name')}}</th>
+                                <th>{{__('site.price')}}</th>
+                               <th></th>
+
                             </tr>
                             </thead>
                             <tbody>
@@ -36,7 +36,7 @@
                                 <td class="image-prod">
                                     <a href="{{route('products.show', @$_wishlist->product->id)}}">
                                     <div
-                                        class="img" style="background-image:url({{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}});">
+                                        class="img" style="background-image:url({{@$_wishlist->product->image->url?(str_contains(@$_wishlist->product->image->url, 'products')?'/storage/'.@$_wishlist->product->image->url:@$_wishlist->product->image->url):asset('assets/site/images/default.png')}});">
                                     </div>
                                     </a>
                                 </td>
@@ -50,26 +50,22 @@
                                 </td>
                                 <td class="price">
                                     @if(@$_wishlist->product->discount)
-                                        <span style="text-decoration: line-through;">{{@$_wishlist->product->price}} EGY</span>  <span style="color: #ffbe08 ">{{@$_wishlist->product->discount_price}} EGY</span>
+                                        <span style="text-decoration: line-through;">{{@$_wishlist->product->price}} {{__('site.currency')}}</span>  <span style="color: #ffbe08 ">{{@$_wishlist->product->discount_price}} {{__('site.currency')}}</span>
                                     @else
-                                        <span style="color: #ffbe08 ">{{@$_wishlist->product->price}} EGY</span>
+                                        <span style="color: #ffbe08 ">{{@$_wishlist->product->price}} {{__('site.currency')}}</span>
                                     @endif
-                                    <span style="color: #bbb;">for {{@$_wishlist->product->quantity}}</span>
+                                    <span style="color: #bbb;">{{__('site.quantity')}} {{@$_wishlist->product->quantity}}</span>
                                 </td>
 
                                 <td class="quantity">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                                    </div>
+                                    <p><a href="{{route('cart.store', @$_wishlist->product->id)}}" class="btn btn-primary py-2 px-4">{{__('site.add_to_cart')}}</a></p>
                                 </td>
-
-                                <td class="total">$4.90</td>
                             </tr><!-- END TR-->
                                 @empty
                                 <tr class="text-center">
                                     <td></td>
                                    <td>
-                                       Your WishList Is Empty
+                                       {{__('site.empty')}}
                                    </td>
                                 </tr>
                                 @endforelse
