@@ -7,8 +7,8 @@
                         <span class="flaticon-shipped"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading">Free Shipping</h3>
-                        <span>On order over $100</span>
+                        <h3 class="heading">{{__('site.shipping')}}</h3>
+                        <span>{{__('site.shipping_sentence')}}</span>
                     </div>
                 </div>
             </div>
@@ -18,8 +18,8 @@
                         <span class="flaticon-diet"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading">Always Fresh</h3>
-                        <span>Product well package</span>
+                        <h3 class="heading">{{__('site.fresh')}}</h3>
+                        <span>{{__('site.fresh_sentence')}}</span>
                     </div>
                 </div>
             </div>
@@ -29,8 +29,8 @@
                         <span class="flaticon-award"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading">Superior Quality</h3>
-                        <span>Quality Products</span>
+                        <h3 class="heading">{{__('site.quality')}}</h3>
+                        <span>{{__('site.quality_sentence')}}</span>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@
                         <span class="flaticon-customer-service"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading">Support</h3>
-                        <span>24/7 Support</span>
+                        <h3 class="heading">{{__('site.support')}}</h3>
+                        <span>{{__('site.support_sentence')}}</span>
                     </div>
                 </div>
             </div>
