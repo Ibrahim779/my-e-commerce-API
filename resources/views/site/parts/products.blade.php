@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row justify-content-center mb-3 pb-3">
             <div class="col-md-12 heading-section text-center ftco-animate">
-                <span class="subheading">Featured Products</span>
-                <h2 class="mb-4">Our Products</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                <span class="subheading">{{__('site.feature')}}</span>
+                <h2 class="mb-4">{{__('site.products')}}</h2>
+                <p>{{__('site.feature_sentence')}}</p>
             </div>
         </div>
     </div>
@@ -14,7 +14,7 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="{{route('products.show', $product->id)}}" class="img-prod">
-                            <img style="width: 300px;height: 200px" class="img-fluid" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="Colorlib Template">
+                            <img style="width:100%;;height: 200px" class="img-fluid" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="Colorlib Template">
                             @if($product->discount)
                                 <span class="status">{{$product->discount}}%</span>
                             @endif
@@ -26,9 +26,9 @@
                                 <div class="pricing">
                                     <p class="price">
                                         @if($product->discount)
-                                            <span class="mr-2 price-dc">{{$product->price}} EGY</span><span class="price-sale">{{$product->discount_price}} EGY</span>
+                                            <span class="mr-2 price-dc">{{$product->price}} {{__('site.currency')}}</span><span class="price-sale">{{$product->discount_price}} {{__('site.currency')}}</span>
                                         @else
-                                            <span>{{$product->price}} EGY</span>
+                                            <span>{{$product->price}} {{__('site.currency')}}</span>
                                         @endif
                                     </p>
                                 </div>
