@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Middleware\SetLocale;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 Route::namespace('Home')->group(function (){
@@ -42,5 +45,11 @@ Route::namespace('Home')->group(function (){
           Route::get('profile/orders/{order}', 'ProfileController@orderShow')->name('profile.orders.show');
       });
 });
+Route::get('lang/{lang}', function ($lang){
+    session([
+        SetLocale::LANG_KEY => $lang
+    ]);
+    return back();
+})->name('lang');
 
 Auth::routes();
