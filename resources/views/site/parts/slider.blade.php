@@ -9,8 +9,8 @@
 
                         <div class="col-md-12 ftco-animate text-center">
                             <h1 class="mb-2">{{$slider->title}}</h1>
-                            <h2 class="subheading mb-4">We deliver organic vegetables &amp; fruits</h2>
-                            <p><a href="{{route('products.index')}}" class="btn btn-primary">Shop Now</a></p>
+                            <h2 class="subheading mb-4">{{$information['sentence']}}</h2>
+                            <p><a href="{{route('products.index')}}" class="btn btn-primary">{{__('site.shop_now')}}</a></p>
                         </div>
 
                     </div>
