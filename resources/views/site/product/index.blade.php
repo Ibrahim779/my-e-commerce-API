@@ -1,6 +1,6 @@
 @extends('layouts.site')
 @section('content')
-    @include('site.parts.hero', ['title' => 'Products'])
+    @include('site.parts.hero', ['title' => __('site.products')])
 <section class="ftco-section ftco-degree-bg container">
     <div class="row">
         <div class="col-lg-3 sidebar ftco-animate">
@@ -12,16 +12,16 @@
                             value="{{request()->search??old('search')}}"
                             name="search" type="text"
                             class="form-control"
-                            placeholder="Search...">
+                            placeholder="{{__('site.search')}}">
                     </div>
                 </form>
             </div>
             <div class="sidebar-box ftco-animate">
-                <h3 class="heading">SubCategories</h3>
+                <h3 class="heading">{{__('site.subcategories')}}</h3>
                 <ul class="categories">
                     @forelse($subcategories as $subcategory)
                         <li>
-                            <a
+                            <a style="margin-right: 40px"
                                 href="{{route('products.categories.getSubcategoryProducts',
                                       ['category' => $subcategory->category_id, 'subcategory' => $subcategory->id])}}">
                                 {{$subcategory->name}}
@@ -32,7 +32,7 @@
                         </li>
                     @empty
                         <li>
-                            Null
+                            {{__('site.null')}}
                         </li>
                     @endforelse
                 </ul>
@@ -40,7 +40,7 @@
 
 
             <div class="sidebar-box ftco-animate">
-                <h3 class="heading">Brands</h3>
+                <h3 class="heading">{{__('site.brands')}}</h3>
                 <div class="tagcloud">
                     @forelse($brands as $brand)
                         <a href="{{$_category?route('products.categories.getCategoryBrandProducts',
@@ -51,7 +51,7 @@
                     @empty
                         <ul class="categories">
                             <li>
-                                Null
+                                {{__('site.null')}}
                             </li>
                         </ul>
                     @endforelse
@@ -62,7 +62,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10 mb-5 text-center">
                 <ul class="product-category">
-                    <li><a href="{{route('products.index')}}" class="{{$_category??'active'}}">All</a></li>
+                    <li><a href="{{route('products.index')}}" class="{{$_category??'active'}}">{{__('site.all')}}</a></li>
                     @foreach($categories as $category)
                     <li>
                         <a
@@ -80,7 +80,7 @@
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="{{route('products.show', $product->id)}}" class="img-prod">
-                            <img style="width: 300px;height: 150px" class="img-fluid" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="Colorlib Template">
+                            <img style="width:100%;height: 150px" class="img-fluid" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="Colorlib Template">
                             @if($product->discount)
                                 <span class="status">{{$product->discount}}%</span>
                             @endif
@@ -92,9 +92,9 @@
                                 <div class="pricing">
                                     <p class="price">
                                         @if($product->discount)
-                                            <span class="mr-2 price-dc">{{$product->price}} EGY</span><span class="price-sale">{{$product->discount_price}} EGY</span>
+                                            <span class="mr-2 price-dc">{{$product->price}} {{__('site.currency')}}</span><span class="price-sale">{{$product->discount_price}} {{__('site.currency')}}</span>
                                         @else
-                                            <span>{{$product->price}} EGY</span>
+                                            <span>{{$product->price}} {{__('site.currency')}}</span>
                                         @endif
                                     </p>
                                 </div>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 @empty
-                        <h4>No Products Allow</h4>
+                        <h4>{{__('site.null')}}</h4>
             @endforelse
             </div>
         <div class="row mt-5">
