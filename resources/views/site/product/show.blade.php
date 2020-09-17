@@ -1,6 +1,6 @@
 @extends('layouts.site')
 @section('content')
-    @include('site.parts.hero', ['title' => 'Single Product'])
+    @include('site.parts.hero', ['title' => __('site.single_product')])
     <section class="ftco-section">
         <div class="container">
             <div class="row">
@@ -8,13 +8,8 @@
 
                     <a href="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" class="image-popup"><img src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" class="img-fluid" alt="Colorlib Template"></a>
                 </div>
-                <div class="col-lg-6 product-details pl-md-5 ftco-animate">
-                    <h4>{{$product->name}}
-                        @if($product->discount)
-                           <span style="color: #ffbe08 ">{{$product->discount_price}} EGY</span>
-                        @else
-                            <span style="color: #ffbe08 ">{{$product->price}} EGY</span>
-                        @endif</h4>
+                <div style="text-align: initial;" class="col-lg-6 product-details pl-md-5 ftco-animate">
+                    <h4>{{$product->name}}</h4>
 {{--                    <div class="rating d-flex">--}}
 {{--                        <p class="text-left mr-4">--}}
 {{--                            <a href="#" class="mr-2">5.0</a>--}}
@@ -38,11 +33,11 @@
                     @endif
                     <p>
                     @if($product->discount)
-                            <span style="text-decoration: line-through;">{{$product->price}} EGY</span>  <span style="color: #ffbe08 ">{{$product->discount_price}} EGY</span>
+                            <span style="text-decoration: line-through;">{{$product->price}} {{__('site.currency')}}</span>  <span style="color: #ffbe08 ">{{$product->discount_price}} {{__('site.currency')}}</span>
                     @else
-                        <span style="color: #ffbe08 ">{{$product->price}} EGY</span>
+                        <span style="color: #ffbe08 ">{{$product->price}} {{__('site.currency')}}</span>
                     @endif
-                            <span style="color: #bbb;">for {{$product->quantity}}</span>
+                            <span style="color: #bbb;">{{__('site.quantity')}} {{$product->quantity}}</span>
                     </p>
                     <p>
                         {{$product->description}}
@@ -66,12 +61,23 @@
                             <div class="input-group col-md-6 d-flex mb-3">
                                 <form method="post" action="{{route('cart.store', $product->id)}}" class="subscribe-form">
                                     @csrf
-                                    <div class="form-group d-flex">
+                                    <div style="margin-bottom: 60px;" class="form-group d-flex">
                                         <input value="1" name="count" type="number" class="form-control" placeholder="Count">
                                     </div>
-                                    <div  class="mt-5 btn btn-black px-5">
-                                        <button style="color:white; border: none"  type="submit">Add To Cart</button>
-                                    </div>
+                                    <button type="submit" class="btn btn-primary py-3 px-4 code">{{__('site.add_to_cart')}}</button>
+                                    <style>
+                                        button.code{
+                                            background: #febe08 !important;
+                                            border: 1px solid  #febe08 !important ;
+                                            color: white !important;
+                                            text-align: center !important;
+                                            padding-bottom: 38px !important;
+                                        }
+                                        .code:hover{
+                                            background: white !important;
+                                            color: #febe08 !important;
+                                        }
+                                    </style>
                                 </form>
                             </div>
                         <div class="w-100"></div>
@@ -86,9 +92,9 @@
         <div class="container">
             <div class="row justify-content-center mb-3 pb-3">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <span class="subheading">Products</span>
-                    <h2 class="mb-4">Related Products</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+                    <span class="subheading">{{__('site.products')}}</span>
+                    <h2 class="mb-4">{{__('site.relate_products')}}</h2>
+                    <p>{{__('site.relate_products_sentence')}}</p>
                 </div>
             </div>
         </div>
@@ -110,9 +116,9 @@
                                     <div class="pricing">
                                         <p class="price">
                                             @if($product->discount)
-                                                <span class="mr-2 price-dc">{{$product->price}} EGY</span><span class="price-sale">{{$product->discount_price}} EGY</span>
+                                                <span class="mr-2 price-dc">{{$product->price}} {{__('site.currency')}}</span><span class="price-sale">{{$product->discount_price}} {{__('site.currency')}}</span>
                                             @else
-                                                <span>{{$product->price}} EGY</span>
+                                                <span>{{$product->price}} {{__('site.currency')}}</span>
                                             @endif
                                         </p>
                                     </div>
@@ -138,42 +144,4 @@
         </div>
     </section>
 @endsection
-@section('script')
-    <script>
-        $(document).ready(function(){
-
-            var quantitiy=0;
-            $('.quantity-right-plus').click(function(e){
-
-                // Stop acting like a button
-                e.preventDefault();
-                // Get the field name
-                var quantity = parseInt($('#quantity').val());
-
-                // If is not undefined
-
-                $('#quantity').val(quantity + 1);
-
-
-                // Increment
-
-            });
-
-            $('.quantity-left-minus').click(function(e){
-                // Stop acting like a button
-                e.preventDefault();
-                // Get the field name
-                var quantity = parseInt($('#quantity').val());
-
-                // If is not undefined
-
-                // Increment
-                if(quantity>0){
-                    $('#quantity').val(quantity - 1);
-                }
-            });
-
-        });
-    </script>
-    @endsection
 
