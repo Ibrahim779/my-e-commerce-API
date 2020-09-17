@@ -1,11 +1,11 @@
-<section class="ftco-section img" style="background-image: url({{asset('assets/site/images/offer_en.jpg')}});">
+<section class="ftco-section img" style="background-image: url({{app()->getLocale() == 'ar'?asset('assets/site/images/offer_ar.jpg'):asset('assets/site/images/offer_en.jpg')}});">
     <div class="container">
         <div class="row justify-content-end">
-            <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
-                <span class="subheading">Best Price For You</span>
-                <h2 class="mb-4">Wait for our offers every Thursday</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                <h3><a href="{{route('products.index')}}">Shop Now</a></h3>
+            <div style="text-align: initial;" class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
+                <span class="subheading">{{__('site.best_price')}}</span>
+                <h2 class="mb-4">{{__('site.offer_title')}}</h2>
+                <p>{{__('site.offer_sentence')}}</p>
+                <h3><a href="{{route('products.index')}}">{{__('site.shop_now')}} </a></h3>
                 <div id="timer" class="d-flex mt-5">
                     <div class="time" id="days"></div>
                     <div class="time pl-3" id="hours"></div>
@@ -20,8 +20,8 @@
 @section('script')
     <script>
         function makeTimer() {
-
-            var endTime = new Date("9/22/2020");
+            var endDate = '{{date('m/d/Y', strtotime('friday this week'))}}';
+            var endTime = new Date(endDate);
             endTime = (Date.parse(endTime) / 1000);
 
             var now = new Date();
@@ -38,10 +38,10 @@
             if (minutes < "10") { minutes = "0" + minutes; }
             if (seconds < "10") { seconds = "0" + seconds; }
 
-            $("#days").html(days + "<span>Days</span>");
-            $("#hours").html(hours + "<span>Hours</span>");
-            $("#minutes").html(minutes + "<span>Minutes</span>");
-            $("#seconds").html(seconds + "<span>Seconds</span>");
+            $("#days").html(days + "<span>{{__('site.days')}}</span>");
+            $("#hours").html(hours + "<span>{{__('site.hours')}}</span>");
+            $("#minutes").html(minutes + "<span>{{__('site.minutes')}}</span>");
+            $("#seconds").html(seconds + "<span>{{__('site.seconds')}}</span>");
 
         }
 
