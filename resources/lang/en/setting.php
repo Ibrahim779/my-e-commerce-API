@@ -1,9 +1,7 @@
 <?php
 return [
-    'site_name' => 'Brain Test',
-    'description' => 'A measure of mental abilities',
-    'newsLatter' => 'Subscribe with us',
-    'newsLatter_placeholder' => 'Subscribe with us',
-    'address' => 'Dakahlia , Egypt',
-
+    'site_name' => 'Cesar',
+    'site_sentence' => 'Hyper Cesar Will Provide You All Things That You need',
+    'site_text' => 'Hyper Cesar Will Provide You All Things That You need',
+    'site_address' => 'Damietta, beside Al-Senaniya traffic after Al-Matbouli Furniture',
 ];
