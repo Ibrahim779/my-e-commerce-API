@@ -21,3 +21,4 @@
 <link rel="stylesheet" href="{{asset('assets/site/css/icomoon.css')}}">
 <link rel="stylesheet" href="{{asset('assets/site/css/style.css')}}">
 @yield('css')
+
