@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Offers</h4>
+        <h4 class="card-title">{{__('site.discount_products')}}</h4>
     </div>
     <div class="comment-widgets scrollable">
         <!-- Comment Row -->
@@ -26,6 +26,9 @@
             </div>
         </div>
             @empty
+            <div class="d-flex flex-row comment-row m-t-0">
+            {{__('site.null')}}
+            </div>
         @endforelse
     </div>
 </div>
