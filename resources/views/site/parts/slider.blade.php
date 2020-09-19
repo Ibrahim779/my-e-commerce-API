@@ -1,3 +1,4 @@
+@if(count($sliders) > 0)
 <section id="home-section" class="hero">
 
         <div class="home-slider owl-carousel" dir="ltr">
@@ -20,3 +21,4 @@
         </div>
 
 </section>
+@endif
