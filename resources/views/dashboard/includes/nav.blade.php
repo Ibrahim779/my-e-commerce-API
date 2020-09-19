@@ -11,13 +11,13 @@
                 <a class="navbar-brand" href="{{route('dashboard.index')}}">
                     <!-- Logo icon -->
                     <b class="logo-icon p-l-10">
-                        <img src="{{asset('assets/dashboard/images/logo-icon.png')}}" alt="homepage" class="light-logo" />
+                        <img src="{{asset('assets/site/images/icon.jpg')}}" alt="homepage" class="light-logo" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                              <!-- dark Logo text -->
-                             <img src="{{asset('assets/dashboard/images/logo-text.png')}}" alt="homepage" class="light-logo" />
+{{--                             <img src="{{asset('assets/site/images/logo.png')}}" alt="homepage" class="light-logo" />--}}
 
                         </span>
                 </a>
@@ -30,15 +30,16 @@
                     <!-- ============================================================== -->
                     <!-- Search -->
                     <!-- ============================================================== -->
-                    <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                    <li class="nav-item search-box d-none"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                         <form class="app-search position-absolute">
                             <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
                         </form>
                     </li>
+
                 </ul>
                 <ul class="navbar-nav float-right">
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown d-none">
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="font-24 mdi mdi-comment-processing"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown" aria-labelledby="2">
@@ -91,17 +92,35 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="icon-translate" aria-hidden="true"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="{{route('lang', 'ar')}}">العربية</a>
+                            <a class="dropdown-item" href="{{route('lang', 'en')}}">English</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="{{isset(auth()->user()->image->url)?'/storage/'.auth()->user()->image->url:asset('assets/site/images/avatar.png')}}" alt="user" class="rounded-circle" width="31"></a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+                            <a target="_blank" class="dropdown-item" href="{{route('profile.edit')}}"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+{{--                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>--}}
+                            <a target="_blank" class="dropdown-item" href="{{route('messages.index')}}"><i class="ti-email m-r-5 m-l-5"></i> Messages</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                            <a class="dropdown-item" href="{{route('lang', 'ar')}}">العربية</a>
+                            <a class="dropdown-item" href="{{route('lang', 'en')}}">English</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                            <ul class="delete">
+                                <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <i class="fa fa-power-off m-r-5 m-l-5"></i><a href="{{route('logout')}}" onclick="event.preventDefault();
+                               document.getElementById(&#39;logout-form&#39;).submit();">{{__('site.logout')}}</a>
+                            </ul>
                             <div class="dropdown-divider"></div>
-                            <div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
+                            <div class="p-l-30 p-10"><a target="_blank" href="{{route('home.index')}}" class="btn btn-sm btn-success btn-rounded">View Site</a></div>
                         </div>
                     </li>
                     <!-- ============================================================== -->
