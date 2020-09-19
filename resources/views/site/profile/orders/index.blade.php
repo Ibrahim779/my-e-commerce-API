@@ -41,13 +41,13 @@
                                                     <span>{{__('site.address')}}:</span> {{$order->address}}
                                                 </li>
                                                 <li>
-                                                    <span>{{__('site.order_status')}}:</span> {{$order->status}}
+                                                    <span>{{__('site.order_status')}}:</span> {{__('site.'.$order->status)}}
                                                 </li>
                                                 <li>
                                                     <span>{{__('site.total')}}:</span>  {{$order->total_price}} ج
                                                 </li>
                                                 <li>
-                                                    <span>{{__('site.payment_status')}}:</span> {{$order->payment_status}}
+                                                    <span>{{__('site.payment_status')}}:</span> {{__('site.'.$order->payment_status)}}
                                                 </li>
                                                 <li>
                                                     <span>{{__('site.date')}}:</span> {{$order->created_at}}
