@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Products UnPublished</h4>
+        <h4 class="card-title">{{__('dashboard.products_unpublished')}}</h4>
     </div>
     <div class="comment-widgets scrollable">
         <!-- Comment Row -->
@@ -26,6 +26,9 @@
             </div>
         </div>
             @empty
+            <div class="d-flex flex-row comment-row m-t-0">
+                {{__('site.null')}}
+            </div>
         @endforelse
     </div>
 </div>
