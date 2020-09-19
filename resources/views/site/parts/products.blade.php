@@ -10,7 +10,7 @@
     </div>
     <div class="container">
         <div class="row">
-            @foreach($products as $product)
+            @forelse($products as $product)
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
                         <a href="{{route('products.show', $product->id)}}" class="img-prod">
@@ -49,7 +49,11 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @empty
+                <div class="col-md-6 col-lg-3 ftco-animate">
+                    {{__('site.empty_data_message')}}
+                </div>
+            @endforelse
         </div>
     </div>
 </section>
