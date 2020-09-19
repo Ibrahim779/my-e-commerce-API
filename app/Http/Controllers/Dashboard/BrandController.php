@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Brand;
+use App\BrandCategory;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -35,7 +36,12 @@ class BrandController extends Controller
 
     public function edit(Brand $brand)
     {
-        return view('dashboard.brand.edit', compact('brand'));
+        $categories_id = BrandCategory::whereBrandId($brand->id)->select('category_id')->get()->toArray();
+        $brand_categories = [];
+        foreach ($categories_id as $brand_category){
+            $brand_categories[] += $brand_category['category_id'];
+        }
+        return view('dashboard.brand.edit', compact('brand','brand_categories'));
     }
 
     /**
@@ -75,12 +81,12 @@ class BrandController extends Controller
     }
     private function saveData($brand)
     {
+
         $this->validation();
         $brand->name = request()->name;
         $brand->save();
-        if ($brand->categories()){
-            $brand->categories()->detach();
-        }
+        $brand->categories()->attach(\request()->categories_id);
+
 
     }
 
