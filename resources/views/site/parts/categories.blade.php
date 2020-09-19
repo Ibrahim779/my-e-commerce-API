@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-6 order-md-last align-items-stretch d-flex">
                         <div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url({{asset('assets/site/images/categories.jpg')}});">
-                            <div class="text text-center">
+                            <div style="margin-bottom: 100%;" class="text text-center">
                                 <h2>{{__('site.categories')}}</h2>
                                 <p>{{__('site.categories_sentence')}}</p>
                                 <p><a href="{{route('products.index')}}" class="btn btn-primary">{{__('site.shop_now')}}</a></p>
