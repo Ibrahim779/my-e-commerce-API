@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/extra-libs/multicheck/multicheck.css')}}">
     <link href="{{asset('assets/dashboard/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
-@section('page_title','Subcategories')
+@section('page_title', __('site.subcategories'))
 @section('content')
  <div class="container-fluid">
    <div class="row">
@@ -16,8 +16,8 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Actions</th>
+                    <th>{{__('site.name')}}</th>
+                    <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,12 +28,12 @@
                     <td>
                         <a href="{{route('subcategories.categories.edit', ['subcategory' => $subcategory->id, 'category' => $category])}}">
                             <button type="button" class="btn btn-cyan btn-sm">
-                                Edit
+                                {{__('dashboard.edit')}}
                             </button>
                         </a>
                         <a href="{{route('subcategories.destroy', $subcategory->id)}}">
                             <button type="button" class="btn btn-danger btn-sm">
-                                Delete
+                                {{__('dashboard.delete')}}
                             </button>
                         </a>
                     </td>
@@ -42,7 +42,7 @@
                 </tbody>
             </table>
             <a href="{{route('subcategories.categories.create',$category)}}">
-                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">{{__('dashboard.add')}}</button>
             </a>
         </div>
     </div>
