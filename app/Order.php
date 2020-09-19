@@ -15,7 +15,11 @@ class Order extends Model
     }
     public function scopePending($query)
     {
-        return $query->whereStatus('pending');
+        return $query->whereStatus('pending')->orWhere('status', 'prepared')->orWhere('status', 'delivered');
+    }
+    public function scopeCompleted($query)
+    {
+        return $query->whereStatus('completed');
     }
     public function city()
     {
