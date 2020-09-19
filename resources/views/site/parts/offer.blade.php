@@ -1,4 +1,4 @@
-<section class="ftco-section img" style="background-image: url({{app()->getLocale() == 'ar'?asset('assets/site/images/offer_ar.jpg'):asset('assets/site/images/offer_en.jpg')}});">
+<section class="ftco-section img" style="background-image: url({{session('dir') == 'rtl'?asset('assets/site/images/offer_ar.jpg'):asset('assets/site/images/offer_en.jpg')}});">
     <div class="container">
         <div class="row justify-content-end">
             <div style="text-align: initial;" class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
@@ -20,7 +20,7 @@
 @section('script')
     <script>
         function makeTimer() {
-            var endDate = '{{date('m/d/Y', strtotime('friday this week'))}}';
+            var endDate = '{{date('m/d/Y', strtotime('friday next week'))}}';
             var endTime = new Date(endDate);
             endTime = (Date.parse(endTime) / 1000);
 
