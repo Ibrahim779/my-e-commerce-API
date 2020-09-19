@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/extra-libs/multicheck/multicheck.css')}}">
     <link href="{{asset('assets/dashboard/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
-@section('page_title','Brands')
+@section('page_title', __('site.brands'))
 @section('content')
  <div class="container-fluid">
    <div class="row">
@@ -16,9 +16,9 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Categories</th>
-                    <th>Actions</th>
+                    <th>{{__('site.name')}}</th>
+                    <th>{{__('dashboard.category')}}</th>
+                    <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,10 +34,10 @@
 
                     <td>
                         <a href="{{route('brands.edit', $brand->id)}}">
-                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                            <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
                         <a href="{{route('brands.destroy', $brand->id )}}">
-                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="button" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
                         </a>
                     </td>
                 </tr>
@@ -45,7 +45,7 @@
                 </tbody>
             </table>
             <a href="{{route('brands.create')}}">
-                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">{{__('dashboard.add')}}</button>
             </a>
         </div>
     </div>
