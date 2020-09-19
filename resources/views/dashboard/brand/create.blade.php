@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/libs/quill/dist/quill.snow.css')}}">
 @endsection
-@section('page_title','Brands| Add')
+@section('page_title', __('site.brands').' | '.__('dashboard.add'))
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -17,11 +17,11 @@
                     <form method="post" action="{{route('brands.store')}}" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
-                            <h5>Brands Add</h5>
+                            <h5>{{__('dashboard.brand_add')}}</h5>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="material-icons">close</i>
+                                        <i class="material-icons">{{__('site.close')}}</i>
                                     </button>
                                     <span>
                                         {{$errors->first()}}
@@ -29,17 +29,18 @@
                                 </div>
                             @endif
                             <div class="form-group row">
-                                <label for="brand_name" class="col-sm-3 text-right control-label col-form-label">Brands Name</label>
+                                <label for="brand_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.name')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="name" value="{{old('name')}}" type="text" class="form-control" id="brand_name" placeholder="Brand Name Here">
+                                    <input name="name" value="{{old('name')}}" type="text" class="form-control" id="brand_name" placeholder="{{__('site.name')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 text-right control-label col-form-label">Categories</label>
+                                <label class="col-sm-3 text-right control-label col-form-label">{{__('site.categories')}}</label>
                                 <div class="col-md-9">
                                     <select name="categories_id[]" class="select2 form-control m-t-15" multiple="multiple" style="height: 36px;width: 100%;">
+                                        <option disabled value="{{null}}">{{__('site.categories')}}</option>
                                        @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                            <option {{old('categories_id')?(in_array($category->id, old('categories_id'))?'selected':''):''}} value="{{$category->id}}">{{$category->name}}</option>
                                        @endforeach
                                     </select>
                                 </div>
@@ -47,7 +48,7 @@
                         </div>
                         <div class="border-top">
                             <div class="card-body">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">{{__('dashboard.submit')}}</button>
                             </div>
                         </div>
                     </form>
