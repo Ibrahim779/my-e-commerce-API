@@ -69,7 +69,7 @@ class CategoryController extends Controller
     {
         return request()->validate([
             'name' => 'required|min:3|max:150',
-            'image' => 'required',
+            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:10000',
         ]);
     }
 
@@ -83,7 +83,9 @@ class CategoryController extends Controller
         $category->name = request()->name;
         $category->save();
         if ($category->image){
-            $category->image()->update(['url' => request()->image->store('categories','public')]);
+            if (request()->image){
+                $category->image()->update(['url' => request()->image->store('categories','public')]);
+            }
         }else{
             $category->image()->create(['url' => request()->image->store('categories','public')]);
         }
