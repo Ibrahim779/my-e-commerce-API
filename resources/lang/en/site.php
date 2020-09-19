@@ -81,7 +81,6 @@ return [
     'delivery' => 'Delivery',
     'discount' => 'Discount',
     'checkout_proceed' => 'Proceed To Checkout',
-    'debt' => 'Payment when receiving',
     'place_order' => 'Place an order',
     'billing_details' => 'Billing Details',
     // Profile Pages
@@ -92,6 +91,14 @@ return [
     'date' => 'Date',
     'bar_code' => 'BarCode',
 
+    //Order Status
+    'pending' => 'pending',
+    'prepared' => 'prepared',
+    'delivered' => 'delivered',
+    'completed' => 'completed',
+    //Order Payment Status
+    'paid' => 'paid',
+    'debt' => 'Payment when receiving',
 
 
 
