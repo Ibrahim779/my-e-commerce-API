@@ -18,7 +18,7 @@ class ProfileController extends Controller
     }
     public function orders()
     {
-        $orders = Order::whereUserId(auth()->id())->get();
+        $orders = Order::whereUserId(auth()->id())->latest()->get();
         return view('site.profile.orders.index', compact('orders'));
     }
     public function orderShow(Order $order)
