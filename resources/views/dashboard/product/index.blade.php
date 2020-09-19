@@ -16,13 +16,13 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>image</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Discount</th>
-                    <th>Bar Code</th>
-                    <th>Actions</th>
+                    <th>{{__('site.name')}}</th>
+                    <th>{{__('dashboard.image')}}</th>
+                    <th>{{__('site.quantity')}}</th>
+                    <th>{{__('site.price')}}</th>
+                    <th>{{__('site.discount')}}</th>
+                    <th>{{__('site.bar_code')}}</th>
+                    <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,23 +40,23 @@
 
                     <td>
                         <a href="{{route('products.categories.edit', ['category' => $category,'product' => $product->id])}}">
-                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                            <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
                         <a href="{{route('products.published', $product->id)}}">
                             <button type="button" class="btn btn-success btn-sm">
-                                {{$product->is_published?'UnPublish':'Publish'}}
+                                {{$product->is_published? __('dashboard.unpublished') : __('dashboard.publish')}}
                             </button>
                         </a>
                         @if($product->discount)
                         <a href="{{route('products.removeDiscount', $product->id)}}">
                             <button type="button" class="btn btn-success btn-sm">
-                                remove discount
+                                {{__('dashboard.remove_discount')}}
                             </button>
                         </a>
                         @endif
                         <a href="{{route('products.destroy',  $product->id)}}">
                             <button type="button" class="btn btn-danger btn-sm">
-                                Delete
+                                {{__('dashboard.delete')}}
                             </button>
                         </a>
                     </td>
@@ -65,7 +65,7 @@
                 </tbody>
             </table>
             <a href="{{route('products.categories.create',$category)}}">
-                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">{{__('dashboard.add')}}</button>
             </a>
         </div>
     </div>
