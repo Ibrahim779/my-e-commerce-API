@@ -81,7 +81,6 @@ return [
     'delivery' => 'التوصيل',
     'discount' => 'الخصم',
     'checkout_proceed' => 'اكمل لملئ بيانات الطلب',
-    'debt' => 'الدفع عند الاستلام',
     'place_order' => 'تقديم الطلب',
     'billing_details' => 'تفاصيل الفاتورة',
     // Profile Pages
@@ -91,6 +90,15 @@ return [
     'payment_status' => 'حالة الدفع',
     'date' => 'التاريخ',
     'bar_code' => 'الباركود',
+
+    //Order Status
+    'pending' => 'في الانتظار',
+    'prepared' => 'يتم تجهيز الطلب',
+    'delivered' => 'جاري التوصيل',
+    'completed' => 'تم اتمام الطلب بنجاح',
+    //Order Payment Status
+    'paid' => 'مدفوع',
+    'debt' => 'الدفع عند الاستلام',
 
 
     'address' => 'العنوان',
