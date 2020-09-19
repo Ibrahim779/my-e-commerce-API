@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Latest Messages</h4>
+        <h4 class="card-title">{{__('dashboard.messages')}}</h4>
     </div>
     <div class="comment-widgets scrollable">
         <!-- Comment Row -->
@@ -18,7 +18,7 @@
         </div>
             @empty
             <div class="d-flex flex-row comment-row m-t-0">
-                لا توجد رسائل
+                {{__('site.null')}}
             </div>
         @endforelse
 
