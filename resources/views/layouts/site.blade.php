@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html dir="{{session('dir')}}" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('site.includes.meta')
