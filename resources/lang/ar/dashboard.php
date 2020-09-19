@@ -3,8 +3,46 @@ return [
     'dashboard' => 'لوحة التحكم',
     'users' => 'المستخدمين',
     'profile' => 'الملف الشخصي',
+    'products_unpublished' => 'منتجات غير متوفرة',
+    'sliders' => 'شرائح العرض',
+    'cities' => 'المدن',
     'messages' => 'الرسائل',
     'subscribes' => 'الإشتراكات',
+
+    'pending_orders' => 'طلبات غير مكتملة',
+    'completed_orders' => 'طلبات مكتملة',
+
+    'delete' => 'حذف',
+    'deleted' => 'تم حذف المنتج',
+    'action' => 'التحكم',
+    'edit' => 'تعديل',
+    'add' => 'اضافة',
+    'submit' => 'ارسال',
+    'unpublished' => 'اجعله غير متوفر',
+    'published' => 'اجعله متوفر',
+    'remove_discount' => 'حذف الخصم',
+    'description' => 'الوصف',
+
+
+    //categories
+    'category' => 'القسم',
+    'category_add' => 'اضافة قسم رئيسي',
+    'category_edit' => 'تعديل الفسم',
+    //subcategories
+    'subcategory' => 'القسم الفرعي',
+    'subcategory_add' => 'اضافة قسم فرعي',
+    'subcategory_edit' => 'تعديل القسم',
+    //brands
+    'brand' => 'العلامة التجارية',
+    'brand_add' => 'اضافة علامة تجارية',
+    'brand_edit' => 'تعديل العلامة التجارية',
+    //product
+    'product' => 'المنتج',
+    'product_add' => 'اضافة منتج',
+    'product_edit' => 'تعديل المنتج',
+
+    'image' => 'الصورة',
+
 
     'users_count' => 'عدد المستخدمين',
     'view_all_users' => 'شاهد جميع المستخدمين',
