@@ -4,15 +4,17 @@
                 @include('dashboard.parts.statistics')
                 <div class="row">
                     <div class="col-md-6">
-                     @include('dashboard.parts.unpublished_products')
+
                          <!-- Card -->
                        @include('dashboard.parts.pending_requests')
                     </div>
                     <div class="col-md-6">
+                       @include('dashboard.parts.unpublished_products')
+                       <!-- card new -->
+                       @include('dashboard.parts.offers')
                          <!-- card -->
                         @include('dashboard.parts.messages')
-                        <!-- card new -->
-                       @include('dashboard.parts.offers')
+
                     </div>
                 </div>
             </div>
