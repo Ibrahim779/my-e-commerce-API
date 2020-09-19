@@ -21,7 +21,7 @@ class ProductController extends Controller
     public function index($category)
     {
         $products = Product::whereCategoryId($category)->published()->get();
-        $page_title = 'Products';
+        $page_title = __('site.products');
         return view('dashboard.product.index',compact('products','page_title','category'));
     }
     public function getUnPublished($category)
@@ -128,6 +128,7 @@ class ProductController extends Controller
         return request()->validate([
             'name' => 'required',
             'price' => 'required',
+            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:10000'
         ]);
     }
 
@@ -153,7 +154,9 @@ class ProductController extends Controller
         }
         $product->save();
         if ($product->image){
-            $product->image()->update(['url' => request()->image->store('products','public')]);
+            if (request()->image){
+                $product->image()->update(['url' => request()->image->store('products','public')]);
+            }
         }else{
             $product->image()->create(['url' => request()->image->store('products','public')]);
         }
