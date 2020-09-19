@@ -48,7 +48,8 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
     Route::get('sliders/{slider}/destroy', 'SliderController@destroy')->name('sliders.destroy');
     Route::resource('messages', 'MessageController')->only(['index','destroy']);
     Route::resource('users', 'UserController');
-    Route::resource('orders', 'OrderController')->only(['index','show']);
+    Route::resource('orders', 'OrderController')->only(['index','show','update']);
+    Route::get('orders/status/completed','OrderController@completed')->name('orders.completed');
     Route::get('orders/{order}/destroy','OrderController@destroy')->name('orders.destroy');
     Route::resource('subscribes', 'SubscribeController')->only(['index', 'destroy']);
     Route::resource('cities', 'CityController');
