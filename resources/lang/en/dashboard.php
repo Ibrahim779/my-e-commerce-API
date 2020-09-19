@@ -3,8 +3,45 @@ return [
     'dashboard' => 'Dashboard',
     'users' => 'Users',
     'profile' => 'Profile',
+    'products_unpublished' => 'Unpublished Products',
+    'sliders' => 'Sliders',
+    'cities' => 'Cities',
     'messages' => 'Messages',
     'subscribes' => 'Subscribes',
+
+    'pending_orders' => 'Pending Orders',
+    'completed_orders' => 'Completed Orders',
+
+    'delete' => 'Delete',
+    'deleted' => 'The product was deleted',
+    'action' => 'Action',
+    'edit' => 'Edit',
+    'add' => 'Add',
+    'submit' => 'Submit',
+    'unpublished' => 'unpublished',
+    'published' => 'published',
+    'remove_discount' => 'remove discount',
+    'description' => 'Description',
+
+    //categories
+    'category' => 'Category',
+    'category_add' => 'Add Category',
+    'category_edit' => 'Edit Category',
+    //subcategories
+    'subcategory' => 'Subcategory',
+    'subcategory_add' => 'Add Subcategory',
+    'subcategory_edit' => 'Edit Subcategory',
+    //brands
+    'brand' => 'Brand',
+    'brand_add' => 'Add Brand',
+    'brand_edit' => 'Edit Brand',
+    //product
+    'product' => 'Product',
+    'product_add' => 'Add Product',
+    'product_edit' => 'Edit Product',
+
+
+    'image' => 'Image',
 
     'users_count' => 'Users Count',
     'view_all_users' => 'View all users',
