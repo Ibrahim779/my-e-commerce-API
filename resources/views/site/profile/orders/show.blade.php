@@ -30,6 +30,7 @@
                                 </div>
                                 <div class="job-filter-result">
                                     @forelse($cartItems as $cartItem)
+                                        @if($cartItem->product)
                                     <div class="job-list">
                                         <div class="thumb">
                                             <a href="{{route('products.show', $cartItem->product->id)}}">
@@ -42,7 +43,7 @@
                                                 </h4>
                                                 <div class="info">
                                                     <span class="company">
-                                                        <span style="color: #febe08">{{__('site.price')}}:</span><span>{{$cartItem->product->price}} {{__('site.currency')}}</span>
+                                                        <span style="color: #febe08">{{__('site.price')}}:</span><span>{{$cartItem->product->discount_price}} {{__('site.currency')}}</span>
                                                     </span>
                                                     <span class="company">
                                                             <span style="color: #febe08">{{__('site.quantity')}}:</span><span>{{$cartItem->product->quantity}}</span>
@@ -64,6 +65,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                        @else
+                                            <div class="job-list">
+                                                {{__('dashboard.deleted')}}
+                                            </div>
+                                            @endif
                                         @empty
                                         <div class="job-list">
                                             {{__('site.empty')}}
