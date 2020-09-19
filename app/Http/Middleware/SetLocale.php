@@ -20,10 +20,14 @@ class SetLocale
     public function handle($request, Closure $next)
     {
         App::setLocale(session(self::LANG_KEY));
-        if (session(self::LANG_KEY) == self::DEFAULT_LANG)
+        if (session(self::LANG_KEY)){
+            if (session(self::LANG_KEY) == self::DEFAULT_LANG)
+                session(['dir' => 'rtl']);
+            else
+                session(['dir' => 'ltr']);
+        }else{
             session(['dir' => 'rtl']);
-        else
-            session(['dir' => 'ltr']);
+        }
         return $next($request);
     }
 }
