@@ -27,7 +27,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$city->name}}</td>
                     <td>
-                        {{$city->shipping}}
+                        {{$city->shipping}} {{__('site.currency')}}
                     </td>
 
                     <td>
