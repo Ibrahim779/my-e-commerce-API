@@ -1,4 +1,5 @@
 <h3>{{__('site.cart_total')}}</h3>
+@if (\App\Cart::getUserCart(auth()->id())->whereOrderId(null)->publishedProduct()->count())
 <p class="d-flex">
     <span>{{__('site.subtotal')}}</span>
     <span>{{$cart_total['sub_total']}} {{__('site.currency')}}</span>
@@ -16,3 +17,8 @@
     <span>{{__('site.total')}}</span>
     <span>{{$cart_total['total']}} {{__('site.currency')}}</span>
 </p>
+    @else
+    <p class="d-flex">
+        <span>{{__('site.empty_cart_error')}}</span>
+    </p>
+    @endif
