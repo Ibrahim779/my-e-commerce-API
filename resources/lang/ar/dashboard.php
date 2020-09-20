@@ -40,6 +40,12 @@ return [
     'product' => 'المنتج',
     'product_add' => 'اضافة منتج',
     'product_edit' => 'تعديل المنتج',
+    //city
+    'city_add' => 'اضافة مدينة',
+    'city_edit' => 'تعديل مدينة',
+    //coupon
+    'coupon_add' => 'اضافة كوبون كود',
+    'coupon_edit' => 'تعديل كوبون كود',
 
     'image' => 'الصورة',
 
