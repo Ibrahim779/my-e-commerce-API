@@ -18,9 +18,13 @@ class CheckoutController extends Controller
     }
     public function store()
     {
-        $this->saveData(new Order());
-
-        return back();
+        if (Cart::getUserCart(auth()->id())->whereOrderId(null)->publishedProduct()->count()){
+            $this->saveData(new Order());
+            return back();
+        }
+        else{
+            return back()->withErrors([__('site.empty_cart_error')]);
+        }
     }
     private function validation()
     {
@@ -50,8 +54,10 @@ class CheckoutController extends Controller
         }
         $order->payment_status = request()->payment_status;
         $order->save();
-        foreach (Cart::getUserCart(auth()->id())->whereOrderId(null)->get() as $cart){
+        foreach (Cart::getUserCart(auth()->id())->whereOrderId(null)->publishedProduct()->get() as $cart){
             $cart->order_id = $order->id;
+            $cart->product->count -= $cart->count;
+            $cart->product->save();
             $cart->save();
         }
         session()->forget('discount');
