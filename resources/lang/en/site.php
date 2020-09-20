@@ -83,6 +83,8 @@ return [
     'checkout_proceed' => 'Proceed To Checkout',
     'place_order' => 'Place an order',
     'billing_details' => 'Billing Details',
+    'unpublished' => 'Unavailable Now',
+    'empty_cart_error' => 'Your Cart Is Empty, Shop First',
     // Profile Pages
     'order' => 'Order',
     'show' => 'Show',
