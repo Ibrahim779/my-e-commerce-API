@@ -31,7 +31,7 @@
                                         </form>
 
                                     </td>
-
+                                    @if($cartItem->product)
                                     <td class="image-prod">
                                         <a href="{{route('products.show', @$cartItem->product->id)}}">
                                             <div
@@ -55,25 +55,35 @@
                                         @endif
                                         <span style="color: #bbb;">{{__('site.quantity')}} {{@$cartItem->product->quantity}}</span>
                                     </td>
-
                                     <td class="quantity">
                                         <form method="post" action="{{route('cart.update', $cartItem->id)}}" class="subscribe-form">
                                             @csrf
                                             @method('PATCH')
                                             <div class="form-group d-flex">
-                                                <input value="{{$cartItem->count}}" name="count" type="number" class="form-control" placeholder="Count">
+                                                <input max="{{@$cartItem->product->count}}" value="{{$cartItem->count > @$cartItem->product->count?@$cartItem->product->count:$cartItem->count}}" name="count" type="number" class="form-control" placeholder="{{__('site.count')}}">
                                                 <input type="submit" value="{{__('site.change')}}" class="submit px-3">
                                             </div>
                                         </form>
                                     </td>
-
+                                        @if($cartItem->product->is_published && $cartItem->product->count>0)
                                     <td style="color: #ffbe08 " class="total">{{$cartItem->count * @$cartItem->product->discount_price}} {{__('site.currency')}}</td>
+                                        @else
+                                            <td class="quantity">
+                                                <p><a style="color: #D0021B;" class="btn btn-primary py-2 px-4">{{__('site.unpublished')}}</a></p>
+                                            </td>
+                                        @endif
+                                    @else
+                                        <td></td>
+                                        <td>
+                                            {{__('dashboard.deleted')}}
+                                        </td>
+                                    @endif
                                 </tr><!-- END TR-->
                             @empty
                                 <tr class="text-center">
                                     <td></td>
                                     <td>
-                                        {{__('site.empty')}}
+                                        {{__('site.empty_cart_error')}}
                                     </td>
                                 </tr>
                             @endforelse
