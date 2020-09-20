@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/libs/quill/dist/quill.snow.css')}}">
 @endsection
-@section('page_title','Sliders| Add')
+@section('page_title', __('dashboard.slider').' | '.__('dashboard.edit'))
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -18,11 +18,11 @@
                         @csrf
                         @method('PATCH')
                         <div class="card-body">
-                            <h5>Sliders Add</h5>
+                            <h5>{{__('dashboard.slider_edit')}}</h5>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="material-icons">close</i>
+                                        <i class="material-icons">{{__('site.close')}}</i>
                                     </button>
                                     <span>
                         {{$errors->first()}}
@@ -30,25 +30,28 @@
                                 </div>
                             @endif
                             <div class="form-group row">
-                                <label for="brand_name" class="col-sm-3 text-right control-label col-form-label">Sliders Title</label>
+                                <label for="brand_name" class="col-sm-3 text-right control-label col-form-label">{{__('dashboard.title')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="title" value="{{$slider->title??old('title')}}" type="text" class="form-control" id="slider_title" placeholder="Slider Title Here">
+                                    <input name="title" value="{{$slider->title??old('title')}}" type="text" class="form-control" id="slider_title" placeholder="{{__('dashboard.title')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="category_image" class="col-sm-3 text-right control-label col-form-label">Slider Image</label>
+                                <label for="category_image" class="col-sm-3 text-right control-label col-form-label">{{__('dashboard.image')}}</label>
                                 <div class="col-md-9">
                                     <div class="custom-file">
-                                        <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                        <label  class="custom-file-label" for="validatedCustomFile">Choose slider image...</label>
+                                        <input name="image" type="file" class="custom-file-input" id="validatedCustomFile">
+                                        <label  class="custom-file-label" for="validatedCustomFile">{{__('dashboard.image')}}...</label>
                                         <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        <div class="custom-file">
+                                            <img style="margin-bottom:50px;width: 100px; height: 80px" src="{{@$slider->image->url?(str_contains(@$slider->image->url, 'sliders')?'/storage/'.@$slider->image->url:@$slider->image->url):asset('assets/site/images/default.png')}}">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="border-top">
                             <div class="card-body">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">{{__('dashboard.submit')}}</button>
                             </div>
                         </div>
                     </form>
