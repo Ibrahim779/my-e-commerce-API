@@ -22,9 +22,10 @@ Route::namespace('Home')->group(function (){
         Route::get('{product}','ProductController@show')->name('show');
         Route::name('categories.')->prefix('categories')->group(function () {
             Route::get('{category}', 'ProductController@getCategoryProducts')->name('getCategoryProducts');
-            Route::get('{category}/subcategory/{subcategory}', 'ProductController@getSubcategoryProducts')->name('getSubcategoryProducts');
+            Route::get('{category}/subcategory/{subcategory}', 'ProductController@getSubcategoryProductsByCategory')->name('getSubcategoryProductsByCategory');
             Route::get('{category}/brand/{brand}', 'ProductController@getCategoryBrandProducts')->name('getCategoryBrandProducts');
         });
+        Route::get('subcategory/{subcategory}', 'ProductController@getSubcategoryProducts')->name('getSubcategoryProducts');
         Route::get('brand/{brand}', 'ProductController@getBrandProducts')->name('getBrandProducts');
       });
       Route::get('search','ProductController@search')->name('search');
