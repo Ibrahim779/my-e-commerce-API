@@ -12,12 +12,11 @@
 */
 use Illuminate\Support\Facades\Route;
 
-Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
+Route::namespace('Dashboard')->prefix('dashboard')->middleware('admin')->group(function (){
     Route::get('/','DashboardController@index')->name('dashboard.index');
     Route::resource('categories', 'CategoryController')->except(['show','destroy']);
     Route::get('categories/{category}/destroy','CategoryController@destroy')->name('categories.destroy');
     Route::name('products.')->prefix('products')->group(function (){
-        Route::get('offers', 'ProductController@isOffer')->name('isOffer');
         Route::name('categories.')->prefix('categories')->group(function (){
             Route::get('{category}', 'ProductController@index')->name('index');
             Route::get('{category}/unpublished', 'ProductController@getUnPublished')->name('unPublished');
@@ -30,6 +29,7 @@ Route::namespace('Dashboard')->prefix('dashboard')->group(function (){
         });
         Route::get('{product}/published', 'ProductController@published')->name('published');
         Route::get('{product}/remove-discount', 'ProductController@removeDiscount')->name('removeDiscount');
+        Route::patch('{product}/update-count', 'ProductController@updateCount')->name('updateCount');
         Route::get('{product}/destroy', 'ProductController@destroy')->name('destroy');
     });
     Route::name('subcategories.')->prefix('subcategories')->group(function (){
