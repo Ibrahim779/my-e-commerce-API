@@ -16,7 +16,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>{{__('site.coupon_code')}}</th>
+                    <th>{{__('site.coupon')}}</th>
                     <th>{{__('site.discount')}}</th>
                     <th>{{__('dashboard.action')}}</th>
                 </tr>
@@ -27,7 +27,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$coupon->code}}</td>
                     <td>
-                        {{$coupon->discount}}
+                        {{$coupon->discount}} %
                     </td>
 
                     <td>
