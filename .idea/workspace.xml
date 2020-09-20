@@ -3,54 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="776c63ef-f381-42af-925f-c21fb43a1511" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/BrandController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/SetLocale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/SetLocale.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/dashboard/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/dashboard/dist/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/dashboard/libs/select2/dist/css/select2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/dashboard/libs/select2/dist/css/select2.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/site/images/slider.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/site/images/slider.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/ar/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/site.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/site.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/site.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/site.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/brand/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/brand/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/brand/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/brand/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/brand/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/brand/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/category/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/includes/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/order/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/messages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/offers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/offers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/pending_requests.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/pending_requests.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/statistics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/statistics.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/parts/unpublished_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/parts/unpublished_products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/subcategory/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/subcategory/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/subcategory/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/subcategory/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/subcategory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/subcategory/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/login/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/parts/categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/parts/offer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/offer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/parts/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/parts/products_hasDiscount.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/products_hasDiscount.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/parts/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/parts/slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/profile/orders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/profile/orders/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/profile/orders/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/profile/orders/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/city/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/city/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/city/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/city/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/city/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/city/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/coupon/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/coupon/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/coupon/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/coupon/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/coupon/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/coupon/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/message/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/message/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/subscribe/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/subscribe/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/user/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +229,7 @@
       <workItem from="1600317257389" duration="19315000" />
       <workItem from="1600352129885" duration="19744000" />
       <workItem from="1600490901265" duration="3064000" />
-      <workItem from="1600494724072" duration="28756000" />
+      <workItem from="1600494724072" duration="31664000" />
     </task>
     <servers />
   </component>
