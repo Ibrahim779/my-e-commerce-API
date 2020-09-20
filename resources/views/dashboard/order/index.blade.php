@@ -17,6 +17,7 @@
                 <tr>
                     <th>#</th>
                     <th>{{__('site.name')}}</th>
+                    <th>{{__('site.city')}}</th>
                     <th>{{__('site.address')}}</th>
                     <th>{{__('site.phone')}}</th>
                     <th>{{__('site.total')}}</th>
@@ -29,12 +30,14 @@
             @foreach($orders as $order)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$order->name??$order->user->full_name}}</td>
-                    <td>{{$order->address??$order->user->address}}</td>
-                    <td>{{$order->phone??$order->user->phone}}</td>
-                    <td>{{$order->total_price}}</td>
+                    <td>{{$order->name}}</td>
+                    <td>{{$order->city->name}}</td>
+                    <td>{{$order->address}}</td>
+                    <td>{{$order->phone}}</td>
+                    <td>{{$order->total_price}} {{__('site.currency')}}</td>
                     <td>{{__('site.'.$order->payment_status)}}</td>
-                    <td><form method="post" action="{{route('orders.update', $order->id)}}" class="subscribe-form">
+                    <td>
+                        <form method="post" action="{{route('orders.update', $order->id)}}" class="subscribe-form">
                             @csrf
                             @method('PATCH')
                             <div class="form-group d-flex">
@@ -47,7 +50,8 @@
                                 </select>
                                 <input type="submit" value="{{__('site.change')}}" class="submit px-3">
                             </div>
-                        </form></td>
+                        </form>
+                    </td>
                     <td>
                         <a href="{{route('orders.show', $order->id)}}">
                             <button type="button" class="btn btn-cyan btn-sm">{{__('site.show')}}</button>
