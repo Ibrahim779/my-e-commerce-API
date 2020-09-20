@@ -39,6 +39,12 @@ return [
     'product' => 'Product',
     'product_add' => 'Add Product',
     'product_edit' => 'Edit Product',
+    //city
+    'city_add' => 'Add City',
+    'city_edit' => 'Edit City',
+    //coupon
+    'coupon_add' => 'Add Coupon',
+    'coupon_edit' => 'Edit Coupon',
 
 
     'image' => 'Image',
