@@ -81,13 +81,13 @@ class BrandController extends Controller
     }
     private function saveData($brand)
     {
-
         $this->validation();
         $brand->name = request()->name;
         $brand->save();
+        if ($brand->categories){
+            $brand->categories()->detach();
+        }
         $brand->categories()->attach(\request()->categories_id);
-
-
     }
 
 }
