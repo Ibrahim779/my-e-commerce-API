@@ -35,9 +35,9 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.quantity')}}</label>
+                                <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.bar_code')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="quantity" value="{{old('quantity')}}" type="text" class="form-control" id="category_quantity" placeholder="{{__('site.quantity')}}">
+                                    <input name="bar_code" value="{{old('bar_code')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.bar_code')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -47,15 +47,21 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.discount')}} %</label>
+                                <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.quantity')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.discount')}}">
+                                    <input name="quantity" value="{{old('quantity')}}" type="text" class="form-control" id="category_quantity" placeholder="{{__('site.quantity')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.bar_code')}}</label>
+                                <label for="count" class="col-sm-3 text-right control-label col-form-label">{{__('site.count')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="bar_code" value="{{old('bar_code')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.bar_code')}}">
+                                    <input name="count" value="{{old('count')}}" type="number" class="form-control" id="count" placeholder="{{__('site.count')}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.discount')}} %</label>
+                                <div class="col-sm-9">
+                                    <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.discount')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -72,7 +78,7 @@
                                 <label class="col-sm-3"></label>
                                 <div class="col-md-9">
                                     <div class="custom-control custom-checkbox mr-sm-2">
-                                        <input name="is_published" type="checkbox" class="custom-control-input" id="customControlAutosizing1">
+                                        <input checked name="is_published" type="checkbox" class="custom-control-input" id="customControlAutosizing1">
                                         <label class="custom-control-label" for="customControlAutosizing1">{{__('dashboard.published')}}</label>
                                     </div>
                                 </div>
