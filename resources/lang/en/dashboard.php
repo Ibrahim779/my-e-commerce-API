@@ -45,7 +45,11 @@ return [
     //coupon
     'coupon_add' => 'Add Coupon',
     'coupon_edit' => 'Edit Coupon',
-
+   //slider
+    'title' => 'Title',
+    'slider' => 'Slider',
+    'slider_add' => 'Add Slider',
+    'slider_edit' => 'Edit Slider',
 
     'image' => 'Image',
 
