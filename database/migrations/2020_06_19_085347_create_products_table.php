@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('brand_id')->nullable();
             $table->unsignedInteger('subcategory_id')->nullable();
-            $table->enum('is_offer',['on',null])->default('on')->nullable();
+            $table->integer('count')->default(1);
             $table->timestamps();
         });
     }
