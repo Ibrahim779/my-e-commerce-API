@@ -34,7 +34,7 @@
                         {{__('site.home')}}
                     </a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{__('site.shop')}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle"  id="dropdown04" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         <i class="icon-translate" aria-hidden="true"></i>
                     </a>
