@@ -83,6 +83,8 @@ return [
     'checkout_proceed' => 'اكمل لملئ بيانات الطلب',
     'place_order' => 'تقديم الطلب',
     'billing_details' => 'تفاصيل الفاتورة',
+    'unpublished' => 'المنتج غير متوفر حاليا',
+    'empty_cart_error' => 'حقيبتك فارغة, تسوق اولا',
     // Profile Pages
     'order' => 'الطلب',
     'show' => 'عرض',
