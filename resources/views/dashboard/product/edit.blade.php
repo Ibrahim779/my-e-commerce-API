@@ -32,9 +32,9 @@
                             </div>
                         </div>
                           <div class="form-group row">
-                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.quantity')}}</label>
+                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.bar_code')}}</label>
                               <div class="col-sm-9">
-                                  <input name="quantity" value="{{$product->quantity??old('quantity')}}" type="text" class="form-control" id="category_quantity" placeholder="{{__('site.quantity')}}">
+                                  <input name="bar_code" value="{{$product->bar_code??old('bar_code')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.bar_code')}}">
                               </div>
                           </div>
                           <div class="form-group row">
@@ -44,22 +44,29 @@
                               </div>
                           </div>
                           <div class="form-group row">
+                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.quantity')}}</label>
+                              <div class="col-sm-9">
+                                  <input name="quantity" value="{{$product->quantity??old('quantity')}}" type="text" class="form-control" id="category_quantity" placeholder="{{__('site.quantity')}}">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="count" class="col-sm-3 text-right control-label col-form-label">{{__('site.count')}}</label>
+                              <div class="col-sm-9">
+                                  <input name="count" value="{{$product->count??old('count')}}" type="number" class="form-control" id="count" placeholder="{{__('site.count')}}">
+                              </div>
+                          </div>
+
+                          <div class="form-group row">
                               <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.discount')}} %</label>
                               <div class="col-sm-9">
                                   <input name="discount" value="{{$product->discount??old('discount')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.discount')}}">
                               </div>
                           </div>
                           <div class="form-group row">
-                              <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.bar_code')}}</label>
-                              <div class="col-sm-9">
-                                  <input name="bar_code" value="{{$product->bar_code??old('bar_code')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.bar_code')}}">
-                              </div>
-                          </div>
-                          <div class="form-group row">
                               <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('dashboard.image')}}</label>
                               <div class="col-md-9">
                                   <div class="custom-file">
-                                      <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                      <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" >
                                       <label  class="custom-file-label" for="validatedCustomFile">{{__('dashboard.image')}}...</label>
                                       <div class="invalid-feedback">Example invalid custom file feedback</div>
                                       <div class="custom-file">
