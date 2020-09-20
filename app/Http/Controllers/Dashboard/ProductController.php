@@ -27,19 +27,13 @@ class ProductController extends Controller
     public function getUnPublished($category)
     {
         $products =  Product::whereCategoryId($category)->unPublished()->get();
-        $page_title = 'Products Not Allow';
+        $page_title = __('dashboard.products_unpublished');
         return view('dashboard.product.index', compact('products', 'page_title','category'));
     }
     public function getHasDiscount($category)
     {
         $products = Product::whereCategoryId($category)->hasDiscount()->get();
-        $page_title = 'Products Has Discount';
-        return view('dashboard.product.index', compact('products', 'page_title','category'));
-    }
-    public function isOffer()
-    {
-        $products = Product::offer()->get();
-        $page_title = 'Offers';
+        $page_title = __('site.discount_products');
         return view('dashboard.product.index', compact('products', 'page_title','category'));
     }
     public function create($category)
@@ -120,6 +114,12 @@ class ProductController extends Controller
             $product->save();
             return redirect()->back();
     }
+    public function updateCount(Product $product)
+    {
+        $product->count = request()->count;
+        $product->save();
+        return back();
+    }
     /**
      * @return mixed
      */
@@ -148,7 +148,7 @@ class ProductController extends Controller
         $product->brand_id        = request()->brand_id;
         $product->bar_code        = request()->bar_code;
         $product->is_published    = request()->is_published;
-        $product->is_offer        = request()->is_offer;
+        $product->count           = request()->count;
         if ($category) {
             $product->category_id     = $category;
         }
