@@ -19,6 +19,8 @@
                                         <br>
                                         <span>{{__('site.address')}}: </span> {{$order->address}}
                                         <br/>
+                                        <span>{{__('site.date')}}: </span> {{$order->created_at}}
+                                        <br>
                                         <span>{{__('site.payment_status')}}: </span> {{__('site.'.$order->payment_status)}}
                                     </p>
                                     <span>{{__('site.order_status')}}: </span>
@@ -45,13 +47,13 @@
                                     <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th>Image</th>
-                                        <th class="text-right">Name</th>
-                                        <th class="text-right">BarCode</th>
-                                        <th class="text-right">Quantity</th>
-                                        <th class="text-right">Price</th>
-                                        <th class="text-right">Count</th>
-                                        <th class="text-right">Total</th>
+                                        <th>{{__('dashboard.image')}}</th>
+                                        <th class="text-right">{{__('site.name')}}</th>
+                                        <th class="text-right">{{__('site.bar_code')}}</th>
+                                        <th class="text-right">{{__('site.quantity')}}</th>
+                                        <th class="text-right">{{__('site.price')}}</th>
+                                        <th class="text-right">{{__('site.count')}}</th>
+                                        <th class="text-right">{{__('site.total')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -90,9 +92,9 @@
                             </div>
                             <div class="clearfix"></div>
                             <hr>
-                            <div class="text-right">
-                                <button class="btn btn-danger" type="submit"> Proceed to payment </button>
-                            </div>
+{{--                            <div class="text-right">--}}
+{{--                                <button class="btn btn-danger" type="submit"> Proceed to payment </button>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
