@@ -67,6 +67,12 @@
                         </span>[{{\App\Cart::whereUserId(auth()->id())->whereOrderId(null)->count()}}]
                     </a>
                 </li>
+                <li class="nav-item cta cta-colored">
+                    <a href="{{route('profile.orders')}}" class="nav-link">
+                       {{__('site.orders')}} <span class="icon-motorcycle">
+                        </span>[{{\App\Order::whereUserId(auth()->id())->count()}}]
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
