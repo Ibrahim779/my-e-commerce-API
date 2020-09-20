@@ -22,6 +22,7 @@
                     <th>{{__('site.price')}}</th>
                     <th>{{__('site.discount')}}</th>
                     <th>{{__('site.bar_code')}}</th>
+                    <th>{{__('site.count')}}</th>
                     <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
@@ -34,9 +35,25 @@
                         <img style="width: 50px;height: auto" src="{{@$product->image->url?(str_contains(@$product->image->url, 'products')?'/storage/'.@$product->image->url:@$product->image->url):asset('assets/site/images/default.png')}}" alt="category image">
                     </td>
                     <td>{{$product->quantity}}</td>
-                    <td>{{$product->price}}</td>
+                    <td>
+                        @if($product->discount)
+                            <span style="text-decoration: line-through;">{{$product->price}}</span>  <span style="color: #ffbe08 ">{{$product->discount_price}} {{__('site.currency')}}</span>
+                        @else
+                            <span style="color: #ffbe08 ">{{$product->price}} {{__('site.currency')}}</span>
+                        @endif
+                    </td>
                     <td>{{$product->discount??'null'}}%</td>
                     <td>{{$product->bar_code}}</td>
+                    <td class="quantity">
+                        <form method="post" action="{{route('products.updateCount', $product->id)}}" class="subscribe-form">
+                            @csrf
+                            @method('PATCH')
+                            <div class="form-group d-flex">
+                                <input  style="width: 100px;" value="{{$product->count}}" name="count" type="number" class="form-control" placeholder="{{__('site.count')}}">
+                                <input type="submit" value="{{__('site.change')}}" class="submit px-3">
+                            </div>
+                        </form>
+                    </td>
 
                     <td>
                         <a href="{{route('products.categories.edit', ['category' => $category,'product' => $product->id])}}">
@@ -44,7 +61,7 @@
                         </a>
                         <a href="{{route('products.published', $product->id)}}">
                             <button type="button" class="btn btn-success btn-sm">
-                                {{$product->is_published? __('dashboard.unpublished') : __('dashboard.publish')}}
+                                {{$product->is_published? __('dashboard.unpublished') : __('dashboard.published')}}
                             </button>
                         </a>
                         @if($product->discount)
