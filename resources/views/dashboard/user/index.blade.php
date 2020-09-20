@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/extra-libs/multicheck/multicheck.css')}}">
     <link href="{{asset('assets/dashboard/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
-@section('page_title','User')
+@section('page_title', __('dashboard.users'))
 @section('content')
  <div class="container-fluid">
    <div class="row">
@@ -16,11 +16,11 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Actions</th>
+                    <th>{{__('site.name')}}</th>
+                    <th>{{__('site.phone')}}</th>
+                    <th>{{__('site.address')}}</th>
+                    <th>{{__('site.email')}}</th>
+                    <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -33,10 +33,10 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <a href="{{route('users.edit', $user->id)}}">
-                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                            <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
                         <a href="{{route('users.destroy', $user->id)}}">
-                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="button" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
                         </a>
                     </td>
                 </tr>
@@ -44,7 +44,7 @@
                 </tbody>
             </table>
             <a href="{{route('users.create')}}">
-                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">{{__('dashboard.add')}}</button>
             </a>
         </div>
         </div>
