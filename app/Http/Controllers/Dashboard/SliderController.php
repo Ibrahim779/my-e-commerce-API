@@ -67,7 +67,8 @@ class SliderController extends Controller
     private function validation()
     {
         return request()->validate([
-            'title' => 'min:10'
+            'title' => 'min:10',
+            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:10000'
         ]);
     }
 
@@ -80,7 +81,9 @@ class SliderController extends Controller
         $slider->title = request()->title;
         $slider->save();
         if ($slider->image){
-            $slider->image()->update(['url' => request()->image->store('sliders','public')]);
+            if (request()->image){
+                $slider->image()->update(['url' => request()->image->store('sliders','public')]);
+            }
         }else{
             $slider->image()->create(['url' => request()->image->store('sliders','public')]);
         }
