@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/libs/quill/dist/quill.snow.css')}}">
 @endsection
-@section('page_title','Cities| Add')
+@section('page_title', __('dashboard.cities').' | '.__('dashboard.add'))
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -17,11 +17,11 @@
                     <form method="post" action="{{route('cities.store')}}" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
-                            <h5>Cities Add</h5>
+                            <h5>{{__('dashboard.city_add')}}</h5>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="material-icons">close</i>
+                                        <i class="material-icons">{{__('site.close')}}</i>
                                     </button>
                                     <span>
                                         {{$errors->first()}}
@@ -29,21 +29,21 @@
                                 </div>
                             @endif
                             <div class="form-group row">
-                                <label for="brand_name" class="col-sm-3 text-right control-label col-form-label">City Name</label>
+                                <label for="brand_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.name')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="name" value="{{old('name')}}" type="text" class="form-control" id="brand_name" placeholder="City Name Here">
+                                    <input name="name" value="{{old('name')}}" type="text" class="form-control" id="brand_name" placeholder="{{__('site.name')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="shipping" class="col-sm-3 text-right control-label col-form-label">Shipping</label>
+                                <label for="shipping" class="col-sm-3 text-right control-label col-form-label">{{__('site.shipping')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="shipping" value="{{old('shipping')}}" type="text" class="form-control" id="shipping" placeholder="Shipping Name Here">
+                                    <input name="shipping" value="{{old('shipping')}}" type="text" class="form-control" id="shipping" placeholder="{{__('site.shipping')}}">
                                 </div>
                             </div>
                         </div>
                         <div class="border-top">
                             <div class="card-body">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">{{__('dashboard.submit')}}</button>
                             </div>
                         </div>
                     </form>
