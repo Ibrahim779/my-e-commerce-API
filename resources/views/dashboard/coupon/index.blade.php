@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/extra-libs/multicheck/multicheck.css')}}">
     <link href="{{asset('assets/dashboard/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
-@section('page_title','Coupons')
+@section('page_title', __('site.coupon'))
 @section('content')
  <div class="container-fluid">
    <div class="row">
@@ -16,9 +16,9 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Code</th>
-                    <th>Discount</th>
-                    <th>Actions</th>
+                    <th>{{__('site.coupon_code')}}</th>
+                    <th>{{__('site.discount')}}</th>
+                    <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,10 +32,10 @@
 
                     <td>
                         <a href="{{route('coupons.edit', $coupon->id)}}">
-                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                            <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
                         <a href="{{route('coupons.destroy', $coupon->id )}}">
-                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="button" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
                         </a>
                     </td>
                 </tr>
@@ -43,7 +43,7 @@
                 </tbody>
             </table>
             <a href="{{route('coupons.create')}}">
-                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">{{__('dashboard.add')}}</button>
             </a>
         </div>
     </div>
