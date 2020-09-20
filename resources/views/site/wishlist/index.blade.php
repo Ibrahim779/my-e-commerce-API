@@ -20,6 +20,7 @@
                             </thead>
                             <tbody>
                             @forelse($wishlist as $_wishlist)
+
                             <tr class="text-center">
                                 <td class="product-remove">
                                     <form method="post" action="{{route('wishlist.destroy', $_wishlist->id)}}">
@@ -32,7 +33,7 @@
                                     </form>
 
                                 </td>
-
+                                @if($_wishlist->product)
                                 <td class="image-prod">
                                     <a href="{{route('products.show', @$_wishlist->product->id)}}">
                                     <div
@@ -56,11 +57,23 @@
                                     @endif
                                     <span style="color: #bbb;">{{__('site.quantity')}} {{@$_wishlist->product->quantity}}</span>
                                 </td>
-
+                             @if($_wishlist->product->is_published && $_wishlist->product->count>0)
                                 <td class="quantity">
                                     <p><a href="{{route('cart.store', @$_wishlist->product->id)}}" class="btn btn-primary py-2 px-4">{{__('site.add_to_cart')}}</a></p>
                                 </td>
+                                 @else
+                                        <td class="quantity">
+                                            <p><a style="color: #D0021B;" class="btn btn-primary py-2 px-4">{{__('site.unpublished')}}</a></p>
+                                        </td>
+                                 @endif
+                            @else
+                                    <td></td>
+                                    <td>
+                                        {{__('dashboard.deleted')}}
+                                    </td>
+                                @endif
                             </tr><!-- END TR-->
+
                                 @empty
                                 <tr class="text-center">
                                     <td></td>
