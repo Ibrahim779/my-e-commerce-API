@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/extra-libs/multicheck/multicheck.css')}}">
     <link href="{{asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
-@section('page_title','Sliders')
+@section('page_title', __('dashboard.sliders'))
 @section('content')
  <div class="container-fluid">
    <div class="row">
@@ -16,9 +16,9 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Title</th>
-                    <th>Image</th>
-                    <th>Actions</th>
+                    <th>{{__('dashboard.title')}}</th>
+                    <th>{{__('dashboard.image')}}</th>
+                    <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,10 +31,10 @@
                     </td>
                     <td>
                         <a href="{{route('sliders.edit', $slider->id)}}">
-                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
+                            <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
                         <a href="{{route('sliders.destroy', $slider->id )}}">
-                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="button" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
                         </a>
                     </td>
                 </tr>
@@ -42,7 +42,7 @@
                 </tbody>
             </table>
             <a href="{{route('sliders.create')}}">
-                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">Add</button>
+                <button type="button" class="pr-5 pl-5 btn btn-cyan btn-md">{{__('dashboard.add')}}</button>
             </a>
         </div>
     </div>
