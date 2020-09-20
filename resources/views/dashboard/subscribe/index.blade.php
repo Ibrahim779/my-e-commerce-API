@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/extra-libs/multicheck/multicheck.css')}}">
     <link href="{{asset('assets/dashboard/libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
 @endsection
-@section('page_title','Subscribes')
+@section('page_title', __('dashboard.subscribes'))
 
 @section('content')
 
@@ -25,8 +25,8 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Email</th>
-                    <th>Actions</th>
+                    <th>{{__('site.email')}}</th>
+                    <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -39,7 +39,7 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">
-                                Delete
+                                {{__('dashboard.delete')}}
                             </button>
                         </form>
                     </td>
