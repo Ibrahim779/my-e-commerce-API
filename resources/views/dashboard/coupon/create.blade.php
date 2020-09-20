@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/dashboard/libs/quill/dist/quill.snow.css')}}">
 @endsection
-@section('page_title','Coupons| Add')
+@section('page_title', __('site.coupon').' | '.__('dashboard.add'))
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -17,11 +17,11 @@
                     <form method="post" action="{{route('coupons.store')}}" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
-                            <h5>Coupons Add</h5>
+                            <h5>{{__('dashboard.coupon_add')}}</h5>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="material-icons">close</i>
+                                        <i class="material-icons">{{__('site.close')}}</i>
                                     </button>
                                     <span>
                                         {{$errors->first()}}
@@ -29,21 +29,21 @@
                                 </div>
                             @endif
                             <div class="form-group row">
-                                <label for="code" class="col-sm-3 text-right control-label col-form-label">Coupon Code</label>
+                                <label for="code" class="col-sm-3 text-right control-label col-form-label">{{__('site.coupon_code')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="code" value="{{old('code')??$random_code}}" type="text" class="form-control" id="code" placeholder="Coupon Code Here">
+                                    <input name="code" value="{{old('code')??$random_code}}" type="text" class="form-control" id="code" placeholder="{{__('site.coupon_code')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="discount" class="col-sm-3 text-right control-label col-form-label">Discount</label>
+                                <label for="discount" class="col-sm-3 text-right control-label col-form-label">{{__('site.discount')}} %</label>
                                 <div class="col-sm-9">
-                                    <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="discount" placeholder="Coupon Discount Here">
+                                    <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="discount" placeholder="{{__('site.discount')}} %">
                                 </div>
                             </div>
                         </div>
                         <div class="border-top">
                             <div class="card-body">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">{{__('dashboard.submit')}}</button>
                             </div>
                         </div>
                     </form>
