@@ -22,8 +22,8 @@
                     @forelse($subcategories as $subcategory)
                         <li>
                             <a style="margin-right: 40px"
-                                href="{{route('products.categories.getSubcategoryProducts',
-                                      ['category' => $subcategory->category_id, 'subcategory' => $subcategory->id])}}">
+                                href="{{$_category?route('products.categories.getSubcategoryProductsByCategory',
+                                      ['category' => $_category, 'subcategory' => $subcategory->id]):route('products.getSubcategoryProducts', $subcategory->id)}}">
                                 {{$subcategory->name}}
                                 <span>
                                    ( {{\App\Product::whereSubcategoryId($subcategory->id)->count()}} )
@@ -120,19 +120,29 @@
             @endforelse
             </div>
         <div class="row mt-5">
-            <div class="col text-center">
-                <div class="block-27">
-                    <ul>
-                        <li><a href="#">&lt;</a></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&gt;</a></li>
-                    </ul>
-                </div>
-            </div>
+            <style>
+                .page-item.active .page-link{
+                    background-color: #febe08;
+                    border-color: #febe08;
+                }
+                .page-link{
+                    color: #febe08;
+                }
+            </style>
+            {{$products->links()}}
+{{--            <div class="col text-center">--}}
+{{--                <div class="block-27">--}}
+{{--                    <ul>--}}
+{{--                        <li><a href="#">&lt;</a></li>--}}
+{{--                        <li class="active"><span>1</span></li>--}}
+{{--                        <li><a href="#">2</a></li>--}}
+{{--                        <li><a href="#">3</a></li>--}}
+{{--                        <li><a href="#">4</a></li>--}}
+{{--                        <li><a href="#">5</a></li>--}}
+{{--                        <li><a href="#">&gt;</a></li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
         </div>
 
