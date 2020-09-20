@@ -4,7 +4,7 @@
         <div class="comment-widgets scrollable">
             @forelse($pending_orders as $pending_order)
                 <div class="d-flex flex-row comment-row m-t-0">
-                    <div class="p-2"><img style="border-radius: 0 !important;" src="{{@$pending_order->user->image->url?(str_contains(@$pending_order->user->image->url, 'user')?'/storage/'.@$pending_order->user->image->url:@$pending_order->user->image->url):asset('assets/site/images/default.png')}}" alt="user" width="50" class="rounded-circle"></div>
+                    <div class="p-2"><img style="border-radius: 0 !important;" src="{{@$pending_order->user->image->url?(str_contains(@$pending_order->user->image->url, 'user')?'/storage/'.@$pending_order->user->image->url:@$pending_order->user->image->url):asset('assets/site/images/avatar.png')}}" alt="user" width="50" class="rounded-circle"></div>
                     <div class="comment-text w-100">
                         <h6 class="font-medium">
                             <span>{{__('site.name')}}:</span> {{$pending_order->user->full_name}}
