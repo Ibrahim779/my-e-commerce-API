@@ -21,9 +21,15 @@ class Cart extends Model
     {
         return $query->whereUserId($user)->with('product');
     }
+    public function scopePublishedProduct($query)
+    {
+        return $query->whereHas('product', function ($q){
+            $q->published();
+        });
+    }
     public static function getTotal()
     {
-        $cart = Cart::getUserCart(auth()->id())->whereOrderId(null)->get();
+        $cart = Cart::getUserCart(auth()->id())->whereOrderId(null)->publishedProduct()->get();
         $sub_total = 0;
         foreach ($cart as $cartItem){
             $sub_total += @$cartItem->count * @$cartItem->product->discount_price;
