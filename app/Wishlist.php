@@ -17,4 +17,10 @@ class Wishlist extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function scopePublishedProduct($query)
+    {
+        return $query->whereHas('product', function ($q){
+            $q->published();
+        });
+    }
 }
