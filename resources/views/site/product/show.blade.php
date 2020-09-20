@@ -57,12 +57,12 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
                         <div class="w-100"></div>
-
+                            @if($product->is_published && $product->count)
                             <div class="input-group col-md-6 d-flex mb-3">
                                 <form method="post" action="{{route('cart.store', $product->id)}}" class="subscribe-form">
                                     @csrf
                                     <div style="margin-bottom: 60px;" class="form-group d-flex">
-                                        <input value="1" name="count" type="number" class="form-control" placeholder="Count">
+                                        <input max="{{$product->count}}" value="{{$product->count?1:0}}" name="count" type="number" class="form-control" placeholder="Count">
                                     </div>
                                     <button type="submit" class="btn btn-primary py-3 px-4 code">{{__('site.add_to_cart')}}</button>
                                     <style>
@@ -80,6 +80,11 @@
                                     </style>
                                 </form>
                             </div>
+                           @else
+                            <div class="input-group col-md-6 d-flex mb-3">
+                                <p><a style="color: #D0021B;" class="btn btn-primary py-2 px-4">{{__('site.unpublished')}}</a></p>
+                            </div>
+                           @endif
                         <div class="w-100"></div>
                     </div>
 
