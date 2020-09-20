@@ -46,6 +46,11 @@ return [
     //coupon
     'coupon_add' => 'اضافة كوبون كود',
     'coupon_edit' => 'تعديل كوبون كود',
+    //slider
+    'title' => 'العنوان',
+    'slider' => 'شريحة عرض',
+    'slider_add' => 'اضافة شريحة عرض',
+    'slider_edit' => 'تعديل شريحة عرض',
 
     'image' => 'الصورة',
 
