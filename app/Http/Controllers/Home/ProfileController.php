@@ -39,6 +39,7 @@ class ProfileController extends Controller
             'phone' => 'required|min:3|max:255',
             'address' => 'required|min:3|max:255',
             'password' => 'nullable|min:8|max:255|confirmed',
+            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:10000'
         ];
         $toValidate['email'] = 'required|email|unique:users,id,'. auth()->user()->id;
 
