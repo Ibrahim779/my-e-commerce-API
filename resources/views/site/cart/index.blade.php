@@ -49,9 +49,9 @@
                                     </td>
                                     <td class="price">
                                         @if(@$cartItem->product->discount)
-                                            <span style="text-decoration: line-through;">{{@$cartItem->product->price}} {{__('site.currency')}}</span>  <span style="color: #ffbe08 ">{{@$cartItem->product->discount_price}} {{__('site.currency')}}</span>
+                                            <span style="text-decoration: line-through;">{{@$cartItem->product->price}} {{__('site.currency')}}</span>  <span class="color">{{@$cartItem->product->discount_price}} {{__('site.currency')}}</span>
                                         @else
-                                            <span style="color: #ffbe08 ">{{@$cartItem->product->price}} {{__('site.currency')}}</span>
+                                            <span class="color">{{@$cartItem->product->price}} {{__('site.currency')}}</span>
                                         @endif
                                         <span style="color: #bbb;">{{__('site.quantity')}} {{@$cartItem->product->quantity}}</span>
                                     </td>
@@ -60,13 +60,13 @@
                                             @csrf
                                             @method('PATCH')
                                             <div class="form-group d-flex">
-                                                <input max="{{@$cartItem->product->count}}" value="{{$cartItem->count > @$cartItem->product->count?@$cartItem->product->count:$cartItem->count}}" name="count" type="number" class="form-control" placeholder="{{__('site.count')}}">
+                                                <input min="0" max="{{@$cartItem->product->count}}" value="{{$cartItem->count > @$cartItem->product->count?@$cartItem->product->count:$cartItem->count}}" name="count" type="number" class="form-control" placeholder="{{__('site.count')}}">
                                                 <input type="submit" value="{{__('site.change')}}" class="submit px-3">
                                             </div>
                                         </form>
                                     </td>
                                         @if($cartItem->product->is_published && $cartItem->product->count>0)
-                                    <td style="color: #ffbe08 " class="total">{{$cartItem->count * @$cartItem->product->discount_price}} {{__('site.currency')}}</td>
+                                    <td class="total color">{{$cartItem->count * @$cartItem->product->discount_price}} {{__('site.currency')}}</td>
                                         @else
                                             <td class="quantity">
                                                 <p><a style="color: #D0021B;" class="btn btn-primary py-2 px-4">{{__('site.unpublished')}}</a></p>
@@ -109,7 +109,7 @@
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="material-icons">{{__('site_close')}}</i>
+                                        <i class="material-icons">&times;</i>
                                     </button>
                                     <span>
                                         {{$errors->first()}}
@@ -121,15 +121,6 @@
                                 <input name="code" type="text" class="form-control text-left px-3" placeholder="{{__('site.coupon_input')}}">
                             </div>
                             <button type="submit" class="btn btn-primary py-3 px-4 code">{{__('site.coupon_button')}}</button>
-                            <style>
-                                button.code{
-                                    border: 1px solid  #febe08 !important ;
-                                    color: white !important
-                                }
-                                .code:hover{
-                                    color: #febe08 !important;
-                                }
-                            </style>
                         </form>
                     </div>
                 </div>
