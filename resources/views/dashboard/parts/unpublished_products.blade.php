@@ -22,14 +22,14 @@
                             {{$product->is_published? __('dashboard.unpublished') : __('dashboard.published')}}
                         </button>
                     </a>
-                        <a href="{{route('products.categories.edit', ['category' => $product->category_id,'product' => $product->id])}}">
+                        <a class="float-left mr-2" href="{{route('products.categories.edit', ['category' => $product->category_id,'product' => $product->id])}}">
                             <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
-                    <a href="{{route('products.destroy',  $product->id)}}">
-                        <button type="button" class="btn btn-danger btn-sm">
-                            {{__('dashboard.delete')}}
-                        </button>
-                    </a>
+                        <form method="post"  action="{{route('products.destroy', $product->id )}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                        </form>
                 </div>
             </div>
         </div>
