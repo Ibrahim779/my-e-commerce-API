@@ -8,7 +8,16 @@
     <div id="app">
 
         @include('site.profile.includes.breadcrumb', ['title' => __('site.edit_profile')])
-
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="material-icons">&times;</i>
+                </button>
+                <span>
+                        {{$errors->first()}}
+                    </span>
+            </div>
+        @endif
         <div style="background: none"  class="alice-bg section-padding-bottom">
             <div class="container no-gliters">
                 <div class="row no-gliters">
@@ -23,7 +32,7 @@
                                         <div class="update-photo">
                                             <img class="image" id="candidateImg" src="{{isset(auth()->user()->image->url)?'/storage/'.auth()->user()->image->url:asset('assets/site/images/avatar.png')}}" alt="">
                                         </div>
-                                        <div style="background: #fbaf29 !important;" class="file-upload">
+                                        <div class="file-upload background">
                                             <input  type="file" name="image" id="upload_image" value="" class="file-input">
                                             {{__('site.avatar_change')}}
                                         </div>
