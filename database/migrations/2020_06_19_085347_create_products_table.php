@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('quantity')->default('1');
-            $table->double('price')->unsigned()->default(0.0);
+            $table->double('price')->unsigned();
             $table->double('discount')->nullable();
             $table->string('bar_code')->nullable();
             $table->enum('is_published',['on',null])->default('on')->nullable();
