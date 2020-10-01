@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('Dashboard')->prefix('dashboard')->middleware('admin')->group(function (){
     Route::get('/','DashboardController@index')->name('dashboard.index');
-    Route::resource('categories', 'CategoryController')->except(['show','destroy']);
-    Route::get('categories/{category}/destroy','CategoryController@destroy')->name('categories.destroy');
+    Route::resource('categories', 'CategoryController')->except(['show']);
     Route::name('products.')->prefix('products')->group(function (){
         Route::name('categories.')->prefix('categories')->group(function (){
             Route::get('{category}', 'ProductController@index')->name('index');
@@ -25,12 +24,12 @@ Route::namespace('Dashboard')->prefix('dashboard')->middleware('admin')->group(f
             Route::get('{category}/create', 'ProductController@create')->name('create');
             Route::get('{category}/edit/{product}', 'ProductController@edit')->name('edit');
             Route::patch('{category}/{product}', 'ProductController@update')->name('update');
-            Route::get('{category}/destroy/{product}', 'ProductController@destroy')->name('destroy');
+            Route::delete('{category}/products/{product}', 'ProductController@destroy')->name('destroy');
         });
         Route::get('{product}/published', 'ProductController@published')->name('published');
         Route::get('{product}/remove-discount', 'ProductController@removeDiscount')->name('removeDiscount');
         Route::patch('{product}/update-count', 'ProductController@updateCount')->name('updateCount');
-        Route::get('{product}/destroy', 'ProductController@destroy')->name('destroy');
+        Route::delete('{product}', 'ProductController@destroy')->name('destroy');
     });
     Route::name('subcategories.')->prefix('subcategories')->group(function (){
         Route::name('categories.')->prefix('categories')->group(function (){
@@ -40,18 +39,16 @@ Route::namespace('Dashboard')->prefix('dashboard')->middleware('admin')->group(f
             Route::get('{category}/edit/{subcategory}', 'SubCategoryController@edit')->name('edit');
             Route::patch('{category}/{subcategory}', 'SubCategoryController@update')->name('update');
         });
-        Route::get('{subcategory}/destroy', 'SubCategoryController@destroy')->name('destroy');
+        Route::delete('{subcategory}', 'SubCategoryController@destroy')->name('destroy');
     });
-    Route::resource('brands', 'BrandController')->except('destroy');
-    Route::get('brands/{brand}/destroy','BrandController@destroy')->name('brands.destroy');
-    Route::resource('sliders', 'SliderController')->except('destroy');
-    Route::get('sliders/{slider}/destroy', 'SliderController@destroy')->name('sliders.destroy');
+    Route::resource('brands', 'BrandController');
+    Route::resource('sliders', 'SliderController');
     Route::resource('messages', 'MessageController')->only(['index','destroy']);
-    Route::resource('users', 'UserController');
-    Route::resource('orders', 'OrderController')->only(['index','show','update']);
+    Route::resource('users', 'UserController')->middleware('owner');
+    Route::resource('orders', 'OrderController')->except(['create','store']);
     Route::get('orders/status/completed','OrderController@completed')->name('orders.completed');
-    Route::get('orders/{order}/destroy','OrderController@destroy')->name('orders.destroy');
     Route::resource('subscribes', 'SubscribeController')->only(['index', 'destroy']);
     Route::resource('cities', 'CityController');
     Route::resource('coupons', 'CouponController');
+    Route::resource('settings', 'SettingController');
 });
