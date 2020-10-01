@@ -4,7 +4,7 @@
 <head>
     @include('site.includes.meta')
     @include('site.includes.style')
-
+    @include('site.includes.color')
 </head>
 <body style="text-align: initial" class="goto-here">
     @include('site.includes.nav')
