@@ -17,7 +17,7 @@
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <i class="fa fa-times"></i>
+                                <i class="fa fa-times">&times;</i>
                             </button>
                             <span>
                         {{$errors->first()}}
@@ -26,7 +26,7 @@
                     @endif
                     <div class="wrap-input100 validate-input m-b-23" data-validate="Email is reauired">
                         <span class="label-input100">{{__('site.email')}}</span>
-                        <input class="input100" type="text" name="email" placeholder="{{__('site.email')}}">
+                        <input value="{{old('email')}}" class="input100" type="email" name="email" placeholder="{{__('site.email')}}">
                         <span class="focus-input100" data-symbol="&#xf206;"></span>
                     </div>
 
