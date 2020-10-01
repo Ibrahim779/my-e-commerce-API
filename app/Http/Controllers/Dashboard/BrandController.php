@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Dashboard;
 use App\Brand;
 use App\BrandCategory;
 use App\Category;
+use App\Traits\SaveData\BrandSaveData;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class BrandController extends Controller
 {
+    use BrandSaveData;
     /**
      * Display a listing of the resource.
      *
@@ -67,27 +69,4 @@ class BrandController extends Controller
         $brand->delete();
         return redirect()->route('brands.index');
     }
-
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    private function validation()
-    {
-        return request()->validate([
-            'name' => 'required',
-            'categories_id' => 'required'
-        ]);
-    }
-    private function saveData($brand)
-    {
-        $this->validation();
-        $brand->name = request()->name;
-        $brand->save();
-        if ($brand->categories){
-            $brand->categories()->detach();
-        }
-        $brand->categories()->attach(\request()->categories_id);
-    }
-
 }
