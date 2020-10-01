@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+
+use App\City;
+use App\Traits\SaveData\UserSaveData;
 use App\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    use UserSaveData;
     /**
      * @return mixed
      */
@@ -18,15 +21,23 @@ class UserController extends Controller
     }
     public function create()
     {
-        return view('dashboard.user.create');
+        $cities = City::all();
+        return view('dashboard.user.create', compact('cities'));
     }
     public function store()
     {
-
+        $this->saveData(new User());
+        return redirect()->route('users.index');
     }
     public function edit(User $user)
     {
-        return view('dashboard.user.edit', compact('user'));
+        $cities = City::all();
+        return view('dashboard.user.edit', compact('user', 'cities'));
+    }
+    public function update(User $user)
+    {
+        $this->saveData($user);
+        return redirect()->route('users.index');
     }
     /**
      * @param User $user
