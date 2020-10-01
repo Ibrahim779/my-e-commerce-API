@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Slider;
+use App\Traits\SaveData\SliderSaveData;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class SliderController extends Controller
 {
+    use SliderSaveData;
     /**
      * Display a listing of the resource.
      *
@@ -59,34 +61,5 @@ class SliderController extends Controller
     {
         $slider->delete();
         return redirect()->back();
-    }
-
-    /**
-     * @return mixed
-     */
-    private function validation()
-    {
-        return request()->validate([
-            'title' => 'min:10',
-            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:10000'
-        ]);
-    }
-
-    /**
-     * @param $slider
-     */
-    private function saveData($slider)
-    {
-        $this->validation();
-        $slider->title = request()->title;
-        $slider->save();
-        if ($slider->image){
-            if (request()->image){
-                $slider->image()->update(['url' => request()->image->store('sliders','public')]);
-            }
-        }else{
-            $slider->image()->create(['url' => request()->image->store('sliders','public')]);
-        }
-        $slider->save();
     }
 }
