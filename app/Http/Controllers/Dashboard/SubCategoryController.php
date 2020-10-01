@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\SubCategory;
+use App\Traits\SaveData\SubcategorySaveData;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class SubCategoryController extends Controller
 {
+    use SubcategorySaveData;
     /**
      * Display a listing of the resource.
      *
@@ -33,10 +35,7 @@ class SubCategoryController extends Controller
      */
     public function store($category)
     {
-        $subcategory = new SubCategory();
-        $subcategory->name = request()->name;
-        $subcategory->category_id = $category;
-        $subcategory->save();
+        $this->saveData(new SubCategory(), $category);
         return redirect()->route('subcategories.categories.index', $category);
     }
     public function edit($category, SubCategory $subcategory)
@@ -68,15 +67,5 @@ class SubCategoryController extends Controller
     {
         $subcategory->delete();
         return redirect()->back();
-    }
-
-    /**
-     * @return mixed
-     */
-    private function validation()
-    {
-        return request()->validate([
-            'name' => 'required'
-        ]);
     }
 }
