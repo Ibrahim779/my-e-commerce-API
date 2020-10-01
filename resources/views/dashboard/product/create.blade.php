@@ -21,7 +21,7 @@
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="material-icons">{{__('site.close')}}</i>
+                                        <i class="material-icons">&times;</i>
                                     </button>
                                     <span>
                         {{$errors->first()}}
@@ -43,7 +43,7 @@
                             <div class="form-group row">
                                 <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.price')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="price" value="{{old('price')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.price')}}">
+                                    <input name="price" value="{{old('price')}}" type="number" class="form-control" id="category_name" placeholder="{{__('site.price')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -55,13 +55,13 @@
                             <div class="form-group row">
                                 <label for="count" class="col-sm-3 text-right control-label col-form-label">{{__('site.count')}}</label>
                                 <div class="col-sm-9">
-                                    <input name="count" value="{{old('count')}}" type="number" class="form-control" id="count" placeholder="{{__('site.count')}}">
+                                    <input min="0" name="count" value="{{old('count')}}" type="number" class="form-control" id="count" placeholder="{{__('site.count')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="category_name" class="col-sm-3 text-right control-label col-form-label">{{__('site.discount')}} %</label>
                                 <div class="col-sm-9">
-                                    <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="category_name" placeholder="{{__('site.discount')}}">
+                                    <input name="discount" value="{{old('discount')}}" type="number" class="form-control" id="category_name" placeholder="{{__('site.discount')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -92,7 +92,6 @@
                                             <option {{old('subcategory_id') == $subcategory->id?'selected':''}} value="{{$subcategory->id}}">{{$subcategory->name}}</option>
                                             @endforeach
                                     </select>
-
                                 </div>
                             </div>
                             <div class="form-group row">
