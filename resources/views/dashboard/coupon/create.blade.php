@@ -21,7 +21,7 @@
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <i class="material-icons">{{__('site.close')}}</i>
+                                        <i class="material-icons">&times;</i>
                                     </button>
                                     <span>
                                         {{$errors->first()}}
@@ -37,7 +37,7 @@
                             <div class="form-group row">
                                 <label for="discount" class="col-sm-3 text-right control-label col-form-label">{{__('site.discount')}} %</label>
                                 <div class="col-sm-9">
-                                    <input name="discount" value="{{old('discount')}}" type="text" class="form-control" id="discount" placeholder="{{__('site.discount')}} %">
+                                    <input name="discount" value="{{old('discount')}}" type="number" class="form-control" id="discount" placeholder="{{__('site.discount')}} %">
                                 </div>
                             </div>
                         </div>
