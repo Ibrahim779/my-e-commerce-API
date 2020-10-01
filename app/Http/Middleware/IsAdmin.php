@@ -17,7 +17,7 @@ class IsAdmin
     {
         if (!auth()->user()){
             return redirect()->route('login');
-        }elseif(!auth()->user()->is_admin){
+        }elseif(auth()->user()->role == 'user'){
             abort(403);
         }
         return $next($request);
