@@ -33,12 +33,14 @@
                     </td>
 
                     <td>
-                        <a href="{{route('brands.edit', $brand->id)}}">
+                        <a class="float-right mr-2" href="{{route('brands.edit', $brand->id)}}">
                             <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
-                        <a href="{{route('brands.destroy', $brand->id )}}">
-                            <button type="button" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
-                        </a>
+                        <form method="post"  action="{{route('brands.destroy', $brand->id )}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
