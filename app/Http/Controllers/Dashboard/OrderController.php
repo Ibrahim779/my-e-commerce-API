@@ -26,14 +26,25 @@ class OrderController extends Controller
     }
     public function update(Order $order)
     {
-        $order->status = request()->status;
-        $order->save();
+        $this->saveData($order);
         return back();
     }
     public function destroy(Order $order)
     {
        $order->delete();
        return redirect()->back();
+    }
+    private function validation()
+    {
+        return request()->validate([
+            'status' => 'required|min:3|max:191',
+        ]);
+    }
+    private function saveData($order)
+    {
+        $this->validation();
+        $order->status = request()->status;
+        $order->save();
     }
 
 }
