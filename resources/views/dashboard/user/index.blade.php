@@ -16,10 +16,13 @@
                 <thead>
                 <tr>
                     <th>#</th>
+                    <th>{{__('site.avatar')}}</th>
                     <th>{{__('site.name')}}</th>
                     <th>{{__('site.phone')}}</th>
+                    <th>{{__('site.city')}}</th>
                     <th>{{__('site.address')}}</th>
                     <th>{{__('site.email')}}</th>
+                    <th>{{__('dashboard.role')}}</th>
                     <th>{{__('dashboard.action')}}</th>
                 </tr>
                 </thead>
@@ -27,17 +30,24 @@
             @foreach($users as $user)
                 <tr>
                     <td>{{$loop->iteration}}</td>
+                    <td>
+                        <img style="width: 50px;height: auto"  src="{{@$user->image->url?'/storage/'.@$user->image->url:asset('assets/site/images/avatar.png')}}">
+                    </td>
                     <td>{{$user->full_name}}</td>
                     <td>{{$user->phone}}</td>
+                    <td>{{$user->city->name}}</td>
                     <td>{{$user->address}}</td>
                     <td>{{$user->email}}</td>
+                    <td>{{__('dashboard.'.$user->role)}}</td>
                     <td>
                         <a href="{{route('users.edit', $user->id)}}">
                             <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
-                        <a href="{{route('users.destroy', $user->id)}}">
-                            <button type="button" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
-                        </a>
+                        <form method="post"  action="{{route('users.destroy', $user->id)}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
@@ -52,7 +62,7 @@
 </div>
     </div>
 </div>
-    </div>
+
 
 @endsection
 @section('script')
