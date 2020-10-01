@@ -75,6 +75,8 @@ return [
     'coupon_sentence' => 'Enter your coupon code if you have one',
     'coupon_input' => 'Enter your coupon code',
     'coupon_button' => 'Apply Coupon Code',
+    'incorrect_coupon' => 'Incorrect Coupon Code',
+    'you_have_discount' => 'You have a discount of ',
     'close' => 'close',
     'cart_total' => 'Cart Total',
     'subtotal' => 'Subtotal',
