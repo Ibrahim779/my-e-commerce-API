@@ -51,9 +51,9 @@
                                 </td>
                                 <td class="price">
                                     @if(@$_wishlist->product->discount)
-                                        <span style="text-decoration: line-through;">{{@$_wishlist->product->price}} {{__('site.currency')}}</span>  <span style="color: #ffbe08 ">{{@$_wishlist->product->discount_price}} {{__('site.currency')}}</span>
+                                        <span style="text-decoration: line-through;">{{@$_wishlist->product->price}} {{__('site.currency')}}</span>  <span class="color">{{@$_wishlist->product->discount_price}} {{__('site.currency')}}</span>
                                     @else
-                                        <span style="color: #ffbe08 ">{{@$_wishlist->product->price}} {{__('site.currency')}}</span>
+                                        <span class="color">{{@$_wishlist->product->price}} {{__('site.currency')}}</span>
                                     @endif
                                     <span style="color: #bbb;">{{__('site.quantity')}} {{@$_wishlist->product->quantity}}</span>
                                 </td>
