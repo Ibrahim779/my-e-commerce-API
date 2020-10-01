@@ -16,11 +16,8 @@ class WishlistController extends Controller
     }
     public function store($product)
     {
-        if (!Wishlist::whereProductId($product)->first()){
-            $wishlist = new Wishlist();
-            $wishlist->product_id = $product;
-            $wishlist->user_id = auth()->id();
-            $wishlist->save();
+        if (!Wishlist::whereUserId(auth()->id())->whereProductId($product)->first()){
+            $this->saveData(new Wishlist(), $product);
         }
         return back();
     }
@@ -28,5 +25,11 @@ class WishlistController extends Controller
     {
         $wishlist->delete();
         return back();
+    }
+    private function saveData($wishlist, $product)
+    {
+        $wishlist->product_id = $product;
+        $wishlist->user_id = auth()->id();
+        $wishlist->save();
     }
 }
