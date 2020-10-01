@@ -6,12 +6,14 @@ use App\Brand;
 use App\Category;
 use App\Product;
 use App\SubCategory;
+use App\Traits\SaveData\ProductSaveData;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
+    use ProductSaveData;
     /**
      * Display a listing of the resource.
      *
@@ -120,46 +122,5 @@ class ProductController extends Controller
         $product->save();
         return back();
     }
-    /**
-     * @return mixed
-     */
-    private function validation()
-    {
-        return request()->validate([
-            'name' => 'required',
-            'price' => 'required',
-            'image' => 'image|mimes:jpeg,jpg,png,gif,svg|max:10000'
-        ]);
-    }
 
-    /**
-     * @param $product
-     * @param null $category
-     */
-    private function saveData($product, $category = null)
-    {
-        $this->validation();
-        $product->name            = request()->name;
-        $product->price           = request()->price;
-        $product->discount        = request()->discount;
-        $product->description     = request()->description;
-        $product->quantity        = request()->quantity;
-        $product->subcategory_id  = request()->subcategory_id;
-        $product->brand_id        = request()->brand_id;
-        $product->bar_code        = request()->bar_code;
-        $product->is_published    = request()->is_published;
-        $product->count           = request()->count;
-        if ($category) {
-            $product->category_id     = $category;
-        }
-        $product->save();
-        if ($product->image){
-            if (request()->image){
-                $product->image()->update(['url' => request()->image->store('products','public')]);
-            }
-        }else{
-            $product->image()->create(['url' => request()->image->store('products','public')]);
-        }
-        $product->save();
-    }
 }
