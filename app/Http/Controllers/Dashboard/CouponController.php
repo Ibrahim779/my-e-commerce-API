@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Coupon;
+use App\Traits\SaveData\CouponSaveData;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 
 class CouponController extends Controller
 {
+    use CouponSaveData;
     /**
      * Display a listing of the resource.
      *
@@ -61,24 +63,5 @@ class CouponController extends Controller
     {
         $coupon->delete();
         return redirect()->route('coupons.index');
-    }
-
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    private function validation()
-    {
-        return request()->validate([
-            'code' => 'required',
-            'discount' => 'required'
-        ]);
-    }
-    private function saveData($coupon)
-    {
-        $this->validation();
-        $coupon->code = request()->code;
-        $coupon->discount = request()->discount;
-        $coupon->save();
     }
 }
