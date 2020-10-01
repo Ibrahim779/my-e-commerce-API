@@ -1,29 +1,13 @@
 <?php
 
-
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Support\Facades\App;
-
-class Setting
+class Setting extends Model
 {
-    public static function getInformation()
+    public function image()
     {
-        return [
-            'name' => __('setting.site_name'),
-            'sentence' => __('setting.site_sentence'),
-            'service' => __('site.support_sentence'),
-            'phone' => '010125489799',
-            'address' => __('setting.site_address'),
-            'email' => 'example@example.com',
-            'website' => 'cesar.com',
-            'text' => __('setting.site_text'),
-            'facebook_link' => '',
-            'twitter_link' => '',
-            'instagram_link' => '',
-        ];
+        return $this->morphOne(image::class, 'imageable');
     }
-
-
 }
