@@ -50,6 +50,13 @@ return [
     'slider' => 'Slider',
     'slider_add' => 'Add Slider',
     'slider_edit' => 'Edit Slider',
+    //user
+    'role' => 'Role',
+    'user' => 'User',
+    'admin' => 'Admin',
+    'owner' => 'Owner',
+    'user_add' => 'Add User',
+    'user_edit' => 'Edit User',
 
     'image' => 'Image',
 
