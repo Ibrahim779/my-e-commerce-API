@@ -25,7 +25,7 @@
                                         </div>
                                     </div>
                                     <div class="showing-number">
-                                        <span style="color: white;background: #febe08;padding: 0 8px 0 8px; border-radius: 5px">{{count($cartItems)}}</span> <span>{{__('site.products')}}</span>
+                                        <span class="background" style="color: white;padding: 0 8px 0 8px; border-radius: 5px">{{count($cartItems)}}</span> <span>{{__('site.products')}}</span>
                                     </div>
                                 </div>
                                 <div class="job-filter-result">
@@ -43,16 +43,16 @@
                                                 </h4>
                                                 <div class="info">
                                                     <span class="company">
-                                                        <span style="color: #febe08">{{__('site.price')}}:</span><span>{{$cartItem->product->discount_price}} {{__('site.currency')}}</span>
+                                                        <span class="color">{{__('site.price')}}:</span><span>{{$cartItem->product->discount_price}} {{__('site.currency')}}</span>
                                                     </span>
                                                     <span class="company">
-                                                            <span style="color: #febe08">{{__('site.quantity')}}:</span><span>{{$cartItem->product->quantity}}</span>
+                                                            <span class="color">{{__('site.quantity')}}:</span><span>{{$cartItem->product->quantity}}</span>
                                                     </span>
                                                     <span class="company">
-                                                            <span style="color: #febe08">{{__('site.count')}}:</span><span>{{$cartItem->count}}</span>
+                                                            <span class="color">{{__('site.count')}}:</span><span>{{$cartItem->count}}</span>
                                                     </span>
                                                     <span class="company">
-                                                           <span style="color: #febe08">{{__('site.bar_code')}}:</span><span>{{$cartItem->product->bar_code}}</span>
+                                                           <span class="color">{{__('site.bar_code')}}:</span><span>{{$cartItem->product->bar_code}}</span>
                                                     </span>
                                                     <span class="job-type temporary">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle>
