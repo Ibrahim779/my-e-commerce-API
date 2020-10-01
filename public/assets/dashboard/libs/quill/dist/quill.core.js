@@ -178,7 +178,7 @@ function create(input, value) {
         throw new ParchmentError("Unable to create " + input + " blot");
     }
     var BlotClass = match;
-    var node = 
+    var node =
     // @ts-ignore
     input instanceof Node || input['nodeType'] === Node.TEXT_NODE ? input : BlotClass.create(value);
     return new BlotClass(node, value);
@@ -7102,7 +7102,7 @@ function diff_bisect_(text1, text2) {
   var v_length = 2 * max_d;
   var v1 = new Array(v_length);
   var v2 = new Array(v_length);
-  // Setting all elements to -1 is faster in Chrome & Firefox than mixing
+  // SiteSetting all elements to -1 is faster in Chrome & Firefox than mixing
   // integers and undefined.
   for (var x = 0; x < v_length; x++) {
     v1[x] = -1;
