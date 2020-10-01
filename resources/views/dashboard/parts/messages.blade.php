@@ -12,7 +12,11 @@
                 <span class="m-b-15 d-block">{{$latest_message->message}} </span>
                 <div class="comment-footer">
                     <span class="text-muted float-right">Phone: {{$latest_message->phone}}</span>
-                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    <form method="post"  action="{{route('messages.destroy', $latest_message->id )}}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                    </form>
                 </div>
             </div>
         </div>
