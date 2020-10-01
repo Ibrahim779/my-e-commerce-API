@@ -33,9 +33,11 @@
                         <a href="{{route('sliders.edit', $slider->id)}}">
                             <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                         </a>
-                        <a href="{{route('sliders.destroy', $slider->id )}}">
-                            <button type="button" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
-                        </a>
+                        <form method="post"  action="{{route('sliders.destroy', $slider->id )}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
