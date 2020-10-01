@@ -6,22 +6,22 @@
         <div  class="row d-flex mb-5 contact-info">
             <div class="w-100"></div>
             <div  class="col-md-3 d-flex">
-                <div style="background: #febe08 !important;" class="info bg-white p-4">
+                <div class="info bg-white p-4 background">
                     <p style="color:white;font-style: italic"><strong>{{__('site.address')}} :</strong> <span style="color: white">{{__('setting.site_address')}}</span></p>
                 </div>
             </div>
             <div class="col-md-3 d-flex">
-                <div style="background: #febe08 !important;" class="info bg-white p-4">
+                <div class="info bg-white p-4 background">
                     <p style="color:white;font-style: italic"><strong>{{__('site.phone')}} :</strong> <a style="color: white" href="tel://1234567920">{{$information['phone']}}</a></p>
                 </div>
             </div>
             <div class="col-md-3 d-flex">
-                <div style="background: #febe08 !important;" class="info bg-white p-4">
+                <div class="info bg-white p-4 background">
                     <p style="color:white;font-style: italic"><strong>{{__('site.email')}} :</strong> <a style="color: white" href="mailto:info@yoursite.com">{{$information['email']}}</a></p>
                 </div>
             </div>
             <div class="col-md-3 d-flex">
-                <div style="background: #febe08 !important;" class="info bg-white p-4">
+                <div class="info bg-white p-4 background">
                     <p style="color:white; font-style: italic"><strong>{{__('site.website')}} :</strong> <a style="color: white" href="#">{{$information['website']}}</a></p>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <i class="material-icons">{{__('site.close')}}</i>
+                                <i class="material-icons">&times;</i>
                             </button>
                             <span>
                                         {{$errors->first()}}
