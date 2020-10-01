@@ -26,16 +26,16 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$subcategory->name}}</td>
                     <td>
-                        <a href="{{route('subcategories.categories.edit', ['subcategory' => $subcategory->id, 'category' => $category])}}">
+                        <a class="float-left mr-2" href="{{route('subcategories.categories.edit', ['subcategory' => $subcategory->id, 'category' => $category])}}">
                             <button type="button" class="btn btn-cyan btn-sm">
                                 {{__('dashboard.edit')}}
                             </button>
                         </a>
-                        <a href="{{route('subcategories.destroy', $subcategory->id)}}">
-                            <button type="button" class="btn btn-danger btn-sm">
-                                {{__('dashboard.delete')}}
-                            </button>
-                        </a>
+                        <form method="post"  action="{{route('subcategories.destroy', $subcategory->id )}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
