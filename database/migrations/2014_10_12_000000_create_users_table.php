@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->unique();
             $table->unsignedBigInteger('city_id')->nullable();
             $table->string('address');
-            $table->tinyInteger('is_admin')->default(false);
+            $table->enum('role', ['user', 'admin', 'owner'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
