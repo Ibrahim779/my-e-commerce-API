@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Cart;
 use App\Category;
-use App\Setting;
+use App\SiteSetting;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -28,6 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::share('categories', Category::all());
-        View::share('information', Setting::getInformation());
+        View::share('information', SiteSetting::getInformation());
     }
 }
