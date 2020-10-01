@@ -43,13 +43,13 @@
                         </a>
                         <a class="dropdown-item" href="{{route('wishlist.index')}}">
                             {{__('site.wishlist')}}
-                            <span style="color:white;background: #febe08;border-radius: 50px; padding: 0 6px 0 6px">
+                            <span class="count">
                             {{\App\Wishlist::whereUserId(auth()->id())->count()}}
                             </span>
                         </a>
                         <a class="dropdown-item" href="{{route('cart.index')}}">
                             {{__('site.cart')}}
-                            <span style="color:white;background: #febe08;border-radius: 50px; padding: 0 6px 0 6px">
+                            <span class="count">
                             {{\App\Cart::whereUserId(auth()->id())->whereOrderId(null)->count()}}
                             </span>
                         </a>
