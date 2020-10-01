@@ -18,14 +18,14 @@
                                 {{__('dashboard.remove_discount')}}
                             </button>
                         </a>
-                    <a href="{{route('products.categories.edit', ['category' => $offer->category_id,'product' => $offer->id])}}">
+                    <a class="float-left mr-2" href="{{route('products.categories.edit', ['category' => $offer->category_id,'product' => $offer->id])}}">
                         <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                     </a>
-                    <a href="{{route('products.destroy',  $offer->id)}}">
-                        <button type="button" class="btn btn-danger btn-sm">
-                            {{__('dashboard.delete')}}
-                        </button>
-                    </a>
+                    <form method="post"  action="{{route('products.destroy', $offer->id )}}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                    </form>
                 </div>
             </div>
         </div>
