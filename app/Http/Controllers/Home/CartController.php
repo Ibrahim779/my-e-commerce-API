@@ -47,9 +47,12 @@ class CartController extends Controller
         ]);
         $coupon = Coupon::whereCode(\request()->code)->first();
         if ($coupon){
-           $discount = Cart::getTotal()['total'] * ($coupon->discount/100);
-           session()->put('discount', $discount);
+            if (!session('discount')){
+                $discount = Cart::getTotal()['total'] * ($coupon->discount/100);
+                session()->put('discount', $discount);
+            }
+            return back()->withErrors([__('site.you_have_discount').session('discount').'%']);
         }
-        return back();
+        return back()->withErrors([__('site.incorrect_coupon')]);
     }
 }
