@@ -53,7 +53,7 @@ return [
     'subcategories' => 'الأقسام الفرعية',
     'brands' => 'العلامات التجارية',
     'all' => 'الكل',
-    'null' => 'غير موجود',
+    'null' => 'لا يوجد',
     'search' => 'بحث...',
     // Product Show Page
     'single_product' => 'منتج واحد',
@@ -75,6 +75,8 @@ return [
     'coupon_sentence' => 'ادخل كود الخصم إذا كنت تملك واحدا',
     'coupon_input' => 'ادخل كود الخصم',
     'coupon_button' => 'تفعيل كود الخصم',
+    'incorrect_coupon' => 'كود الخصم غير صحيح',
+    'you_have_discount' => 'لديك خصم بقيمة ',
     'close' => 'اغلاق',
     'cart_total' => 'حساب حقيبة التسوق',
     'subtotal' => 'المجموع',
