@@ -27,15 +27,15 @@
 {{--                        </p>--}}
 {{--                    </div>--}}
                     @if($product->discount)
-                    <div style="background: #ffbe08; width:50px;text-align: center">
+                    <div class="background" style="width:50px;text-align: center">
                         <span style="color:white;">{{$product->discount}}%</span>
                     </div>
                     @endif
                     <p>
                     @if($product->discount)
-                            <span style="text-decoration: line-through;">{{$product->price}} {{__('site.currency')}}</span>  <span style="color: #ffbe08 ">{{$product->discount_price}} {{__('site.currency')}}</span>
+                            <span style="text-decoration: line-through;">{{$product->price}} {{__('site.currency')}}</span>  <span class="color">{{$product->discount_price}} {{__('site.currency')}}</span>
                     @else
-                        <span style="color: #ffbe08 ">{{$product->price}} {{__('site.currency')}}</span>
+                        <span class="color">{{$product->price}} {{__('site.currency')}}</span>
                     @endif
                             <span style="color: #bbb;">{{__('site.quantity')}} {{$product->quantity}}</span>
                     </p>
@@ -62,22 +62,9 @@
                                 <form method="post" action="{{route('cart.store', $product->id)}}" class="subscribe-form">
                                     @csrf
                                     <div style="margin-bottom: 60px;" class="form-group d-flex">
-                                        <input max="{{$product->count}}" value="{{$product->count?1:0}}" name="count" type="number" class="form-control" placeholder="Count">
+                                        <input min="0" max="{{$product->count}}" value="{{$product->count?1:0}}" name="count" type="number" class="form-control" placeholder="Count">
                                     </div>
-                                    <button type="submit" class="btn btn-primary py-3 px-4 code">{{__('site.add_to_cart')}}</button>
-                                    <style>
-                                        button.code{
-                                            background: #febe08 !important;
-                                            border: 1px solid  #febe08 !important ;
-                                            color: white !important;
-                                            text-align: center !important;
-                                            padding-bottom: 38px !important;
-                                        }
-                                        .code:hover{
-                                            background: white !important;
-                                            color: #febe08 !important;
-                                        }
-                                    </style>
+                                    <button type="submit" class="btn btn-primary py-3 px-4 add-to-cart">{{__('site.add_to_cart')}}</button>
                                 </form>
                             </div>
                            @else
@@ -145,6 +132,18 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="row mt-5">
+                <style>
+                    .page-item.active .page-link{
+                        background-color: #febe08;
+                        border-color: #febe08;
+                    }
+                    .page-link{
+                        color: #febe08;
+                    }
+                </style>
+                {{$related_products->links()}}
             </div>
         </div>
     </section>
