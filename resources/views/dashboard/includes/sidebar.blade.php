@@ -68,9 +68,12 @@
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('orders.completed')}}" aria-expanded="false"><i class="mdi mdi-clipboard-check"></i><span class="hide-menu"> {{__('dashboard.completed_orders')}}</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('coupons.index')}}" aria-expanded="false"><i class="mdi mdi-multiplication-box"></i><span class="hide-menu"> {{__('site.coupon')}}</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('sliders.index')}}" aria-expanded="false"><i class="mdi mdi-sign-caution"></i><span class="hide-menu"> {{__('dashboard.sliders')}}</span></a></li>
+                @if(auth()->user()->role == 'owner')
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('users.index')}}" aria-expanded="false"><i class="mdi  mdi-account-multiple"></i><span class="hide-menu"> {{__('dashboard.users')}}</span></a></li>
+                @endif
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('messages.index')}}" aria-expanded="false"><i class="mdi mdi-message-text"></i><span class="hide-menu"> {{__('dashboard.messages')}}</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('subscribes.index')}}" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu"> {{__('dashboard.subscribes')}}</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('settings.index')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu"> {{__('dashboard.settings')}}</span></a></li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
