@@ -30,12 +30,14 @@
                         <img style="width: 50px;height: auto" src="{{@$category->image->url?(str_contains(@$category->image->url, 'categories')?'/storage/'.@$category->image->url:@$category->image->url):asset('assets/site/images/default.png')}}" alt="category image">
                     </td>
                     <td>
-                      <a href="{{route('categories.edit', $category->id)}}">
+                      <a class="float-left mr-2" href="{{route('categories.edit', $category->id)}}">
                           <button type="button" class="btn btn-cyan btn-sm">{{__('dashboard.edit')}}</button>
                       </a>
-                        <a href="{{route('categories.destroy', $category->id)}}">
-                            <button type="button" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
-                        </a>
+                        <form method="post"  action="{{route('categories.destroy', $category->id )}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
