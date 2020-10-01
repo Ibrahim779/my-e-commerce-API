@@ -11,10 +11,9 @@ use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    private $pagination = 50;
     public function index()
     {
-        $products = Product::published()->paginate($this->pagination);
+        $products = Product::published()->paginate(self::pagination);
         $categories = Category::get();
         $subcategories = SubCategory::get();
         $_category = null;
@@ -24,7 +23,7 @@ class ProductController extends Controller
     }
     public function search()
     {
-        $products = Product::published()->search(request()->search)->paginate($this->pagination);
+        $products = Product::published()->search(request()->search)->paginate(self::pagination);
         $categories = Category::get();
         $_category = null;
         $subcategories = SubCategory::all();
@@ -34,7 +33,7 @@ class ProductController extends Controller
     }
     public function getCategoryProducts($category)
     {
-        $products = Product::whereCategoryId($category)->published()->paginate($this->pagination);
+        $products = Product::whereCategoryId($category)->published()->paginate(self::pagination);
         $categories = Category::get();
         $_category = Category::find($category);
         $subcategories = SubCategory::whereCategoryId($category)->get();
@@ -44,7 +43,7 @@ class ProductController extends Controller
     }
     public function getSubcategoryProducts($subcategory)
     {
-        $products = Product::whereSubcategoryId($subcategory)->published()->paginate($this->pagination);
+        $products = Product::whereSubcategoryId($subcategory)->published()->paginate(self::pagination);
         $categories = Category::get();
         $_category = null;
         $subcategories = SubCategory::all();
@@ -54,7 +53,7 @@ class ProductController extends Controller
     }
     public function getSubcategoryProductsByCategory($category,$subcategory)
     {
-        $products = Product::whereCategoryId($category)->whereSubcategoryId($subcategory)->published()->paginate($this->pagination);
+        $products = Product::whereCategoryId($category)->whereSubcategoryId($subcategory)->published()->paginate(self::pagination);
         $categories = Category::get();
         $_category = Category::find($category);
         $subcategories = SubCategory::whereCategoryId($category)->get();
@@ -64,7 +63,7 @@ class ProductController extends Controller
     }
     public function getBrandProducts($brand)
     {
-        $products = Product::whereBrandId($brand)->published()->paginate($this->pagination);
+        $products = Product::whereBrandId($brand)->published()->paginate(self::pagination);
         $categories = Category::get();
         $_category = null;
         $subcategories = SubCategory::all();
@@ -74,7 +73,7 @@ class ProductController extends Controller
     }
     public function getCategoryBrandProducts($category, $brand)
     {
-        $products = Product::whereCategoryId($category)->whereBrandId($brand)->published()->paginate($this->pagination);
+        $products = Product::whereCategoryId($category)->whereBrandId($brand)->published()->paginate(self::pagination);
         $categories = Category::get();
         $_category = Category::find($category);
         $subcategories = SubCategory::whereCategoryId($category)->get();
@@ -85,7 +84,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $category = $product->category_id;
-        $related_products = Product::whereCategoryId($category)->inRandomOrder()->get();
+        $related_products = Product::whereCategoryId($category)->inRandomOrder()->paginate(self::pagination);
         return view('site.product.show', compact('product', 'related_products'));
     }
 }
