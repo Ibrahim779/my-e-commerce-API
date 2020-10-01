@@ -7,7 +7,7 @@
                     <h1 style="color: #2a3d45">{{$title}}</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="https://himba.net/employers/dashboard">{{__('dashboard.dashboard')}}</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('profile.edit')}}">{{__('site.profile')}}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{$title}}</li>
                         </ol>
                     </nav>
