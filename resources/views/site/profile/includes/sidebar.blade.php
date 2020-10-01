@@ -1,4 +1,4 @@
-<div style="background: #ffbe08  ; color: white" class="dashboard-sidebar">
+<div style="color: white" class="dashboard-sidebar background">
     <div class="company-info">
         <div class="thumb">
             <img src="{{isset(auth()->user()->image->url)?'/storage/'.auth()->user()->image->url:asset('assets/site/images/avatar.png')}}" class="img-fluid" alt="">
