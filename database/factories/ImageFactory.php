@@ -15,6 +15,14 @@ $factory->define(\App\image::class, function (Faker $faker) {
     return [
         'imageable_type' => $type,
         'imageable_id' => factory($type),
-        'url' => $faker->imageUrl(640, 420, 'food')
+        'url' => $faker->randomElement(
+            [
+                asset('assets/site/images/product-1.jpg'),
+                asset('assets/site/images/product-2.jpg'),
+                asset('assets/site/images/product-3.jpg'),
+                asset('assets/site/images/bg-1.jpg'),
+                asset('assets/site/images/bg-2.jpg'),
+                asset('assets/site/images/bg-3.jpg'),
+             ])
     ];
 });
