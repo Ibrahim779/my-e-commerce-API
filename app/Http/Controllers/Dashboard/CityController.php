@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\City;
+use App\Traits\SaveData\CitySaveData;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class CityController extends Controller
 {
+    use CitySaveData;
     /**
      * Display a listing of the resource.
      *
@@ -59,24 +61,5 @@ class CityController extends Controller
     {
         $city->delete();
         return redirect()->route('cities.index');
-    }
-
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    private function validation()
-    {
-        return request()->validate([
-            'name' => 'required',
-            'shipping' => 'required'
-        ]);
-    }
-    private function saveData($city)
-    {
-        $this->validation();
-        $city->name = request()->name;
-        $city->shipping = request()->shipping;
-        $city->save();
     }
 }
