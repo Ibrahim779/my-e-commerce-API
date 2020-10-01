@@ -42,14 +42,14 @@
                             <span style="color: #ffbe08 ">{{$product->price}} {{__('site.currency')}}</span>
                         @endif
                     </td>
-                    <td>{{$product->discount??'null'}}%</td>
+                    <td>{{$product->discount??__('site.null')}}%</td>
                     <td>{{$product->bar_code}}</td>
                     <td class="quantity">
                         <form method="post" action="{{route('products.updateCount', $product->id)}}" class="subscribe-form">
                             @csrf
                             @method('PATCH')
                             <div class="form-group d-flex">
-                                <input  style="width: 100px;" value="{{$product->count}}" name="count" type="number" class="form-control" placeholder="{{__('site.count')}}">
+                                <input min="0" style="width: 100px;" value="{{$product->count}}" name="count" type="number" class="form-control" placeholder="{{__('site.count')}}">
                                 <input type="submit" value="{{__('site.change')}}" class="submit px-3">
                             </div>
                         </form>
@@ -71,11 +71,11 @@
                             </button>
                         </a>
                         @endif
-                        <a href="{{route('products.destroy',  $product->id)}}">
-                            <button type="button" class="btn btn-danger btn-sm">
-                                {{__('dashboard.delete')}}
-                            </button>
-                        </a>
+                        <form class="mt-1" method="post"  action="{{route('products.destroy', $product->id )}}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">{{__('dashboard.delete')}}</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
