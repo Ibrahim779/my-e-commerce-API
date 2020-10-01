@@ -20,7 +20,7 @@
 @section('script')
     <script>
         function makeTimer() {
-            var endDate = '{{date('m/d/Y', strtotime('friday next week'))}}';
+            var endDate = '{{date('d', strtotime('friday this week'))>date('d', strtotime('now'))?date('m/d/Y', strtotime('friday this week')):date('m/d/Y', strtotime('friday next week'))}}';
             var endTime = new Date(endDate);
             endTime = (Date.parse(endTime) / 1000);
 
