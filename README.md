@@ -1,80 +1,150 @@
-# my-e-commerce-API
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+Multilingual e-commerce website
+An e-commerce site to display products for sale and online shopping, and to provide the user with ease in purchasing and ordering the products he wants
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+1. Introduction
+An e-commerce site to display products for sale and online shopping, and to provide the user with ease in purchasing and ordering the products he wants
 
-## About Laravel
+Building a control panel for the site administrator to control all parts of the site, add products and all data, and display statistics, late requests, and incoming messages.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1.1 Purpose
+The site will provide the user with ease of purchase, the addition of products that the user wants to buy, ease of searching for the product, and displaying its details.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The site will provide the user with a request order and ease of payment, whether on receipt or via the Internet, and provide safety and protection for the user.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The site will provide the admin with (add, update, delete) all data.
 
-## Learning Laravel
+The site will provide the admin with see orders
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The site will provide the admin with control over the parts of the site
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1.2 Actors
+System admin ⇒ Who has access to the dashboard and control all data
 
-## Laravel Sponsors
+System User ⇒ Who browses the site to shop online and order products
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1.3 Main Functions
+system admin adds the data like (categories, products, brands, etc.), and he can edit it or remove it
+system admin can see statistics, messages, users, and orders
+system admin controls over the parts of the site
+system user see all products
+system user can search on products
+system user can add the product to his shopping cart or wish list
+system user can request an order
+system user can see all details of the final bill (invoices)
+system user can edit his profile
+register, login, and logout
+ 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+Functional Requirements
+The system must allow the admin to view statistics, late orders, incoming messages, and recently added products on the main dashboard page
 
-## Contributing
+Manage Categories
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+The system must allow the admin to view categories
+The system must allow the admin to add categories
+The system must allow the admin to edit categories
+The system must allow the admin to delete categories
+Manage Subcategories
 
-## Code of Conduct
+The system must allow the admin to view subcategories
+The system must allow the admin to add subcategories
+The system must allow the admin to edit subcategories
+The system must allow the admin to delete subcategories
+Manage Brands
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The system must allow the admin to view Brands
+The system must allow the admin to add Brands
+The system must allow the admin to edit Brands
+The system must allow the admin to delete Brands
+Manage Products
 
-## Security Vulnerabilities
+The system must allow the admin to view products
+The system must allow the admin to add products
+The system must allow the admin to edit products
+The system must allow the admin to delete products
+Manage Unavailable products
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+The system must allow the admin to view unavailable products
+The system must allow the admin to add unavailable products
+The system must allow the admin to edit unavailable products
+The system must allow the admin to delete unavailable products
+The system must allow the admin to make available unavailable products
+Manage Products that contain a discount
 
-## License
+The system must allow the admin to view products that contain a discount
+The system must allow the admin to add products that contain a discount
+The system must allow the admin to edit products that contain a discount
+The system must allow the admin to delete products that contain a discount
+The system must allow the admin to cancel the discount products that contain a discount
+Manage Orders
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The system must allow the admin to view orders
+The system must allow the admin to display order details and ordered products orders
+The system must allow the admin to edit orders
+The system must allow the admin to change order status orders
+The system must allow the admin to delete orders
+Manage Shipping
+
+The system must allow the admin to view shipping
+The system must allow the admin to add shipping for each city
+The system must allow the admin to edit shipping
+The system must allow the admin to delete shipping
+Manage Coupon Code
+
+The system must allow the admin to view coupon Code
+The system must allow the admin to add coupon Code
+The system must allow the admin to edit coupon Code
+The system must allow the admin to delete coupon Code
+Manage Users
+
+The system must allow the admin to view Users
+The system must allow the admin to add Users
+The system must allow the admin to edit Users
+The system must allow the admin to delete Users
+Manage Messages
+
+The system must allow the admin to view messages
+The system must allow the admin to delete messages
+Manage Subscriptions
+
+The system must allow the admin to view Subscriptions
+The system must allow the admin to delete subscriptions
+Manage Slideshow
+
+The system must allow the admin to view the slideshow
+The system must allow the admin to add a slideshow
+The system must allow the admin to edit slideshow
+The system must allow the admin to delete a slideshow
+The system must allow the admin to control the parts of the site
+
+Non Functional Requirements
+1. System properties and constrain
+
+1.1. Performance
+
+Fast navigation between pages should be less than 5 seconds
+When adding the products and the rest of the data, the saving process will take place in less than 4 seconds
+There is enough space to hold the data
+1.2. Security
+
+User data must be preserved and his information encrypted
+Preventing those who do not have access to the control panel
+Secure registration and logout process
+Prevent adding a harmful or inappropriate data type to its data right
+Prevent uploading malicious files or with code
+The data entered must be verified before saving to the database
+Use strong encryption methods to encrypt passwords
+Check the data size and allow a specific data size limit based on the data type
+1.3. Reliability
+
+Ensure that the item is deleted before deleting it from the database
+A warning about unavailable or consumed products and requests
+1.4. Usability
+
+Usability for most people.
+suitable for most environments.
+maintainability design and can be able to be updated continuously.
+2. Process requirements may also be specified
+
+must run on a certain platform or operating system
+The site should be built using PHP for the backend
