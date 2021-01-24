@@ -4,15 +4,18 @@
 <p style="text-align: left;">An e-commerce site to display products for sale and online shopping, and to provide the user with ease in purchasing and ordering the products he wants</p>
 <p style="text-align: left;">Building a control panel for the site administrator to control all parts of the site, add products and all data, and display statistics, late requests, and incoming messages.</p>
 <h3 style="text-align: left;">1.1 Purpose</h3>
+<hr />
 <p style="text-align: left;">The site will provide the user with ease of purchase, the addition of products that the user wants to buy, ease of searching for the product, and displaying its details.</p>
 <p style="text-align: left;">The site will provide the user with a request order and ease of payment, whether on receipt or via the Internet, and provide safety and protection for the user.</p>
 <p style="text-align: left;">The site will provide the admin with (add, update, delete) all data.</p>
 <p style="text-align: left;">The site will provide the admin with see orders</p>
 <p style="text-align: left;">The site will provide the admin with control over the parts of the site</p>
 <h3 style="text-align: left;">1.2 Actors</h3>
+<hr />
 <p style="text-align: left;">System admin &rArr; Who has access to the dashboard and control all data</p>
 <p style="text-align: left;">System User &rArr; Who browses the site to shop online and order products</p>
 <h3 style="text-align: left;">1.3 Main Functions</h3>
+<hr />
 <ul style="text-align: left;">
 <li style="text-align: left;">system admin adds the data like (categories, products, brands, etc.), and he can edit it or remove it</li>
 <li style="text-align: left;">system admin can see statistics, messages, users, and orders</li>
@@ -27,6 +30,7 @@
 </ul>
 <p>&nbsp;</p>
 <h3 style="text-align: left;">Functional Requirements</h3>
+<hr />
 <ul style="text-align: left;">
 <li style="text-align: left;">
 <p>The system must allow the admin to view statistics, late orders, incoming messages, and recently added products on the main dashboard page</p>
@@ -122,6 +126,7 @@
 </ul>
 <p><strong>The system must allow the admin to control the parts of the site</strong></p>
 <h3 style="text-align: left;">Non Functional Requirements</h3>
+    <hr />
 <p><strong>1. System properties and constrain</strong></p>
 <p>1.1. <strong>Performance</strong></p>
 <ul>
